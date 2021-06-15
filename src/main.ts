@@ -1,13 +1,7 @@
 import fs from "fs";
 import path from "path";
 import mkdirp from "mkdirp";
-import {
-  dataFolder,
-  TestStatsState,
-  collectStats,
-  formatTestStat,
-  StatsState,
-} from "./lib";
+import { dataFolder, collectStats, formatTestStat, StatsState } from "./lib";
 import { createTestStatsTable } from "./lib/presentation/testStats/table";
 import { TestEnv } from "./lib/env";
 import { compareTestStatsSort } from "./lib/presentation/testStats/sort";
@@ -15,16 +9,15 @@ import { createTestErrorStatsTable } from "./lib/presentation/errorStats/table";
 import { compareErrorStatsSort } from "./lib/presentation/errorStats/sort";
 (async function main() {
   const testEnv = TestEnv.Local;
-  const mode = "override";
+  const mode: string = "override";
   const testRunPrefix = mode == "override" ? "" : new Date().getTime() + "_";
+  const soureFolder = dataFolder(testEnv);
   //Create all folders required
   const outFolder = path.join(__dirname, "../out");
-  const dirroot = path.join(__dirname, "../data", dataFolder(testEnv));
+  const dirroot = path.join(__dirname, "../data", soureFolder);
   await Promise.all([mkdirp(outFolder), mkdirp(dirroot)]);
-  const outFile = path.join(
-    outFolder,
-    testRunPrefix + dataFolder(testEnv) + ".txt"
-  );
+  const outFileName = testRunPrefix + dataFolder(testEnv) + ".txt";
+  const outFile = path.join(outFolder, outFileName);
   //Get files to be parsed
   const files = await new Promise<string[]>((resolve, reject) => {
     fs.readdir(dirroot, { withFileTypes: true }, (err, files) => {
