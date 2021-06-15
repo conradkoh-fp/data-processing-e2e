@@ -1,0 +1,183 @@
+yarn run v1.22.4
+$ sh ./scripts/setup-e2e-local.sh; export $(xargs < ./envs/.env.e2e.local); yarn e2e
+checking for local e2e env file
+./envs/.env.e2e.local exists
+$ E2E_TEST_USERNAME=$E2E_TEST_USERNAME E2E_TEST_PASSWORD=$E2E_TEST_PASSWORD sh ./scripts/run-e2e.sh
+$ /Users/c.koh.3/Documents/Projects/react/fp-apac-jedi-skywalker/node_modules/.bin/jest -c e2e/jest-webkit.config.js --json --outputFile=e2e/output/playwright.webkit.json --maxWorkers=4
+PASS browser: webkit e2e/tests/vp-plugin/deal-utilization-card-and-details.e2e.ts (31.89s)
+PASS browser: webkit e2e/tests/vp-plugin/vendor-health.e2e.ts (42.907s)
+PASS browser: webkit e2e/tests/vp-plugin/vendor-health-single-vendor-account.e2e.ts (27.404s)
+PASS browser: webkit e2e/tests/vppd-plugin/deal-creation.e2e.ts (65.307s)
+PASS browser: webkit e2e/tests/vfd-plugin/dealform-persist-vendor-change.e2e.ts (25.874s)
+PASS browser: webkit e2e/tests/vfd-plugin/deal-creation.e2e.ts (79.73s)
+PASS browser: webkit e2e/tests/vppd-plugin/edit-deal-button-verification.e2e.ts (17.545s)
+PASS browser: webkit e2e/tests/vfd-plugin/tnc-error-message-validation.e2e.ts (14.52s)
+PASS browser: webkit e2e/tests/vp-plugin/customer-conversion-all-details-check.e2e.ts (25.944s)
+PASS browser: webkit e2e/tests/vp-plugin/customer-conversion-card-and-details.e2e.ts (9.867s)
+PASS browser: webkit e2e/tests/vp-plugin/kpi-summary.e2e.ts (12.331s)
+PASS browser: webkit e2e/tests/vfd-plugin/edit-deal-button-verification.e2e.ts (17.378s)
+PASS browser: webkit e2e/tests/vp-plugin/single-outlet-health-page.e2e.ts (12.072s)
+PASS browser: webkit e2e/tests/vp-plugin/prep-time-details-page.e2e.ts (11.938s)
+PASS browser: webkit e2e/tests/vfd-plugin/dealform-has-default-options.e2e.ts (10.437s)
+PASS browser: webkit e2e/tests/vp-plugin/delay-order-details-page.e2e.ts (11.669s)
+PASS browser: webkit e2e/tests/vp-plugin/offline-duration-details-page.e2e.ts (12.613s)
+PASS browser: webkit e2e/tests/vp-plugin/order-rejection-rate-card-and-details.e2e.ts (11.696s)
+PASS browser: webkit e2e/tests/vp-plugin/accept-time-details-page.e2e.ts (12.288s)
+PASS browser: webkit e2e/tests/vp-plugin/all-outlets-health-page.e2e.ts (11.639s)
+PASS browser: webkit e2e/tests/vp-plugin/order-revenue-loss-card-and-details.e2e.ts (10.5s)
+
+Test Suites: 21 passed, 21 total
+Tests:       38 passed, 38 total
+Snapshots:   0 total
+Time:        121.629s
+Ran all test suites.
+Test results written to: e2e/output/playwright.webkit.json
+$ /Users/c.koh.3/Documents/Projects/react/fp-apac-jedi-skywalker/node_modules/.bin/jest -c e2e/jest-chromium.config.js --json --outputFile=e2e/output/playwright.json --maxWorkers=4
+PASS browser: chromium e2e/tests/vp-plugin/vendor-health.e2e.ts (48.393s)
+PASS browser: chromium e2e/tests/vppd-plugin/deal-creation.e2e.ts (66.262s)
+PASS browser: chromium e2e/tests/vp-plugin/vendor-health-single-vendor-account.e2e.ts (27.086s)
+PASS browser: chromium e2e/tests/vfd-plugin/deal-creation.e2e.ts (82.633s)
+PASS browser: chromium e2e/tests/vfd-plugin/dealform-persist-vendor-change.e2e.ts (22.779s)
+FAIL browser: chromium e2e/tests/vp-plugin/deal-utilization-card-and-details.e2e.ts (92.817s)
+  ● VP - Deal Utilization card and details page › [C456533]Verify deals report summary card details
+
+    page.waitForSelector: Timeout 30000ms exceeded.
+    =========================== logs ===========================
+    waiting for selector "a[data-testid="dealsReport"]" to be visible
+    ============================================================
+    Note: use DEBUG=pw:api environment variable to capture Playwright logs.
+
+      77 |
+      78 |     // inspect kpi card in dashboard
+    > 79 |     await page.waitForSelector(dealUtilizationCard);
+         |                ^
+      80 |     const hasTrendIcon = await inspectTrendIconExist(page)(dealUtilizationCard);
+      81 |     const kpiCardDetails = await inspectKpiCard(page)(dealUtilizationCard);
+      82 |     expect(kpiCardDetails).toMatchObject({
+
+      at Object.captureStackTrace (../../../node_modules/playwright/lib/utils/stackTrace.js:48:19)
+      at Connection.sendMessageToServer (../../../node_modules/playwright/lib/client/connection.js:69:48)
+      at Proxy.<anonymous> (../../../node_modules/playwright/lib/client/channelOwner.js:64:61)
+      at ../../../node_modules/playwright/lib/client/frame.js:202:42
+      at Frame._wrapApiCall (../../../node_modules/playwright/lib/client/channelOwner.js:77:34)
+      at Frame.waitForSelector (../../../node_modules/playwright/lib/client/frame.js:197:21)
+      at ../../../node_modules/playwright/lib/client/page.js:241:60
+      at Page._attributeToPage (../../../node_modules/playwright/lib/client/page.js:231:20)
+      at Page.waitForSelector (../../../node_modules/playwright/lib/client/page.js:241:21)
+      at tests/vp-plugin/deal-utilization-card-and-details.e2e.ts:79:16
+
+  ● VP - Deal Utilization card and details page › [C457064]Verify pandaPromo utilization card and table details
+
+    page.waitForSelector: Timeout 30000ms exceeded.
+    =========================== logs ===========================
+    waiting for selector "[data-testid="pr-vfd-sc"]" to be visible
+    ============================================================
+    Note: use DEBUG=pw:api environment variable to capture Playwright logs.
+
+      56 |   cardSelector: string
+      57 | ): Promise<DealUtilizationCardInformation> => {
+    > 58 |   await page.waitForSelector(cardSelector);
+         |              ^
+      59 |
+      60 |   const title = await page.innerText(
+      61 |     `${cardSelector} ${DealsUtilizationSummaryCard.dealSummaryTitle}`
+
+      at Object.captureStackTrace (../../../node_modules/playwright/lib/utils/stackTrace.js:48:19)
+      at Connection.sendMessageToServer (../../../node_modules/playwright/lib/client/connection.js:69:48)
+      at Proxy.<anonymous> (../../../node_modules/playwright/lib/client/channelOwner.js:64:61)
+      at ../../../node_modules/playwright/lib/client/frame.js:202:42
+      at Frame._wrapApiCall (../../../node_modules/playwright/lib/client/channelOwner.js:77:34)
+      at Frame.waitForSelector (../../../node_modules/playwright/lib/client/frame.js:197:21)
+      at ../../../node_modules/playwright/lib/client/page.js:241:60
+      at Page._attributeToPage (../../../node_modules/playwright/lib/client/page.js:231:20)
+      at Page.waitForSelector (../../../node_modules/playwright/lib/client/page.js:241:21)
+      at actions/vp-plugin/kpi-details/index.ts:58:14
+
+PASS browser: chromium e2e/tests/vppd-plugin/edit-deal-button-verification.e2e.ts (15.604s)
+PASS browser: chromium e2e/tests/vp-plugin/customer-conversion-all-details-check.e2e.ts (24.653s)
+PASS browser: chromium e2e/tests/vfd-plugin/tnc-error-message-validation.e2e.ts (16.531s)
+PASS browser: chromium e2e/tests/vfd-plugin/edit-deal-button-verification.e2e.ts (17.339s)
+PASS browser: chromium e2e/tests/vp-plugin/customer-conversion-card-and-details.e2e.ts (12.166s)
+PASS browser: chromium e2e/tests/vp-plugin/kpi-summary.e2e.ts (15.999s)
+PASS browser: chromium e2e/tests/vp-plugin/accept-time-details-page.e2e.ts (12.166s)
+PASS browser: chromium e2e/tests/vp-plugin/order-rejection-rate-card-and-details.e2e.ts (12.364s)
+PASS browser: chromium e2e/tests/vp-plugin/single-outlet-health-page.e2e.ts (11.743s)
+PASS browser: chromium e2e/tests/vp-plugin/offline-duration-details-page.e2e.ts (12.705s)
+PASS browser: chromium e2e/tests/vp-plugin/delay-order-details-page.e2e.ts (11.5s)
+PASS browser: chromium e2e/tests/vp-plugin/prep-time-details-page.e2e.ts (11.984s)
+PASS browser: chromium e2e/tests/vfd-plugin/dealform-has-default-options.e2e.ts (11.582s)
+PASS browser: chromium e2e/tests/vp-plugin/all-outlets-health-page.e2e.ts (11.862s)
+PASS browser: chromium e2e/tests/vp-plugin/order-revenue-loss-card-and-details.e2e.ts (12.16s)
+
+Summary of all failing tests
+FAIL tests/vp-plugin/deal-utilization-card-and-details.e2e.ts (92.817s)
+  ● VP - Deal Utilization card and details page › [C456533]Verify deals report summary card details
+
+    page.waitForSelector: Timeout 30000ms exceeded.
+    =========================== logs ===========================
+    waiting for selector "a[data-testid="dealsReport"]" to be visible
+    ============================================================
+    Note: use DEBUG=pw:api environment variable to capture Playwright logs.
+
+      77 |
+      78 |     // inspect kpi card in dashboard
+    > 79 |     await page.waitForSelector(dealUtilizationCard);
+         |                ^
+      80 |     const hasTrendIcon = await inspectTrendIconExist(page)(dealUtilizationCard);
+      81 |     const kpiCardDetails = await inspectKpiCard(page)(dealUtilizationCard);
+      82 |     expect(kpiCardDetails).toMatchObject({
+
+      at Object.captureStackTrace (../../../node_modules/playwright/lib/utils/stackTrace.js:48:19)
+      at Connection.sendMessageToServer (../../../node_modules/playwright/lib/client/connection.js:69:48)
+      at Proxy.<anonymous> (../../../node_modules/playwright/lib/client/channelOwner.js:64:61)
+      at ../../../node_modules/playwright/lib/client/frame.js:202:42
+      at Frame._wrapApiCall (../../../node_modules/playwright/lib/client/channelOwner.js:77:34)
+      at Frame.waitForSelector (../../../node_modules/playwright/lib/client/frame.js:197:21)
+      at ../../../node_modules/playwright/lib/client/page.js:241:60
+      at Page._attributeToPage (../../../node_modules/playwright/lib/client/page.js:231:20)
+      at Page.waitForSelector (../../../node_modules/playwright/lib/client/page.js:241:21)
+      at tests/vp-plugin/deal-utilization-card-and-details.e2e.ts:79:16
+
+  ● VP - Deal Utilization card and details page › [C457064]Verify pandaPromo utilization card and table details
+
+    page.waitForSelector: Timeout 30000ms exceeded.
+    =========================== logs ===========================
+    waiting for selector "[data-testid="pr-vfd-sc"]" to be visible
+    ============================================================
+    Note: use DEBUG=pw:api environment variable to capture Playwright logs.
+
+      56 |   cardSelector: string
+      57 | ): Promise<DealUtilizationCardInformation> => {
+    > 58 |   await page.waitForSelector(cardSelector);
+         |              ^
+      59 |
+      60 |   const title = await page.innerText(
+      61 |     `${cardSelector} ${DealsUtilizationSummaryCard.dealSummaryTitle}`
+
+      at Object.captureStackTrace (../../../node_modules/playwright/lib/utils/stackTrace.js:48:19)
+      at Connection.sendMessageToServer (../../../node_modules/playwright/lib/client/connection.js:69:48)
+      at Proxy.<anonymous> (../../../node_modules/playwright/lib/client/channelOwner.js:64:61)
+      at ../../../node_modules/playwright/lib/client/frame.js:202:42
+      at Frame._wrapApiCall (../../../node_modules/playwright/lib/client/channelOwner.js:77:34)
+      at Frame.waitForSelector (../../../node_modules/playwright/lib/client/frame.js:197:21)
+      at ../../../node_modules/playwright/lib/client/page.js:241:60
+      at Page._attributeToPage (../../../node_modules/playwright/lib/client/page.js:231:20)
+      at Page.waitForSelector (../../../node_modules/playwright/lib/client/page.js:241:21)
+      at actions/vp-plugin/kpi-details/index.ts:58:14
+
+
+Test Suites: 1 failed, 20 passed, 21 total
+Tests:       2 failed, 36 passed, 38 total
+Snapshots:   0 total
+Time:        143.009s
+Ran all test suites.
+Test results written to: e2e/output/playwright.json
+error Command failed with exit code 1.
+info Visit https://yarnpkg.com/en/docs/cli/run for documentation about this command.
+Browser    Exit Code
+webkit         0
+chrome         1
+error Command failed with exit code 1.
+info Visit https://yarnpkg.com/en/docs/cli/run for documentation about this command.
+error Command failed with exit code 1.
+info Visit https://yarnpkg.com/en/docs/cli/run for documentation about this command.
