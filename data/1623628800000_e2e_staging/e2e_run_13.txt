@@ -1,0 +1,222 @@
+yarn run v1.22.4
+$ sh ./scripts/setup-e2e-local.sh; export $(xargs < ./envs/.env.e2e.local); yarn e2e
+checking for local e2e env file
+./envs/.env.e2e.local exists
+$ E2E_TEST_USERNAME=$E2E_TEST_USERNAME E2E_TEST_PASSWORD=$E2E_TEST_PASSWORD sh ./scripts/run-e2e.sh
+$ /Users/c.koh.3/Documents/Projects/react/fp-apac-jedi-skywalker/node_modules/.bin/jest -c e2e/jest-webkit.config.js --json --outputFile=e2e/output/playwright.webkit.json --maxWorkers=4
+PASS browser: webkit e2e/tests/vp-plugin/deal-utilization-card-and-details.e2e.ts (46.258s)
+PASS browser: webkit e2e/tests/vp-plugin/vendor-health.e2e.ts (62.711s)
+PASS browser: webkit e2e/tests/vp-plugin/vendor-health-single-vendor-account.e2e.ts (42.756s)
+PASS browser: webkit e2e/tests/vppd-plugin/deal-creation.e2e.ts (93.568s)
+PASS browser: webkit e2e/tests/vp-plugin/customer-conversion-all-details-check.e2e.ts (31.717s)
+PASS browser: webkit e2e/tests/vfd-plugin/deal-creation.e2e.ts (114.844s)
+PASS browser: webkit e2e/tests/vfd-plugin/edit-deal-button-verification.e2e.ts (23.143s)
+PASS browser: webkit e2e/tests/vppd-plugin/edit-deal-button-verification.e2e.ts (22.754s)
+PASS browser: webkit e2e/tests/vfd-plugin/dealform-persist-vendor-change.e2e.ts (33.723s)
+PASS browser: webkit e2e/tests/vp-plugin/delay-order-details-page.e2e.ts (18.443s)
+PASS browser: webkit e2e/tests/vp-plugin/order-rejection-rate-card-and-details.e2e.ts (17.182s)
+PASS browser: webkit e2e/tests/vp-plugin/single-outlet-health-page.e2e.ts (17.759s)
+PASS browser: webkit e2e/tests/vp-plugin/prep-time-details-page.e2e.ts (18.582s)
+PASS browser: webkit e2e/tests/vp-plugin/all-outlets-health-page.e2e.ts (17.306s)
+PASS browser: webkit e2e/tests/vp-plugin/order-revenue-loss-card-and-details.e2e.ts (18.862s)
+PASS browser: webkit e2e/tests/vfd-plugin/tnc-error-message-validation.e2e.ts (22.633s)
+PASS browser: webkit e2e/tests/vp-plugin/customer-conversion-card-and-details.e2e.ts (17.794s)
+PASS browser: webkit e2e/tests/vp-plugin/accept-time-details-page.e2e.ts (19.388s)
+PASS browser: webkit e2e/tests/vp-plugin/offline-duration-details-page.e2e.ts (17.012s)
+PASS browser: webkit e2e/tests/vp-plugin/kpi-summary.e2e.ts (22.795s)
+PASS browser: webkit e2e/tests/vfd-plugin/dealform-has-default-options.e2e.ts (16.14s)
+
+Test Suites: 21 passed, 21 total
+Tests:       38 passed, 38 total
+Snapshots:   0 total
+Time:        177.142s, estimated 183s
+Ran all test suites.
+Test results written to: e2e/output/playwright.webkit.json
+$ /Users/c.koh.3/Documents/Projects/react/fp-apac-jedi-skywalker/node_modules/.bin/jest -c e2e/jest-chromium.config.js --json --outputFile=e2e/output/playwright.json --maxWorkers=4
+PASS browser: chromium e2e/tests/vp-plugin/vendor-health-single-vendor-account.e2e.ts (57.654s)
+PASS browser: chromium e2e/tests/vp-plugin/vendor-health.e2e.ts (83.915s)
+PASS browser: chromium e2e/tests/vppd-plugin/deal-creation.e2e.ts (105.774s)
+PASS browser: chromium e2e/tests/vp-plugin/deal-utilization-card-and-details.e2e.ts (51.056s)
+PASS browser: chromium e2e/tests/vp-plugin/customer-conversion-all-details-check.e2e.ts (44.665s)
+PASS browser: chromium e2e/tests/vp-plugin/kpi-summary.e2e.ts (27.824s)
+PASS browser: chromium e2e/tests/vfd-plugin/edit-deal-button-verification.e2e.ts (24.467s)
+PASS browser: chromium e2e/tests/vfd-plugin/tnc-error-message-validation.e2e.ts (20.187s)
+FAIL browser: chromium e2e/tests/vfd-plugin/dealform-persist-vendor-change.e2e.ts (56.274s)
+  ● VFD - vendor selection change › [C259594]Verify dealform state persist after changing vendor
+
+    page.waitForSelector: Timeout 30000ms exceeded.
+    =========================== logs ===========================
+    waiting for selector "div[data-testid="dr-block"]" to be visible
+    ============================================================
+    Note: use DEBUG=pw:api environment variable to capture Playwright logs.
+
+      25 |     const expectedDeal = await inspectDealFormState(page)();
+      26 |     await reviewDeal(page)();
+    > 27 |     await page.waitForSelector('div[data-testid="dr-block"]'); // wait for review page to load
+         |                ^
+      28 |     await switchVendor(page)();
+      29 |
+      30 |     const dealFormState = await inspectDealFormState(page)();
+
+      at Object.captureStackTrace (../../../node_modules/playwright/lib/utils/stackTrace.js:48:19)
+      at Connection.sendMessageToServer (../../../node_modules/playwright/lib/client/connection.js:69:48)
+      at Proxy.<anonymous> (../../../node_modules/playwright/lib/client/channelOwner.js:64:61)
+      at ../../../node_modules/playwright/lib/client/frame.js:202:42
+      at Frame._wrapApiCall (../../../node_modules/playwright/lib/client/channelOwner.js:77:34)
+      at Frame.waitForSelector (../../../node_modules/playwright/lib/client/frame.js:197:21)
+      at ../../../node_modules/playwright/lib/client/page.js:241:60
+      at Page._attributeToPage (../../../node_modules/playwright/lib/client/page.js:231:20)
+      at Page.waitForSelector (../../../node_modules/playwright/lib/client/page.js:241:21)
+      at tests/vfd-plugin/dealform-persist-vendor-change.e2e.ts:27:16
+
+PASS browser: chromium e2e/tests/vp-plugin/order-revenue-loss-card-and-details.e2e.ts (16.089s)
+PASS browser: chromium e2e/tests/vppd-plugin/edit-deal-button-verification.e2e.ts (22.388s)
+PASS browser: chromium e2e/tests/vp-plugin/customer-conversion-card-and-details.e2e.ts (18.174s)
+PASS browser: chromium e2e/tests/vp-plugin/prep-time-details-page.e2e.ts (16.187s)
+FAIL browser: chromium e2e/tests/vfd-plugin/deal-creation.e2e.ts (191.549s)
+  ● VFD - Deal Creation › [C262631]Verify promotional message exists before creating a deal
+
+    expect(received).toBeTruthy()
+
+    Received: false
+
+      129 |   it('[C262631]Verify promotional message exists before creating a deal', async () => {
+      130 |     const deal = dealFixtures[env][DealFixtureType.FixedAmountDiscount];
+    > 131 |     expect(await hasPromotionalMessage(page)()).toBeTruthy();
+          |                                                 ^
+      132 |   });
+      133 | });
+      134 |
+
+      at tests/vfd-plugin/deal-creation.e2e.ts:131:49
+      at step (tests/vfd-plugin/deal-creation.e2e.ts:44:23)
+      at Object.next (tests/vfd-plugin/deal-creation.e2e.ts:25:53)
+      at fulfilled (tests/vfd-plugin/deal-creation.e2e.ts:16:58)
+
+  ● VFD - Deal Creation › [C262631]Verify promotional message exists before creating a deal
+
+    page.waitForSelector: Timeout 30000ms exceeded.
+    =========================== logs ===========================
+    waiting for selector "button[data-testid="popmenu-trigger"]" to be visible
+    ============================================================
+    Note: use DEBUG=pw:api environment variable to capture Playwright logs.
+
+      3 | export const userLogout = (page: Page) => async () => {
+      4 |   // press menu button
+    > 5 |   await page.waitForSelector('button[data-testid="popmenu-trigger"]', { timeout: 30000 });
+        |              ^
+      6 |   await page.click('button[data-testid="popmenu-trigger"]');
+      7 |
+      8 |   // press logout button
+
+      at Object.captureStackTrace (../../../node_modules/playwright/lib/utils/stackTrace.js:48:19)
+      at Connection.sendMessageToServer (../../../node_modules/playwright/lib/client/connection.js:69:48)
+      at Proxy.<anonymous> (../../../node_modules/playwright/lib/client/channelOwner.js:64:61)
+      at ../../../node_modules/playwright/lib/client/frame.js:202:42
+      at Frame._wrapApiCall (../../../node_modules/playwright/lib/client/channelOwner.js:77:34)
+      at Frame.waitForSelector (../../../node_modules/playwright/lib/client/frame.js:197:21)
+      at ../../../node_modules/playwright/lib/client/page.js:241:60
+      at Page._attributeToPage (../../../node_modules/playwright/lib/client/page.js:231:20)
+      at Page.waitForSelector (../../../node_modules/playwright/lib/client/page.js:241:21)
+      at setup/common/logout.ts:5:14
+
+PASS browser: chromium e2e/tests/vp-plugin/all-outlets-health-page.e2e.ts (18.005s)
+PASS browser: chromium e2e/tests/vp-plugin/accept-time-details-page.e2e.ts (18.439s)
+PASS browser: chromium e2e/tests/vp-plugin/order-rejection-rate-card-and-details.e2e.ts (18.539s)
+PASS browser: chromium e2e/tests/vp-plugin/offline-duration-details-page.e2e.ts (18.817s)
+PASS browser: chromium e2e/tests/vfd-plugin/dealform-has-default-options.e2e.ts (15.372s)
+PASS browser: chromium e2e/tests/vp-plugin/single-outlet-health-page.e2e.ts (20.775s)
+PASS browser: chromium e2e/tests/vp-plugin/delay-order-details-page.e2e.ts (15.171s)
+
+Summary of all failing tests
+FAIL tests/vfd-plugin/dealform-persist-vendor-change.e2e.ts (56.274s)
+  ● VFD - vendor selection change › [C259594]Verify dealform state persist after changing vendor
+
+    page.waitForSelector: Timeout 30000ms exceeded.
+    =========================== logs ===========================
+    waiting for selector "div[data-testid="dr-block"]" to be visible
+    ============================================================
+    Note: use DEBUG=pw:api environment variable to capture Playwright logs.
+
+      25 |     const expectedDeal = await inspectDealFormState(page)();
+      26 |     await reviewDeal(page)();
+    > 27 |     await page.waitForSelector('div[data-testid="dr-block"]'); // wait for review page to load
+         |                ^
+      28 |     await switchVendor(page)();
+      29 |
+      30 |     const dealFormState = await inspectDealFormState(page)();
+
+      at Object.captureStackTrace (../../../node_modules/playwright/lib/utils/stackTrace.js:48:19)
+      at Connection.sendMessageToServer (../../../node_modules/playwright/lib/client/connection.js:69:48)
+      at Proxy.<anonymous> (../../../node_modules/playwright/lib/client/channelOwner.js:64:61)
+      at ../../../node_modules/playwright/lib/client/frame.js:202:42
+      at Frame._wrapApiCall (../../../node_modules/playwright/lib/client/channelOwner.js:77:34)
+      at Frame.waitForSelector (../../../node_modules/playwright/lib/client/frame.js:197:21)
+      at ../../../node_modules/playwright/lib/client/page.js:241:60
+      at Page._attributeToPage (../../../node_modules/playwright/lib/client/page.js:231:20)
+      at Page.waitForSelector (../../../node_modules/playwright/lib/client/page.js:241:21)
+      at tests/vfd-plugin/dealform-persist-vendor-change.e2e.ts:27:16
+
+FAIL tests/vfd-plugin/deal-creation.e2e.ts (191.549s)
+  ● VFD - Deal Creation › [C262631]Verify promotional message exists before creating a deal
+
+    expect(received).toBeTruthy()
+
+    Received: false
+
+      129 |   it('[C262631]Verify promotional message exists before creating a deal', async () => {
+      130 |     const deal = dealFixtures[env][DealFixtureType.FixedAmountDiscount];
+    > 131 |     expect(await hasPromotionalMessage(page)()).toBeTruthy();
+          |                                                 ^
+      132 |   });
+      133 | });
+      134 |
+
+      at tests/vfd-plugin/deal-creation.e2e.ts:131:49
+      at step (tests/vfd-plugin/deal-creation.e2e.ts:44:23)
+      at Object.next (tests/vfd-plugin/deal-creation.e2e.ts:25:53)
+      at fulfilled (tests/vfd-plugin/deal-creation.e2e.ts:16:58)
+
+  ● VFD - Deal Creation › [C262631]Verify promotional message exists before creating a deal
+
+    page.waitForSelector: Timeout 30000ms exceeded.
+    =========================== logs ===========================
+    waiting for selector "button[data-testid="popmenu-trigger"]" to be visible
+    ============================================================
+    Note: use DEBUG=pw:api environment variable to capture Playwright logs.
+
+      3 | export const userLogout = (page: Page) => async () => {
+      4 |   // press menu button
+    > 5 |   await page.waitForSelector('button[data-testid="popmenu-trigger"]', { timeout: 30000 });
+        |              ^
+      6 |   await page.click('button[data-testid="popmenu-trigger"]');
+      7 |
+      8 |   // press logout button
+
+      at Object.captureStackTrace (../../../node_modules/playwright/lib/utils/stackTrace.js:48:19)
+      at Connection.sendMessageToServer (../../../node_modules/playwright/lib/client/connection.js:69:48)
+      at Proxy.<anonymous> (../../../node_modules/playwright/lib/client/channelOwner.js:64:61)
+      at ../../../node_modules/playwright/lib/client/frame.js:202:42
+      at Frame._wrapApiCall (../../../node_modules/playwright/lib/client/channelOwner.js:77:34)
+      at Frame.waitForSelector (../../../node_modules/playwright/lib/client/frame.js:197:21)
+      at ../../../node_modules/playwright/lib/client/page.js:241:60
+      at Page._attributeToPage (../../../node_modules/playwright/lib/client/page.js:231:20)
+      at Page.waitForSelector (../../../node_modules/playwright/lib/client/page.js:241:21)
+      at setup/common/logout.ts:5:14
+
+
+Test Suites: 2 failed, 19 passed, 21 total
+Tests:       2 failed, 36 passed, 38 total
+Snapshots:   0 total
+Time:        225.239s
+Ran all test suites.
+Test results written to: e2e/output/playwright.json
+error Command failed with exit code 1.
+info Visit https://yarnpkg.com/en/docs/cli/run for documentation about this command.
+Browser    Exit Code
+webkit         0
+chrome         1
+error Command failed with exit code 1.
+info Visit https://yarnpkg.com/en/docs/cli/run for documentation about this command.
+error Command failed with exit code 1.
+info Visit https://yarnpkg.com/en/docs/cli/run for documentation about this command.

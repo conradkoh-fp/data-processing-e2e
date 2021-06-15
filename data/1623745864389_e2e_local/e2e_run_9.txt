@@ -1,0 +1,133 @@
+yarn run v1.22.4
+$ sh ./scripts/setup-e2e-local.sh; export $(xargs < ./envs/.env.e2e.local); yarn e2e
+checking for local e2e env file
+./envs/.env.e2e.local exists
+$ E2E_TEST_USERNAME=$E2E_TEST_USERNAME E2E_TEST_PASSWORD=$E2E_TEST_PASSWORD sh ./scripts/run-e2e.sh
+$ /Users/c.koh.3/Documents/Projects/react/fp-apac-jedi-skywalker/node_modules/.bin/jest -c e2e/jest-webkit.config.js --json --outputFile=e2e/output/playwright.webkit.json --maxWorkers=4
+PASS browser: webkit e2e/tests/vp-plugin/deal-utilization-card-and-details.e2e.ts (31.138s)
+PASS browser: webkit e2e/tests/vp-plugin/vendor-health.e2e.ts (42.377s)
+PASS browser: webkit e2e/tests/vp-plugin/vendor-health-single-vendor-account.e2e.ts (25.517s)
+PASS browser: webkit e2e/tests/vppd-plugin/deal-creation.e2e.ts (64.215s)
+PASS browser: webkit e2e/tests/vfd-plugin/dealform-persist-vendor-change.e2e.ts (24.243s)
+PASS browser: webkit e2e/tests/vfd-plugin/deal-creation.e2e.ts (75.292s)
+PASS browser: webkit e2e/tests/vp-plugin/customer-conversion-all-details-check.e2e.ts (19.055s)
+PASS browser: webkit e2e/tests/vfd-plugin/edit-deal-button-verification.e2e.ts (16.103s)
+PASS browser: webkit e2e/tests/vfd-plugin/tnc-error-message-validation.e2e.ts (14.028s)
+PASS browser: webkit e2e/tests/vppd-plugin/edit-deal-button-verification.e2e.ts (15.824s)
+FAIL browser: webkit e2e/tests/vp-plugin/kpi-summary.e2e.ts (15.557s)
+
+
+  ● Test suite failed to run
+
+    page.waitForSelector: Unable to adopt element handle from a different document
+    =========================== logs ===========================
+    waiting for selector "#button_login" to be visible
+      selector resolved to visible <button tabindex="0" type="submit" id="button_login" dat…>…</button>
+    ============================================================
+    Note: use DEBUG=pw:api environment variable to capture Playwright logs.
+
+      11 |
+      12 |   // wait for login button to appear
+    > 13 |   await page.waitForSelector('#button_login', { timeout: 30000 });
+         |              ^
+      14 | };
+      15 |
+
+      at Object.captureStackTrace (../../../node_modules/playwright/lib/utils/stackTrace.js:48:19)
+      at Connection.sendMessageToServer (../../../node_modules/playwright/lib/client/connection.js:69:48)
+      at Proxy.<anonymous> (../../../node_modules/playwright/lib/client/channelOwner.js:64:61)
+      at ../../../node_modules/playwright/lib/client/frame.js:202:42
+      at Frame._wrapApiCall (../../../node_modules/playwright/lib/client/channelOwner.js:77:34)
+      at Frame.waitForSelector (../../../node_modules/playwright/lib/client/frame.js:197:21)
+      at ../../../node_modules/playwright/lib/client/page.js:241:60
+      at Page._attributeToPage (../../../node_modules/playwright/lib/client/page.js:231:20)
+      at Page.waitForSelector (../../../node_modules/playwright/lib/client/page.js:241:21)
+      at setup/common/logout.ts:13:14
+
+PASS browser: webkit e2e/tests/vp-plugin/prep-time-details-page.e2e.ts (11.25s)
+PASS browser: webkit e2e/tests/vp-plugin/single-outlet-health-page.e2e.ts (12.053s)
+PASS browser: webkit e2e/tests/vp-plugin/customer-conversion-card-and-details.e2e.ts (13.343s)
+PASS browser: webkit e2e/tests/vp-plugin/all-outlets-health-page.e2e.ts (14.44s)
+PASS browser: webkit e2e/tests/vp-plugin/offline-duration-details-page.e2e.ts (13.569s)
+PASS browser: webkit e2e/tests/vp-plugin/order-revenue-loss-card-and-details.e2e.ts (13.846s)
+PASS browser: webkit e2e/tests/vfd-plugin/dealform-has-default-options.e2e.ts (12.621s)
+PASS browser: webkit e2e/tests/vp-plugin/order-rejection-rate-card-and-details.e2e.ts (13.269s)
+PASS browser: webkit e2e/tests/vp-plugin/delay-order-details-page.e2e.ts (14.304s)
+PASS browser: webkit e2e/tests/vp-plugin/accept-time-details-page.e2e.ts (15.335s)
+
+Summary of all failing tests
+FAIL tests/vp-plugin/kpi-summary.e2e.ts (15.557s)
+
+
+  ● Test suite failed to run
+
+    page.waitForSelector: Unable to adopt element handle from a different document
+    =========================== logs ===========================
+    waiting for selector "#button_login" to be visible
+      selector resolved to visible <button tabindex="0" type="submit" id="button_login" dat…>…</button>
+    ============================================================
+    Note: use DEBUG=pw:api environment variable to capture Playwright logs.
+
+      11 |
+      12 |   // wait for login button to appear
+    > 13 |   await page.waitForSelector('#button_login', { timeout: 30000 });
+         |              ^
+      14 | };
+      15 |
+
+      at Object.captureStackTrace (../../../node_modules/playwright/lib/utils/stackTrace.js:48:19)
+      at Connection.sendMessageToServer (../../../node_modules/playwright/lib/client/connection.js:69:48)
+      at Proxy.<anonymous> (../../../node_modules/playwright/lib/client/channelOwner.js:64:61)
+      at ../../../node_modules/playwright/lib/client/frame.js:202:42
+      at Frame._wrapApiCall (../../../node_modules/playwright/lib/client/channelOwner.js:77:34)
+      at Frame.waitForSelector (../../../node_modules/playwright/lib/client/frame.js:197:21)
+      at ../../../node_modules/playwright/lib/client/page.js:241:60
+      at Page._attributeToPage (../../../node_modules/playwright/lib/client/page.js:231:20)
+      at Page.waitForSelector (../../../node_modules/playwright/lib/client/page.js:241:21)
+      at setup/common/logout.ts:13:14
+
+
+Test Suites: 1 failed, 20 passed, 21 total
+Tests:       38 passed, 38 total
+Snapshots:   0 total
+Time:        121.342s
+Ran all test suites.
+Test results written to: e2e/output/playwright.webkit.json
+error Command failed with exit code 1.
+info Visit https://yarnpkg.com/en/docs/cli/run for documentation about this command.
+$ /Users/c.koh.3/Documents/Projects/react/fp-apac-jedi-skywalker/node_modules/.bin/jest -c e2e/jest-chromium.config.js --json --outputFile=e2e/output/playwright.json --maxWorkers=4
+PASS browser: chromium e2e/tests/vp-plugin/deal-utilization-card-and-details.e2e.ts (35.491s)
+PASS browser: chromium e2e/tests/vp-plugin/vendor-health.e2e.ts (48.933s)
+PASS browser: chromium e2e/tests/vppd-plugin/deal-creation.e2e.ts (62.129s)
+PASS browser: chromium e2e/tests/vp-plugin/vendor-health-single-vendor-account.e2e.ts (31.005s)
+PASS browser: chromium e2e/tests/vfd-plugin/dealform-persist-vendor-change.e2e.ts (24.692s)
+PASS browser: chromium e2e/tests/vfd-plugin/deal-creation.e2e.ts (80.091s)
+PASS browser: chromium e2e/tests/vp-plugin/kpi-summary.e2e.ts (14.472s)
+PASS browser: chromium e2e/tests/vp-plugin/customer-conversion-all-details-check.e2e.ts (24.239s)
+PASS browser: chromium e2e/tests/vfd-plugin/edit-deal-button-verification.e2e.ts (19.244s)
+PASS browser: chromium e2e/tests/vppd-plugin/edit-deal-button-verification.e2e.ts (17.342s)
+PASS browser: chromium e2e/tests/vfd-plugin/tnc-error-message-validation.e2e.ts (16.879s)
+PASS browser: chromium e2e/tests/vp-plugin/accept-time-details-page.e2e.ts (13.833s)
+PASS browser: chromium e2e/tests/vp-plugin/single-outlet-health-page.e2e.ts (14.058s)
+PASS browser: chromium e2e/tests/vp-plugin/offline-duration-details-page.e2e.ts (11.775s)
+PASS browser: chromium e2e/tests/vp-plugin/all-outlets-health-page.e2e.ts (14.61s)
+PASS browser: chromium e2e/tests/vp-plugin/delay-order-details-page.e2e.ts (14.682s)
+PASS browser: chromium e2e/tests/vp-plugin/prep-time-details-page.e2e.ts (11.306s)
+PASS browser: chromium e2e/tests/vp-plugin/order-rejection-rate-card-and-details.e2e.ts (12.17s)
+PASS browser: chromium e2e/tests/vp-plugin/customer-conversion-card-and-details.e2e.ts (11.867s)
+PASS browser: chromium e2e/tests/vp-plugin/order-revenue-loss-card-and-details.e2e.ts (12.4s)
+PASS browser: chromium e2e/tests/vfd-plugin/dealform-has-default-options.e2e.ts (9.34s)
+
+Test Suites: 21 passed, 21 total
+Tests:       38 passed, 38 total
+Snapshots:   0 total
+Time:        129.409s
+Ran all test suites.
+Test results written to: e2e/output/playwright.json
+Browser    Exit Code
+webkit         1
+chrome         0
+error Command failed with exit code 1.
+info Visit https://yarnpkg.com/en/docs/cli/run for documentation about this command.
+error Command failed with exit code 1.
+info Visit https://yarnpkg.com/en/docs/cli/run for documentation about this command.

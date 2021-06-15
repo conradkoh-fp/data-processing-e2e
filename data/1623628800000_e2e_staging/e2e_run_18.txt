@@ -1,0 +1,129 @@
+yarn run v1.22.4
+$ sh ./scripts/setup-e2e-local.sh; export $(xargs < ./envs/.env.e2e.local); yarn e2e
+checking for local e2e env file
+./envs/.env.e2e.local exists
+$ E2E_TEST_USERNAME=$E2E_TEST_USERNAME E2E_TEST_PASSWORD=$E2E_TEST_PASSWORD sh ./scripts/run-e2e.sh
+$ /Users/c.koh.3/Documents/Projects/react/fp-apac-jedi-skywalker/node_modules/.bin/jest -c e2e/jest-webkit.config.js --json --outputFile=e2e/output/playwright.webkit.json --maxWorkers=4
+PASS browser: webkit e2e/tests/vp-plugin/deal-utilization-card-and-details.e2e.ts (40.3s)
+PASS browser: webkit e2e/tests/vp-plugin/vendor-health.e2e.ts (57.953s)
+PASS browser: webkit e2e/tests/vp-plugin/vendor-health-single-vendor-account.e2e.ts (37.144s)
+PASS browser: webkit e2e/tests/vfd-plugin/dealform-persist-vendor-change.e2e.ts (31.186s)
+PASS browser: webkit e2e/tests/vppd-plugin/deal-creation.e2e.ts (89.598s)
+PASS browser: webkit e2e/tests/vp-plugin/customer-conversion-all-details-check.e2e.ts (26.89s)
+PASS browser: webkit e2e/tests/vppd-plugin/edit-deal-button-verification.e2e.ts (20.705s)
+PASS browser: webkit e2e/tests/vfd-plugin/edit-deal-button-verification.e2e.ts (23.679s)
+PASS browser: webkit e2e/tests/vfd-plugin/deal-creation.e2e.ts (113.619s)
+PASS browser: webkit e2e/tests/vp-plugin/kpi-summary.e2e.ts (18.62s)
+PASS browser: webkit e2e/tests/vp-plugin/offline-duration-details-page.e2e.ts (14.878s)
+PASS browser: webkit e2e/tests/vp-plugin/prep-time-details-page.e2e.ts (15.641s)
+PASS browser: webkit e2e/tests/vfd-plugin/tnc-error-message-validation.e2e.ts (21.555s)
+PASS browser: webkit e2e/tests/vp-plugin/all-outlets-health-page.e2e.ts (16.264s)
+PASS browser: webkit e2e/tests/vp-plugin/customer-conversion-card-and-details.e2e.ts (13.413s)
+PASS browser: webkit e2e/tests/vp-plugin/delay-order-details-page.e2e.ts (14.955s)
+PASS browser: webkit e2e/tests/vp-plugin/accept-time-details-page.e2e.ts (16.415s)
+PASS browser: webkit e2e/tests/vp-plugin/order-rejection-rate-card-and-details.e2e.ts (17.071s)
+PASS browser: webkit e2e/tests/vp-plugin/single-outlet-health-page.e2e.ts (15.916s)
+PASS browser: webkit e2e/tests/vp-plugin/order-revenue-loss-card-and-details.e2e.ts (14.312s)
+PASS browser: webkit e2e/tests/vfd-plugin/dealform-has-default-options.e2e.ts (15.307s)
+
+Test Suites: 21 passed, 21 total
+Tests:       38 passed, 38 total
+Snapshots:   0 total
+Time:        164.6s
+Ran all test suites.
+Test results written to: e2e/output/playwright.webkit.json
+$ /Users/c.koh.3/Documents/Projects/react/fp-apac-jedi-skywalker/node_modules/.bin/jest -c e2e/jest-chromium.config.js --json --outputFile=e2e/output/playwright.json --maxWorkers=4
+PASS browser: chromium e2e/tests/vp-plugin/deal-utilization-card-and-details.e2e.ts (47.508s)
+PASS browser: chromium e2e/tests/vp-plugin/vendor-health.e2e.ts (69.773s)
+PASS browser: chromium e2e/tests/vp-plugin/vendor-health-single-vendor-account.e2e.ts (41.531s)
+PASS browser: chromium e2e/tests/vppd-plugin/deal-creation.e2e.ts (98.11s)
+PASS browser: chromium e2e/tests/vp-plugin/customer-conversion-all-details-check.e2e.ts (31.563s)
+PASS browser: chromium e2e/tests/vp-plugin/delay-order-details-page.e2e.ts (17.397s)
+PASS browser: chromium e2e/tests/vfd-plugin/deal-creation.e2e.ts (119.327s)
+FAIL browser: chromium e2e/tests/vfd-plugin/edit-deal-button-verification.e2e.ts (21.348s)
+  ● VFD - edit promotion button clicked › [C260079]Verify page goes back & selected deal form values are retained
+
+    page.click: Timeout 3000ms exceeded.
+    =========================== logs ===========================
+    waiting for selector "li[class^="MuiButtonBase-root MuiListItem-root"]"
+    ============================================================
+    Note: use DEBUG=pw:api environment variable to capture Playwright logs.
+
+      163 |     await page.click(nonDefaultOption, { timeout: 3000 });
+      164 |   } catch {
+    > 165 |     await page.click(firstAvailableOption, { timeout: 3000 });
+          |                ^
+      166 |   }
+      167 | };
+      168 |
+
+      at Object.captureStackTrace (../../../node_modules/playwright/lib/utils/stackTrace.js:48:19)
+      at Connection.sendMessageToServer (../../../node_modules/playwright/lib/client/connection.js:69:48)
+      at Proxy.<anonymous> (../../../node_modules/playwright/lib/client/channelOwner.js:64:61)
+      at ../../../node_modules/playwright/lib/client/frame.js:279:34
+      at Frame._wrapApiCall (../../../node_modules/playwright/lib/client/channelOwner.js:77:34)
+      at Frame.click (../../../node_modules/playwright/lib/client/frame.js:278:21)
+      at ../../../node_modules/playwright/lib/client/page.js:447:60
+      at Page._attributeToPage (../../../node_modules/playwright/lib/client/page.js:231:20)
+      at Page.click (../../../node_modules/playwright/lib/client/page.js:447:21)
+      at actions/vfd-plugin/deals-overview/index.ts:165:16
+
+PASS browser: chromium e2e/tests/vfd-plugin/dealform-persist-vendor-change.e2e.ts (30.662s)
+PASS browser: chromium e2e/tests/vp-plugin/accept-time-details-page.e2e.ts (20.807s)
+PASS browser: chromium e2e/tests/vfd-plugin/tnc-error-message-validation.e2e.ts (22.021s)
+PASS browser: chromium e2e/tests/vppd-plugin/edit-deal-button-verification.e2e.ts (22.693s)
+PASS browser: chromium e2e/tests/vp-plugin/kpi-summary.e2e.ts (23.208s)
+PASS browser: chromium e2e/tests/vp-plugin/customer-conversion-card-and-details.e2e.ts (16.675s)
+PASS browser: chromium e2e/tests/vp-plugin/order-revenue-loss-card-and-details.e2e.ts (18.489s)
+PASS browser: chromium e2e/tests/vp-plugin/prep-time-details-page.e2e.ts (18.777s)
+PASS browser: chromium e2e/tests/vp-plugin/single-outlet-health-page.e2e.ts (20.259s)
+PASS browser: chromium e2e/tests/vfd-plugin/dealform-has-default-options.e2e.ts (17.111s)
+PASS browser: chromium e2e/tests/vp-plugin/all-outlets-health-page.e2e.ts (18.072s)
+PASS browser: chromium e2e/tests/vp-plugin/order-rejection-rate-card-and-details.e2e.ts (18.061s)
+PASS browser: chromium e2e/tests/vp-plugin/offline-duration-details-page.e2e.ts (19.186s)
+
+Summary of all failing tests
+FAIL tests/vfd-plugin/edit-deal-button-verification.e2e.ts (21.348s)
+  ● VFD - edit promotion button clicked › [C260079]Verify page goes back & selected deal form values are retained
+
+    page.click: Timeout 3000ms exceeded.
+    =========================== logs ===========================
+    waiting for selector "li[class^="MuiButtonBase-root MuiListItem-root"]"
+    ============================================================
+    Note: use DEBUG=pw:api environment variable to capture Playwright logs.
+
+      163 |     await page.click(nonDefaultOption, { timeout: 3000 });
+      164 |   } catch {
+    > 165 |     await page.click(firstAvailableOption, { timeout: 3000 });
+          |                ^
+      166 |   }
+      167 | };
+      168 |
+
+      at Object.captureStackTrace (../../../node_modules/playwright/lib/utils/stackTrace.js:48:19)
+      at Connection.sendMessageToServer (../../../node_modules/playwright/lib/client/connection.js:69:48)
+      at Proxy.<anonymous> (../../../node_modules/playwright/lib/client/channelOwner.js:64:61)
+      at ../../../node_modules/playwright/lib/client/frame.js:279:34
+      at Frame._wrapApiCall (../../../node_modules/playwright/lib/client/channelOwner.js:77:34)
+      at Frame.click (../../../node_modules/playwright/lib/client/frame.js:278:21)
+      at ../../../node_modules/playwright/lib/client/page.js:447:60
+      at Page._attributeToPage (../../../node_modules/playwright/lib/client/page.js:231:20)
+      at Page.click (../../../node_modules/playwright/lib/client/page.js:447:21)
+      at actions/vfd-plugin/deals-overview/index.ts:165:16
+
+
+Test Suites: 1 failed, 20 passed, 21 total
+Tests:       1 failed, 37 passed, 38 total
+Snapshots:   0 total
+Time:        180.559s, estimated 186s
+Ran all test suites.
+Test results written to: e2e/output/playwright.json
+error Command failed with exit code 1.
+info Visit https://yarnpkg.com/en/docs/cli/run for documentation about this command.
+Browser    Exit Code
+webkit         0
+chrome         1
+error Command failed with exit code 1.
+info Visit https://yarnpkg.com/en/docs/cli/run for documentation about this command.
+error Command failed with exit code 1.
+info Visit https://yarnpkg.com/en/docs/cli/run for documentation about this command.

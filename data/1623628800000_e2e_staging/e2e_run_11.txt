@@ -1,0 +1,147 @@
+yarn run v1.22.4
+$ sh ./scripts/setup-e2e-local.sh; export $(xargs < ./envs/.env.e2e.local); yarn e2e
+checking for local e2e env file
+./envs/.env.e2e.local exists
+$ E2E_TEST_USERNAME=$E2E_TEST_USERNAME E2E_TEST_PASSWORD=$E2E_TEST_PASSWORD sh ./scripts/run-e2e.sh
+$ /Users/c.koh.3/Documents/Projects/react/fp-apac-jedi-skywalker/node_modules/.bin/jest -c e2e/jest-webkit.config.js --json --outputFile=e2e/output/playwright.webkit.json --maxWorkers=4
+PASS browser: webkit e2e/tests/vppd-plugin/edit-deal-button-verification.e2e.ts (27.436s)
+PASS browser: webkit e2e/tests/vp-plugin/vendor-health.e2e.ts (60.435s)
+PASS browser: webkit e2e/tests/vp-plugin/deal-utilization-card-and-details.e2e.ts (41.65s)
+PASS browser: webkit e2e/tests/vppd-plugin/deal-creation.e2e.ts (93.082s)
+PASS browser: webkit e2e/tests/vfd-plugin/dealform-persist-vendor-change.e2e.ts (33.296s)
+PASS browser: webkit e2e/tests/vp-plugin/vendor-health-single-vendor-account.e2e.ts (42.271s)
+PASS browser: webkit e2e/tests/vfd-plugin/deal-creation.e2e.ts (121.363s)
+PASS browser: webkit e2e/tests/vp-plugin/kpi-summary.e2e.ts (19.976s)
+PASS browser: webkit e2e/tests/vfd-plugin/tnc-error-message-validation.e2e.ts (21.609s)
+PASS browser: webkit e2e/tests/vp-plugin/customer-conversion-all-details-check.e2e.ts (36.263s)
+PASS browser: webkit e2e/tests/vp-plugin/prep-time-details-page.e2e.ts (17.442s)
+PASS browser: webkit e2e/tests/vp-plugin/single-outlet-health-page.e2e.ts (19.551s)
+PASS browser: webkit e2e/tests/vfd-plugin/edit-deal-button-verification.e2e.ts (25.701s)
+PASS browser: webkit e2e/tests/vp-plugin/order-rejection-rate-card-and-details.e2e.ts (18.989s)
+PASS browser: webkit e2e/tests/vp-plugin/all-outlets-health-page.e2e.ts (18.594s)
+PASS browser: webkit e2e/tests/vp-plugin/order-revenue-loss-card-and-details.e2e.ts (18.61s)
+PASS browser: webkit e2e/tests/vfd-plugin/dealform-has-default-options.e2e.ts (14.842s)
+PASS browser: webkit e2e/tests/vp-plugin/offline-duration-details-page.e2e.ts (17.647s)
+PASS browser: webkit e2e/tests/vp-plugin/customer-conversion-card-and-details.e2e.ts (16.095s)
+PASS browser: webkit e2e/tests/vp-plugin/delay-order-details-page.e2e.ts (17.362s)
+PASS browser: webkit e2e/tests/vp-plugin/accept-time-details-page.e2e.ts (15.719s)
+
+Test Suites: 21 passed, 21 total
+Tests:       38 passed, 38 total
+Snapshots:   0 total
+Time:        179.576s
+Ran all test suites.
+Test results written to: e2e/output/playwright.webkit.json
+$ /Users/c.koh.3/Documents/Projects/react/fp-apac-jedi-skywalker/node_modules/.bin/jest -c e2e/jest-chromium.config.js --json --outputFile=e2e/output/playwright.json --maxWorkers=4
+PASS browser: chromium e2e/tests/vppd-plugin/edit-deal-button-verification.e2e.ts (25.979s)
+PASS browser: chromium e2e/tests/vp-plugin/vendor-health.e2e.ts (73.549s)
+PASS browser: chromium e2e/tests/vp-plugin/vendor-health-single-vendor-account.e2e.ts (51.618s)
+FAIL browser: chromium e2e/tests/vppd-plugin/deal-creation.e2e.ts (103.88s)
+  ● VPPD - Deal Creation › [C369175]Verify pandapro deal creation flow - Fixed Amount
+
+    expect(received).toMatchObject(expected)
+
+    - Expected  - 3
+    + Received  + 3
+
+      Object {
+    -   "description": "$30 off on minimum order value of $120 for all pandapro users",
+    -   "mvTagText": "PRO - $30 OFF $120",
+    +   "description": "20% off on minimum order value of $80 for all pandapro users",
+    +   "mvTagText": "",
+        "reviewCardDetails": Object {
+          "dealTypeText": "Amount discount",
+          "dealValue": "$30",
+          "mov": "Minimum order $120",
+          "startDate": "Starts on 15th Jun",
+          "vendorName": "Hungry Korean (Causeway Bay)",
+        },
+    -   "title": "pro - $30 off $120",
+    +   "title": "pro - 20% off $80",
+      }
+
+      104 |     const dealDetails = await verifyAndConfirmDeal(deal);
+      105 |     const expected = expectedDealDetails(deal);
+    > 106 |     expect(dealDetails).toMatchObject(expected);
+          |                         ^
+      107 |   });
+      108 |
+      109 |   it('[C369176]Verify the pandapro promotion creation flow - Free Delivery Discount', async () => {
+
+      at tests/vppd-plugin/deal-creation.e2e.ts:106:25
+      at step (tests/vppd-plugin/deal-creation.e2e.ts:44:23)
+      at Object.next (tests/vppd-plugin/deal-creation.e2e.ts:25:53)
+      at fulfilled (tests/vppd-plugin/deal-creation.e2e.ts:16:58)
+
+PASS browser: chromium e2e/tests/vp-plugin/customer-conversion-all-details-check.e2e.ts (38.727s)
+PASS browser: chromium e2e/tests/vp-plugin/deal-utilization-card-and-details.e2e.ts (49.712s)
+PASS browser: chromium e2e/tests/vfd-plugin/deal-creation.e2e.ts (129.626s)
+PASS browser: chromium e2e/tests/vp-plugin/offline-duration-details-page.e2e.ts (18.641s)
+PASS browser: chromium e2e/tests/vfd-plugin/dealform-persist-vendor-change.e2e.ts (32.668s)
+PASS browser: chromium e2e/tests/vfd-plugin/tnc-error-message-validation.e2e.ts (23.183s)
+PASS browser: chromium e2e/tests/vp-plugin/accept-time-details-page.e2e.ts (19.861s)
+PASS browser: chromium e2e/tests/vfd-plugin/edit-deal-button-verification.e2e.ts (26.186s)
+PASS browser: chromium e2e/tests/vp-plugin/prep-time-details-page.e2e.ts (19.726s)
+PASS browser: chromium e2e/tests/vp-plugin/customer-conversion-card-and-details.e2e.ts (19.594s)
+PASS browser: chromium e2e/tests/vp-plugin/order-rejection-rate-card-and-details.e2e.ts (18.047s)
+PASS browser: chromium e2e/tests/vp-plugin/order-revenue-loss-card-and-details.e2e.ts (21.828s)
+PASS browser: chromium e2e/tests/vp-plugin/kpi-summary.e2e.ts (26.083s)
+PASS browser: chromium e2e/tests/vp-plugin/all-outlets-health-page.e2e.ts (19.163s)
+PASS browser: chromium e2e/tests/vfd-plugin/dealform-has-default-options.e2e.ts (16.799s)
+PASS browser: chromium e2e/tests/vp-plugin/delay-order-details-page.e2e.ts (15.546s)
+PASS browser: chromium e2e/tests/vp-plugin/single-outlet-health-page.e2e.ts (16.316s)
+
+Summary of all failing tests
+FAIL tests/vppd-plugin/deal-creation.e2e.ts (103.88s)
+  ● VPPD - Deal Creation › [C369175]Verify pandapro deal creation flow - Fixed Amount
+
+    expect(received).toMatchObject(expected)
+
+    - Expected  - 3
+    + Received  + 3
+
+      Object {
+    -   "description": "$30 off on minimum order value of $120 for all pandapro users",
+    -   "mvTagText": "PRO - $30 OFF $120",
+    +   "description": "20% off on minimum order value of $80 for all pandapro users",
+    +   "mvTagText": "",
+        "reviewCardDetails": Object {
+          "dealTypeText": "Amount discount",
+          "dealValue": "$30",
+          "mov": "Minimum order $120",
+          "startDate": "Starts on 15th Jun",
+          "vendorName": "Hungry Korean (Causeway Bay)",
+        },
+    -   "title": "pro - $30 off $120",
+    +   "title": "pro - 20% off $80",
+      }
+
+      104 |     const dealDetails = await verifyAndConfirmDeal(deal);
+      105 |     const expected = expectedDealDetails(deal);
+    > 106 |     expect(dealDetails).toMatchObject(expected);
+          |                         ^
+      107 |   });
+      108 |
+      109 |   it('[C369176]Verify the pandapro promotion creation flow - Free Delivery Discount', async () => {
+
+      at tests/vppd-plugin/deal-creation.e2e.ts:106:25
+      at step (tests/vppd-plugin/deal-creation.e2e.ts:44:23)
+      at Object.next (tests/vppd-plugin/deal-creation.e2e.ts:25:53)
+      at fulfilled (tests/vppd-plugin/deal-creation.e2e.ts:16:58)
+
+
+Test Suites: 1 failed, 20 passed, 21 total
+Tests:       1 failed, 37 passed, 38 total
+Snapshots:   0 total
+Time:        200.579s, estimated 210s
+Ran all test suites.
+Test results written to: e2e/output/playwright.json
+error Command failed with exit code 1.
+info Visit https://yarnpkg.com/en/docs/cli/run for documentation about this command.
+Browser    Exit Code
+webkit         0
+chrome         1
+error Command failed with exit code 1.
+info Visit https://yarnpkg.com/en/docs/cli/run for documentation about this command.
+error Command failed with exit code 1.
+info Visit https://yarnpkg.com/en/docs/cli/run for documentation about this command.

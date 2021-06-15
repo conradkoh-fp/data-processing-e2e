@@ -1,0 +1,421 @@
+yarn run v1.22.4
+$ sh ./scripts/setup-e2e-local.sh; export $(xargs < ./envs/.env.e2e.local); yarn e2e
+checking for local e2e env file
+./envs/.env.e2e.local exists
+$ E2E_TEST_USERNAME=$E2E_TEST_USERNAME E2E_TEST_PASSWORD=$E2E_TEST_PASSWORD sh ./scripts/run-e2e.sh
+$ /Users/c.koh.3/Documents/Projects/react/fp-apac-jedi-skywalker/node_modules/.bin/jest -c e2e/jest-webkit.config.js --json --outputFile=e2e/output/playwright.webkit.json --maxWorkers=4
+PASS browser: webkit e2e/tests/vp-plugin/deal-utilization-card-and-details.e2e.ts (42.867s)
+PASS browser: webkit e2e/tests/vp-plugin/vendor-health.e2e.ts (60.317s)
+PASS browser: webkit e2e/tests/vp-plugin/vendor-health-single-vendor-account.e2e.ts (37.726s)
+FAIL browser: webkit e2e/tests/vppd-plugin/deal-creation.e2e.ts (85.899s)
+  ● VPPD - Deal Creation › [C369175]Verify pandapro deal creation flow - Fixed Amount
+
+    getMostRecentDiscountId() Error: unable to find any discount headers
+
+      131 |
+      132 |   if (customDiscountHeaders.length == 0) {
+    > 133 |     throw new Error('getMostRecentDiscountId() Error: unable to find any discount headers');
+          |           ^
+      134 |   }
+      135 |   return customDiscountHeaders[0].id;
+      136 | };
+
+      at getMostRecentDiscountId (utils/dealTitleDescription.ts:133:11)
+      at utils/dealTitleDescription.ts:93:22
+      at step (utils/dealTitleDescription.ts:33:23)
+      at Object.next (utils/dealTitleDescription.ts:14:53)
+      at fulfilled (utils/dealTitleDescription.ts:5:58)
+
+PASS browser: webkit e2e/tests/vfd-plugin/dealform-persist-vendor-change.e2e.ts (29.792s)
+PASS browser: webkit e2e/tests/vppd-plugin/edit-deal-button-verification.e2e.ts (22.887s)
+PASS browser: webkit e2e/tests/vp-plugin/customer-conversion-all-details-check.e2e.ts (29.47s)
+PASS browser: webkit e2e/tests/vfd-plugin/edit-deal-button-verification.e2e.ts (22.156s)
+PASS browser: webkit e2e/tests/vfd-plugin/deal-creation.e2e.ts (113.419s)
+PASS browser: webkit e2e/tests/vp-plugin/single-outlet-health-page.e2e.ts (17.206s)
+PASS browser: webkit e2e/tests/vp-plugin/order-rejection-rate-card-and-details.e2e.ts (16.708s)
+PASS browser: webkit e2e/tests/vp-plugin/accept-time-details-page.e2e.ts (16.545s)
+PASS browser: webkit e2e/tests/vfd-plugin/tnc-error-message-validation.e2e.ts (23.79s)
+PASS browser: webkit e2e/tests/vp-plugin/all-outlets-health-page.e2e.ts (17.399s)
+PASS browser: webkit e2e/tests/vp-plugin/prep-time-details-page.e2e.ts (19.592s)
+PASS browser: webkit e2e/tests/vp-plugin/offline-duration-details-page.e2e.ts (17.163s)
+PASS browser: webkit e2e/tests/vfd-plugin/dealform-has-default-options.e2e.ts (15.271s)
+PASS browser: webkit e2e/tests/vp-plugin/customer-conversion-card-and-details.e2e.ts (16.984s)
+PASS browser: webkit e2e/tests/vp-plugin/order-revenue-loss-card-and-details.e2e.ts (18.404s)
+PASS browser: webkit e2e/tests/vp-plugin/delay-order-details-page.e2e.ts (19.051s)
+PASS browser: webkit e2e/tests/vp-plugin/kpi-summary.e2e.ts (19.718s)
+
+Summary of all failing tests
+FAIL tests/vppd-plugin/deal-creation.e2e.ts (85.899s)
+  ● VPPD - Deal Creation › [C369175]Verify pandapro deal creation flow - Fixed Amount
+
+    getMostRecentDiscountId() Error: unable to find any discount headers
+
+      131 |
+      132 |   if (customDiscountHeaders.length == 0) {
+    > 133 |     throw new Error('getMostRecentDiscountId() Error: unable to find any discount headers');
+          |           ^
+      134 |   }
+      135 |   return customDiscountHeaders[0].id;
+      136 | };
+
+      at getMostRecentDiscountId (utils/dealTitleDescription.ts:133:11)
+      at utils/dealTitleDescription.ts:93:22
+      at step (utils/dealTitleDescription.ts:33:23)
+      at Object.next (utils/dealTitleDescription.ts:14:53)
+      at fulfilled (utils/dealTitleDescription.ts:5:58)
+
+
+Test Suites: 1 failed, 20 passed, 21 total
+Tests:       1 failed, 37 passed, 38 total
+Snapshots:   0 total
+Time:        169.153s
+Ran all test suites.
+Test results written to: e2e/output/playwright.webkit.json
+error Command failed with exit code 1.
+info Visit https://yarnpkg.com/en/docs/cli/run for documentation about this command.
+$ /Users/c.koh.3/Documents/Projects/react/fp-apac-jedi-skywalker/node_modules/.bin/jest -c e2e/jest-chromium.config.js --json --outputFile=e2e/output/playwright.json --maxWorkers=4
+PASS browser: chromium e2e/tests/vp-plugin/vendor-health-single-vendor-account.e2e.ts (52.921s)
+PASS browser: chromium e2e/tests/vp-plugin/vendor-health.e2e.ts (87.869s)
+PASS browser: chromium e2e/tests/vppd-plugin/deal-creation.e2e.ts (117.184s)
+PASS browser: chromium e2e/tests/vp-plugin/deal-utilization-card-and-details.e2e.ts (71.97s)
+PASS browser: chromium e2e/tests/vp-plugin/customer-conversion-all-details-check.e2e.ts (53.954s)
+FAIL browser: chromium e2e/tests/vfd-plugin/deal-creation.e2e.ts (157.36s)
+  ● VFD - Deal Creation › [C260036]Verify the deal creation flow - Percentage Discount
+
+    expect(received).toMatchObject(expected)
+
+    - Expected  - 5
+    + Received  + 5
+
+      Object {
+    -   "description": "10% off on minimum order value of $20",
+    -   "mvTagText": "10% OFF $20",
+    +   "description": "$30 off on minimum order value of $50  - price reflected is after $30 discount",
+    +   "mvTagText": "",
+        "reviewCardDetails": Object {
+          "dealTypeText": "Percentage discount",
+          "dealValue": "10%",
+          "endDate": "Ends on 31st Jul",
+          "mov": "Minimum order $20",
+          "startDate": "Starts on 15th Jun",
+          "vendorName": "Hungry Korean (Causeway Bay)",
+        },
+        "timeline": Object {
+    -     "endDateExists": true,
+    -     "startDateExists": true,
+    +     "endDateExists": false,
+    +     "startDateExists": false,
+        },
+    -   "title": "10% off $20",
+    +   "title": "$30 off $50",
+      }
+
+      110 |     const dealDetails = await verifyAndConfirmDeal(deal);
+      111 |     const expected = expectedDealDetails(deal);
+    > 112 |     expect(dealDetails).toMatchObject(expected);
+          |                         ^
+      113 |   });
+      114 |
+      115 |   it('[C266337]Verify the deal creation flow - Fixed Amount Discount', async () => {
+
+      at tests/vfd-plugin/deal-creation.e2e.ts:112:25
+      at step (tests/vfd-plugin/deal-creation.e2e.ts:44:23)
+      at Object.next (tests/vfd-plugin/deal-creation.e2e.ts:25:53)
+      at fulfilled (tests/vfd-plugin/deal-creation.e2e.ts:16:58)
+
+PASS browser: chromium e2e/tests/vfd-plugin/dealform-persist-vendor-change.e2e.ts (41.256s)
+PASS browser: chromium e2e/tests/vfd-plugin/edit-deal-button-verification.e2e.ts (33.964s)
+PASS browser: chromium e2e/tests/vppd-plugin/edit-deal-button-verification.e2e.ts (31.367s)
+PASS browser: chromium e2e/tests/vp-plugin/offline-duration-details-page.e2e.ts (18.568s)
+FAIL browser: chromium e2e/tests/vfd-plugin/tnc-error-message-validation.e2e.ts (44.515s)
+  ● VFD - Terms and Conditions agreement validation › [C260100]Verify error message shown if terms and conditions are not clicked
+
+    page.waitForSelector: Timeout 30000ms exceeded.
+    =========================== logs ===========================
+    waiting for selector "[data-testid="wrapped-select-dealtype"]"
+    ============================================================
+    Note: use DEBUG=pw:api environment variable to capture Playwright logs.
+
+      158 |   const firstAvailableOption = 'li[class^="MuiButtonBase-root MuiListItem-root"]';
+      159 |   const nonDefaultOption = firstAvailableOption + '[data-isdefault="false"]';
+    > 160 |   const selectField = await page.waitForSelector(fieldSelector, { state: 'attached' });
+          |                                  ^
+      161 |   await selectField.click();
+      162 |   try {
+      163 |     await page.click(nonDefaultOption, { timeout: 3000 });
+
+      at Object.captureStackTrace (../../../node_modules/playwright/lib/utils/stackTrace.js:48:19)
+      at Connection.sendMessageToServer (../../../node_modules/playwright/lib/client/connection.js:69:48)
+      at Proxy.<anonymous> (../../../node_modules/playwright/lib/client/channelOwner.js:64:61)
+      at ../../../node_modules/playwright/lib/client/frame.js:202:42
+      at Frame._wrapApiCall (../../../node_modules/playwright/lib/client/channelOwner.js:77:34)
+      at Frame.waitForSelector (../../../node_modules/playwright/lib/client/frame.js:197:21)
+      at ../../../node_modules/playwright/lib/client/page.js:241:60
+      at Page._attributeToPage (../../../node_modules/playwright/lib/client/page.js:231:20)
+      at Page.waitForSelector (../../../node_modules/playwright/lib/client/page.js:241:21)
+      at actions/vfd-plugin/deals-overview/index.ts:160:34
+
+FAIL browser: chromium e2e/tests/vp-plugin/all-outlets-health-page.e2e.ts (45.154s)
+  ● VP - All Outlets Health Page › [C467401]Verify all outlets health status in single page if chain outlet user has more than 4 outlets
+
+    page.waitForSelector: Timeout 30000ms exceeded.
+    =========================== logs ===========================
+    waiting for selector "div[data-testid="vendor-health-topcard"]" to be visible
+    ============================================================
+    Note: use DEBUG=pw:api environment variable to capture Playwright logs.
+
+      16 |  */
+      17 | export const clickKpiCard = (page: Page) => async (cardSelector: string) => {
+    > 18 |   const card = await page.waitForSelector(cardSelector);
+         |                           ^
+      19 |   await card.click();
+      20 | };
+      21 |
+
+      at Object.captureStackTrace (../../../node_modules/playwright/lib/utils/stackTrace.js:48:19)
+      at Connection.sendMessageToServer (../../../node_modules/playwright/lib/client/connection.js:69:48)
+      at Proxy.<anonymous> (../../../node_modules/playwright/lib/client/channelOwner.js:64:61)
+      at ../../../node_modules/playwright/lib/client/frame.js:202:42
+      at Frame._wrapApiCall (../../../node_modules/playwright/lib/client/channelOwner.js:77:34)
+      at Frame.waitForSelector (../../../node_modules/playwright/lib/client/frame.js:197:21)
+      at ../../../node_modules/playwright/lib/client/page.js:241:60
+      at Page._attributeToPage (../../../node_modules/playwright/lib/client/page.js:231:20)
+      at Page.waitForSelector (../../../node_modules/playwright/lib/client/page.js:241:21)
+      at actions/vp-plugin/dashboard/index.ts:18:27
+
+PASS browser: chromium e2e/tests/vp-plugin/prep-time-details-page.e2e.ts (22.95s)
+FAIL browser: chromium e2e/tests/vp-plugin/kpi-summary.e2e.ts (64.244s)
+  ● VP - KPI Summary › [C367701] Verify the KPI summary screen details with different timeframe selection
+
+    page.waitForSelector: Timeout 30000ms exceeded.
+    =========================== logs ===========================
+    waiting for selector "data-testid=date-switcher-date-btn" to be visible
+    ============================================================
+    Note: use DEBUG=pw:api environment variable to capture Playwright logs.
+
+      41 |
+      42 |     // Verify the default timeframe as "last 7 days" and all KPI cards summary details
+    > 43 |     await page.waitForSelector('data-testid=date-switcher-date-btn');
+         |                ^
+      44 |     await page.click('data-testid=date-switcher-date-btn >> text="last 7 days"');
+      45 |     await page.waitForLoadState('networkidle', { timeout: 10000 });
+      46 |
+
+      at Object.captureStackTrace (../../../node_modules/playwright/lib/utils/stackTrace.js:48:19)
+      at Connection.sendMessageToServer (../../../node_modules/playwright/lib/client/connection.js:69:48)
+      at Proxy.<anonymous> (../../../node_modules/playwright/lib/client/channelOwner.js:64:61)
+      at ../../../node_modules/playwright/lib/client/frame.js:202:42
+      at Frame._wrapApiCall (../../../node_modules/playwright/lib/client/channelOwner.js:77:34)
+      at Frame.waitForSelector (../../../node_modules/playwright/lib/client/frame.js:197:21)
+      at ../../../node_modules/playwright/lib/client/page.js:241:60
+      at Page._attributeToPage (../../../node_modules/playwright/lib/client/page.js:231:20)
+      at Page.waitForSelector (../../../node_modules/playwright/lib/client/page.js:241:21)
+      at tests/vp-plugin/kpi-summary.e2e.ts:43:16
+
+  ● VP - KPI Summary › [C367694] Verify the vendor is able to see the KPIs for multiple restaurants
+
+    page.waitForSelector: Timeout 30000ms exceeded.
+    =========================== logs ===========================
+    waiting for selector "[data-testid="multiselect-filter-vendors-select"]"
+    ============================================================
+    Note: use DEBUG=pw:api environment variable to capture Playwright logs.
+
+      54 |
+      55 |     // Select first 2 vendors from dropdown
+    > 56 |     const vendorSelector = await page.waitForSelector(
+         |                                       ^
+      57 |       '[data-testid="multiselect-filter-vendors-select"]',
+      58 |       {
+      59 |         state: 'attached',
+
+      at Object.captureStackTrace (../../../node_modules/playwright/lib/utils/stackTrace.js:48:19)
+      at Connection.sendMessageToServer (../../../node_modules/playwright/lib/client/connection.js:69:48)
+      at Proxy.<anonymous> (../../../node_modules/playwright/lib/client/channelOwner.js:64:61)
+      at ../../../node_modules/playwright/lib/client/frame.js:202:42
+      at Frame._wrapApiCall (../../../node_modules/playwright/lib/client/channelOwner.js:77:34)
+      at Frame.waitForSelector (../../../node_modules/playwright/lib/client/frame.js:197:21)
+      at ../../../node_modules/playwright/lib/client/page.js:241:60
+      at Page._attributeToPage (../../../node_modules/playwright/lib/client/page.js:231:20)
+      at Page.waitForSelector (../../../node_modules/playwright/lib/client/page.js:241:21)
+      at tests/vp-plugin/kpi-summary.e2e.ts:56:39
+
+PASS browser: chromium e2e/tests/vp-plugin/order-revenue-loss-card-and-details.e2e.ts (20.889s)
+PASS browser: chromium e2e/tests/vp-plugin/single-outlet-health-page.e2e.ts (23.929s)
+PASS browser: chromium e2e/tests/vp-plugin/order-rejection-rate-card-and-details.e2e.ts (25.24s)
+PASS browser: chromium e2e/tests/vp-plugin/accept-time-details-page.e2e.ts (21.946s)
+PASS browser: chromium e2e/tests/vp-plugin/delay-order-details-page.e2e.ts (23.481s)
+PASS browser: chromium e2e/tests/vfd-plugin/dealform-has-default-options.e2e.ts (19.923s)
+PASS browser: chromium e2e/tests/vp-plugin/customer-conversion-card-and-details.e2e.ts (17.395s)
+
+Summary of all failing tests
+FAIL tests/vfd-plugin/deal-creation.e2e.ts (157.36s)
+  ● VFD - Deal Creation › [C260036]Verify the deal creation flow - Percentage Discount
+
+    expect(received).toMatchObject(expected)
+
+    - Expected  - 5
+    + Received  + 5
+
+      Object {
+    -   "description": "10% off on minimum order value of $20",
+    -   "mvTagText": "10% OFF $20",
+    +   "description": "$30 off on minimum order value of $50  - price reflected is after $30 discount",
+    +   "mvTagText": "",
+        "reviewCardDetails": Object {
+          "dealTypeText": "Percentage discount",
+          "dealValue": "10%",
+          "endDate": "Ends on 31st Jul",
+          "mov": "Minimum order $20",
+          "startDate": "Starts on 15th Jun",
+          "vendorName": "Hungry Korean (Causeway Bay)",
+        },
+        "timeline": Object {
+    -     "endDateExists": true,
+    -     "startDateExists": true,
+    +     "endDateExists": false,
+    +     "startDateExists": false,
+        },
+    -   "title": "10% off $20",
+    +   "title": "$30 off $50",
+      }
+
+      110 |     const dealDetails = await verifyAndConfirmDeal(deal);
+      111 |     const expected = expectedDealDetails(deal);
+    > 112 |     expect(dealDetails).toMatchObject(expected);
+          |                         ^
+      113 |   });
+      114 |
+      115 |   it('[C266337]Verify the deal creation flow - Fixed Amount Discount', async () => {
+
+      at tests/vfd-plugin/deal-creation.e2e.ts:112:25
+      at step (tests/vfd-plugin/deal-creation.e2e.ts:44:23)
+      at Object.next (tests/vfd-plugin/deal-creation.e2e.ts:25:53)
+      at fulfilled (tests/vfd-plugin/deal-creation.e2e.ts:16:58)
+
+FAIL tests/vfd-plugin/tnc-error-message-validation.e2e.ts (44.515s)
+  ● VFD - Terms and Conditions agreement validation › [C260100]Verify error message shown if terms and conditions are not clicked
+
+    page.waitForSelector: Timeout 30000ms exceeded.
+    =========================== logs ===========================
+    waiting for selector "[data-testid="wrapped-select-dealtype"]"
+    ============================================================
+    Note: use DEBUG=pw:api environment variable to capture Playwright logs.
+
+      158 |   const firstAvailableOption = 'li[class^="MuiButtonBase-root MuiListItem-root"]';
+      159 |   const nonDefaultOption = firstAvailableOption + '[data-isdefault="false"]';
+    > 160 |   const selectField = await page.waitForSelector(fieldSelector, { state: 'attached' });
+          |                                  ^
+      161 |   await selectField.click();
+      162 |   try {
+      163 |     await page.click(nonDefaultOption, { timeout: 3000 });
+
+      at Object.captureStackTrace (../../../node_modules/playwright/lib/utils/stackTrace.js:48:19)
+      at Connection.sendMessageToServer (../../../node_modules/playwright/lib/client/connection.js:69:48)
+      at Proxy.<anonymous> (../../../node_modules/playwright/lib/client/channelOwner.js:64:61)
+      at ../../../node_modules/playwright/lib/client/frame.js:202:42
+      at Frame._wrapApiCall (../../../node_modules/playwright/lib/client/channelOwner.js:77:34)
+      at Frame.waitForSelector (../../../node_modules/playwright/lib/client/frame.js:197:21)
+      at ../../../node_modules/playwright/lib/client/page.js:241:60
+      at Page._attributeToPage (../../../node_modules/playwright/lib/client/page.js:231:20)
+      at Page.waitForSelector (../../../node_modules/playwright/lib/client/page.js:241:21)
+      at actions/vfd-plugin/deals-overview/index.ts:160:34
+
+FAIL tests/vp-plugin/all-outlets-health-page.e2e.ts (45.154s)
+  ● VP - All Outlets Health Page › [C467401]Verify all outlets health status in single page if chain outlet user has more than 4 outlets
+
+    page.waitForSelector: Timeout 30000ms exceeded.
+    =========================== logs ===========================
+    waiting for selector "div[data-testid="vendor-health-topcard"]" to be visible
+    ============================================================
+    Note: use DEBUG=pw:api environment variable to capture Playwright logs.
+
+      16 |  */
+      17 | export const clickKpiCard = (page: Page) => async (cardSelector: string) => {
+    > 18 |   const card = await page.waitForSelector(cardSelector);
+         |                           ^
+      19 |   await card.click();
+      20 | };
+      21 |
+
+      at Object.captureStackTrace (../../../node_modules/playwright/lib/utils/stackTrace.js:48:19)
+      at Connection.sendMessageToServer (../../../node_modules/playwright/lib/client/connection.js:69:48)
+      at Proxy.<anonymous> (../../../node_modules/playwright/lib/client/channelOwner.js:64:61)
+      at ../../../node_modules/playwright/lib/client/frame.js:202:42
+      at Frame._wrapApiCall (../../../node_modules/playwright/lib/client/channelOwner.js:77:34)
+      at Frame.waitForSelector (../../../node_modules/playwright/lib/client/frame.js:197:21)
+      at ../../../node_modules/playwright/lib/client/page.js:241:60
+      at Page._attributeToPage (../../../node_modules/playwright/lib/client/page.js:231:20)
+      at Page.waitForSelector (../../../node_modules/playwright/lib/client/page.js:241:21)
+      at actions/vp-plugin/dashboard/index.ts:18:27
+
+FAIL tests/vp-plugin/kpi-summary.e2e.ts (64.244s)
+  ● VP - KPI Summary › [C367701] Verify the KPI summary screen details with different timeframe selection
+
+    page.waitForSelector: Timeout 30000ms exceeded.
+    =========================== logs ===========================
+    waiting for selector "data-testid=date-switcher-date-btn" to be visible
+    ============================================================
+    Note: use DEBUG=pw:api environment variable to capture Playwright logs.
+
+      41 |
+      42 |     // Verify the default timeframe as "last 7 days" and all KPI cards summary details
+    > 43 |     await page.waitForSelector('data-testid=date-switcher-date-btn');
+         |                ^
+      44 |     await page.click('data-testid=date-switcher-date-btn >> text="last 7 days"');
+      45 |     await page.waitForLoadState('networkidle', { timeout: 10000 });
+      46 |
+
+      at Object.captureStackTrace (../../../node_modules/playwright/lib/utils/stackTrace.js:48:19)
+      at Connection.sendMessageToServer (../../../node_modules/playwright/lib/client/connection.js:69:48)
+      at Proxy.<anonymous> (../../../node_modules/playwright/lib/client/channelOwner.js:64:61)
+      at ../../../node_modules/playwright/lib/client/frame.js:202:42
+      at Frame._wrapApiCall (../../../node_modules/playwright/lib/client/channelOwner.js:77:34)
+      at Frame.waitForSelector (../../../node_modules/playwright/lib/client/frame.js:197:21)
+      at ../../../node_modules/playwright/lib/client/page.js:241:60
+      at Page._attributeToPage (../../../node_modules/playwright/lib/client/page.js:231:20)
+      at Page.waitForSelector (../../../node_modules/playwright/lib/client/page.js:241:21)
+      at tests/vp-plugin/kpi-summary.e2e.ts:43:16
+
+  ● VP - KPI Summary › [C367694] Verify the vendor is able to see the KPIs for multiple restaurants
+
+    page.waitForSelector: Timeout 30000ms exceeded.
+    =========================== logs ===========================
+    waiting for selector "[data-testid="multiselect-filter-vendors-select"]"
+    ============================================================
+    Note: use DEBUG=pw:api environment variable to capture Playwright logs.
+
+      54 |
+      55 |     // Select first 2 vendors from dropdown
+    > 56 |     const vendorSelector = await page.waitForSelector(
+         |                                       ^
+      57 |       '[data-testid="multiselect-filter-vendors-select"]',
+      58 |       {
+      59 |         state: 'attached',
+
+      at Object.captureStackTrace (../../../node_modules/playwright/lib/utils/stackTrace.js:48:19)
+      at Connection.sendMessageToServer (../../../node_modules/playwright/lib/client/connection.js:69:48)
+      at Proxy.<anonymous> (../../../node_modules/playwright/lib/client/channelOwner.js:64:61)
+      at ../../../node_modules/playwright/lib/client/frame.js:202:42
+      at Frame._wrapApiCall (../../../node_modules/playwright/lib/client/channelOwner.js:77:34)
+      at Frame.waitForSelector (../../../node_modules/playwright/lib/client/frame.js:197:21)
+      at ../../../node_modules/playwright/lib/client/page.js:241:60
+      at Page._attributeToPage (../../../node_modules/playwright/lib/client/page.js:231:20)
+      at Page.waitForSelector (../../../node_modules/playwright/lib/client/page.js:241:21)
+      at tests/vp-plugin/kpi-summary.e2e.ts:56:39
+
+
+Test Suites: 4 failed, 17 passed, 21 total
+Tests:       5 failed, 33 passed, 38 total
+Snapshots:   0 total
+Time:        259.499s
+Ran all test suites.
+Test results written to: e2e/output/playwright.json
+error Command failed with exit code 1.
+info Visit https://yarnpkg.com/en/docs/cli/run for documentation about this command.
+Browser    Exit Code
+webkit         1
+chrome         1
+error Command failed with exit code 1.
+info Visit https://yarnpkg.com/en/docs/cli/run for documentation about this command.
+error Command failed with exit code 1.
+info Visit https://yarnpkg.com/en/docs/cli/run for documentation about this command.

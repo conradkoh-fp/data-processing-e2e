@@ -1,0 +1,13 @@
+yarn run v1.22.4
+$ sh ./scripts/setup-e2e-local.sh; export $(xargs < ./envs/.env.e2e.local); yarn e2e
+checking for local e2e env file
+./envs/.env.e2e.local exists
+$ E2E_TEST_USERNAME=$E2E_TEST_USERNAME E2E_TEST_PASSWORD=$E2E_TEST_PASSWORD sh ./scripts/run-e2e.sh
+$ /Users/c.koh.3/Documents/Projects/react/fp-apac-jedi-skywalker/node_modules/.bin/jest -c e2e/jest-webkit.config.js --json --outputFile=e2e/output/playwright.webkit.json --maxWorkers=4
+PASS browser: webkit e2e/tests/vp-plugin/vendor-health-single-vendor-account.e2e.ts (39.917s)
+PASS browser: webkit e2e/tests/vp-plugin/vendor-health.e2e.ts (53.129s)
+PASS browser: webkit e2e/tests/vp-plugin/kpi-summary.e2e.ts (15.68s)
+PASS browser: webkit e2e/tests/vfd-plugin/dealform-persist-vendor-change.e2e.ts (24.645s)
+PASS browser: webkit e2e/tests/vppd-plugin/deal-creation.e2e.ts (80.485s)
+PASS browser: webkit e2e/tests/vp-plugin/deal-utilization-card-and-details.e2e.ts (29.229s)
+PASS browser: webkit e2e/tests/vfd-plugin/deal-creation.e2e.ts (93.986s)

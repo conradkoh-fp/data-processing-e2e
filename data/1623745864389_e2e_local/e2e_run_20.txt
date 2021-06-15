@@ -1,0 +1,187 @@
+yarn run v1.22.4
+$ sh ./scripts/setup-e2e-local.sh; export $(xargs < ./envs/.env.e2e.local); yarn e2e
+checking for local e2e env file
+./envs/.env.e2e.local exists
+$ E2E_TEST_USERNAME=$E2E_TEST_USERNAME E2E_TEST_PASSWORD=$E2E_TEST_PASSWORD sh ./scripts/run-e2e.sh
+$ /Users/c.koh.3/Documents/Projects/react/fp-apac-jedi-skywalker/node_modules/.bin/jest -c e2e/jest-webkit.config.js --json --outputFile=e2e/output/playwright.webkit.json --maxWorkers=4
+FAIL browser: webkit e2e/tests/vp-plugin/deal-utilization-card-and-details.e2e.ts (33.25s)
+  ● VP - Deal Utilization card and details page › [C457065]Verify pandaPro utilization card and table details
+
+    expect(received).toContain(expected) // indexOf
+
+    Expected substring: "Data Not Available"
+    Received string:    "pandapromo Promotions Details·
+    Outlet Name
+    Gross Orders
+    Total Food Value
+    Avg Basket Size
+    Total Customer
+    New Customer
+    Pickup Customers
+    Pepper Lunch - UP Town Center
+    88
+    ₱44,503
+    ₱505.716
+    88
+    88
+    0
+    Pepper Lunch - Eastwood Mall
+    99
+    ₱55,852
+    ₱564.162
+    99
+    99
+    0
+    Pepper Lunch - Greenbelt
+    363
+    ₱210,559
+    ₱580.052
+    363
+    363
+    0
+    Pepper Lunch - Shangri-La Plaza Mall
+    211
+    ₱121,811
+    ₱577.303
+    211
+    211
+    0
+    "
+
+      140 |     if (value == 0) {
+      141 |       const text = await page.innerText(tableGridContainer);
+    > 142 |       expect(text).toContain('Data Not Available');
+          |                    ^
+      143 |     } else {
+      144 |       const headers = await inspectDealUtilizationTableHeaders(page)();
+      145 |       expect(tableHeadersText(headers)).toBeTruthy();
+
+      at tests/vp-plugin/deal-utilization-card-and-details.e2e.ts:142:20
+      at step (tests/vp-plugin/deal-utilization-card-and-details.e2e.ts:63:23)
+      at Object.next (tests/vp-plugin/deal-utilization-card-and-details.e2e.ts:44:53)
+      at fulfilled (tests/vp-plugin/deal-utilization-card-and-details.e2e.ts:35:58)
+
+PASS browser: webkit e2e/tests/vp-plugin/vendor-health.e2e.ts (43.261s)
+PASS browser: webkit e2e/tests/vp-plugin/vendor-health-single-vendor-account.e2e.ts (26.296s)
+PASS browser: webkit e2e/tests/vppd-plugin/deal-creation.e2e.ts (63.925s)
+PASS browser: webkit e2e/tests/vfd-plugin/dealform-persist-vendor-change.e2e.ts (23.893s)
+PASS browser: webkit e2e/tests/vppd-plugin/edit-deal-button-verification.e2e.ts (13.201s)
+PASS browser: webkit e2e/tests/vfd-plugin/deal-creation.e2e.ts (78.732s)
+PASS browser: webkit e2e/tests/vp-plugin/customer-conversion-all-details-check.e2e.ts (20.979s)
+PASS browser: webkit e2e/tests/vfd-plugin/edit-deal-button-verification.e2e.ts (18.82s)
+PASS browser: webkit e2e/tests/vp-plugin/kpi-summary.e2e.ts (18.199s)
+PASS browser: webkit e2e/tests/vp-plugin/delay-order-details-page.e2e.ts (14.751s)
+PASS browser: webkit e2e/tests/vfd-plugin/tnc-error-message-validation.e2e.ts (19.703s)
+PASS browser: webkit e2e/tests/vp-plugin/offline-duration-details-page.e2e.ts (13.841s)
+PASS browser: webkit e2e/tests/vp-plugin/order-rejection-rate-card-and-details.e2e.ts (14.203s)
+PASS browser: webkit e2e/tests/vp-plugin/order-revenue-loss-card-and-details.e2e.ts (14.287s)
+PASS browser: webkit e2e/tests/vp-plugin/prep-time-details-page.e2e.ts (13.092s)
+PASS browser: webkit e2e/tests/vp-plugin/single-outlet-health-page.e2e.ts (13.841s)
+PASS browser: webkit e2e/tests/vp-plugin/all-outlets-health-page.e2e.ts (15.638s)
+PASS browser: webkit e2e/tests/vfd-plugin/dealform-has-default-options.e2e.ts (11.708s)
+PASS browser: webkit e2e/tests/vp-plugin/customer-conversion-card-and-details.e2e.ts (13.908s)
+PASS browser: webkit e2e/tests/vp-plugin/accept-time-details-page.e2e.ts (16.243s)
+
+Summary of all failing tests
+FAIL tests/vp-plugin/deal-utilization-card-and-details.e2e.ts (33.25s)
+  ● VP - Deal Utilization card and details page › [C457065]Verify pandaPro utilization card and table details
+
+    expect(received).toContain(expected) // indexOf
+
+    Expected substring: "Data Not Available"
+    Received string:    "pandapromo Promotions Details·
+    Outlet Name
+    Gross Orders
+    Total Food Value
+    Avg Basket Size
+    Total Customer
+    New Customer
+    Pickup Customers
+    Pepper Lunch - UP Town Center
+    88
+    ₱44,503
+    ₱505.716
+    88
+    88
+    0
+    Pepper Lunch - Eastwood Mall
+    99
+    ₱55,852
+    ₱564.162
+    99
+    99
+    0
+    Pepper Lunch - Greenbelt
+    363
+    ₱210,559
+    ₱580.052
+    363
+    363
+    0
+    Pepper Lunch - Shangri-La Plaza Mall
+    211
+    ₱121,811
+    ₱577.303
+    211
+    211
+    0
+    "
+
+      140 |     if (value == 0) {
+      141 |       const text = await page.innerText(tableGridContainer);
+    > 142 |       expect(text).toContain('Data Not Available');
+          |                    ^
+      143 |     } else {
+      144 |       const headers = await inspectDealUtilizationTableHeaders(page)();
+      145 |       expect(tableHeadersText(headers)).toBeTruthy();
+
+      at tests/vp-plugin/deal-utilization-card-and-details.e2e.ts:142:20
+      at step (tests/vp-plugin/deal-utilization-card-and-details.e2e.ts:63:23)
+      at Object.next (tests/vp-plugin/deal-utilization-card-and-details.e2e.ts:44:53)
+      at fulfilled (tests/vp-plugin/deal-utilization-card-and-details.e2e.ts:35:58)
+
+
+Test Suites: 1 failed, 20 passed, 21 total
+Tests:       1 failed, 37 passed, 38 total
+Snapshots:   0 total
+Time:        127.347s, estimated 129s
+Ran all test suites.
+Test results written to: e2e/output/playwright.webkit.json
+error Command failed with exit code 1.
+info Visit https://yarnpkg.com/en/docs/cli/run for documentation about this command.
+$ /Users/c.koh.3/Documents/Projects/react/fp-apac-jedi-skywalker/node_modules/.bin/jest -c e2e/jest-chromium.config.js --json --outputFile=e2e/output/playwright.json --maxWorkers=4
+PASS browser: chromium e2e/tests/vp-plugin/deal-utilization-card-and-details.e2e.ts (38.749s)
+PASS browser: chromium e2e/tests/vp-plugin/vendor-health.e2e.ts (55.349s)
+PASS browser: chromium e2e/tests/vppd-plugin/deal-creation.e2e.ts (66.391s)
+PASS browser: chromium e2e/tests/vp-plugin/vendor-health-single-vendor-account.e2e.ts (31.638s)
+PASS browser: chromium e2e/tests/vp-plugin/customer-conversion-all-details-check.e2e.ts (28.012s)
+PASS browser: chromium e2e/tests/vfd-plugin/deal-creation.e2e.ts (85.532s)
+PASS browser: chromium e2e/tests/vfd-plugin/tnc-error-message-validation.e2e.ts (17.192s)
+PASS browser: chromium e2e/tests/vfd-plugin/dealform-persist-vendor-change.e2e.ts (26.115s)
+PASS browser: chromium e2e/tests/vp-plugin/single-outlet-health-page.e2e.ts (16.841s)
+PASS browser: chromium e2e/tests/vfd-plugin/edit-deal-button-verification.e2e.ts (21.718s)
+PASS browser: chromium e2e/tests/vp-plugin/prep-time-details-page.e2e.ts (17.577s)
+PASS browser: chromium e2e/tests/vp-plugin/kpi-summary.e2e.ts (23.569s)
+PASS browser: chromium e2e/tests/vp-plugin/offline-duration-details-page.e2e.ts (16.159s)
+PASS browser: chromium e2e/tests/vppd-plugin/edit-deal-button-verification.e2e.ts (17.794s)
+PASS browser: chromium e2e/tests/vp-plugin/accept-time-details-page.e2e.ts (13.222s)
+PASS browser: chromium e2e/tests/vp-plugin/customer-conversion-card-and-details.e2e.ts (13.308s)
+PASS browser: chromium e2e/tests/vp-plugin/delay-order-details-page.e2e.ts (12.723s)
+PASS browser: chromium e2e/tests/vp-plugin/order-revenue-loss-card-and-details.e2e.ts (12.485s)
+PASS browser: chromium e2e/tests/vp-plugin/order-rejection-rate-card-and-details.e2e.ts (12.871s)
+PASS browser: chromium e2e/tests/vp-plugin/all-outlets-health-page.e2e.ts (13.274s)
+PASS browser: chromium e2e/tests/vfd-plugin/dealform-has-default-options.e2e.ts (10.674s)
+
+Test Suites: 21 passed, 21 total
+Tests:       38 passed, 38 total
+Snapshots:   0 total
+Time:        144.55s
+Ran all test suites.
+Test results written to: e2e/output/playwright.json
+Browser    Exit Code
+webkit         1
+chrome         0
+error Command failed with exit code 1.
+info Visit https://yarnpkg.com/en/docs/cli/run for documentation about this command.
+error Command failed with exit code 1.
+info Visit https://yarnpkg.com/en/docs/cli/run for documentation about this command.

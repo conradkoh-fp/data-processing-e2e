@@ -1,0 +1,99 @@
+yarn run v1.22.4
+$ sh ./scripts/setup-e2e-local.sh; export $(xargs < ./envs/.env.e2e.local); yarn e2e
+checking for local e2e env file
+./envs/.env.e2e.local exists
+$ E2E_TEST_USERNAME=$E2E_TEST_USERNAME E2E_TEST_PASSWORD=$E2E_TEST_PASSWORD sh ./scripts/run-e2e.sh
+$ /Users/c.koh.3/Documents/Projects/react/fp-apac-jedi-skywalker/node_modules/.bin/jest -c e2e/jest-webkit.config.js --json --outputFile=e2e/output/playwright.webkit.json --maxWorkers=4
+PASS browser: webkit e2e/tests/vp-plugin/deal-utilization-card-and-details.e2e.ts (40.839s)
+PASS browser: webkit e2e/tests/vp-plugin/vendor-health.e2e.ts (58.229s)
+PASS browser: webkit e2e/tests/vp-plugin/vendor-health-single-vendor-account.e2e.ts (37.795s)
+PASS browser: webkit e2e/tests/vfd-plugin/dealform-persist-vendor-change.e2e.ts (30.892s)
+PASS browser: webkit e2e/tests/vppd-plugin/deal-creation.e2e.ts (89.498s)
+PASS browser: webkit e2e/tests/vfd-plugin/deal-creation.e2e.ts (108.556s)
+PASS browser: webkit e2e/tests/vp-plugin/customer-conversion-all-details-check.e2e.ts (30.392s)
+FAIL browser: webkit e2e/tests/vp-plugin/kpi-summary.e2e.ts
+  ● Test suite failed to run
+
+    browserContext.newPage: Protocol error (Page.setScreenSizeOverride): The page has been closed.
+
+      at Object.captureStackTrace (../../../node_modules/playwright/lib/utils/stackTrace.js:48:19)
+      at Connection.sendMessageToServer (../../../node_modules/playwright/lib/client/connection.js:69:48)
+      at Proxy.<anonymous> (../../../node_modules/playwright/lib/client/channelOwner.js:64:61)
+      at ../../../node_modules/playwright/lib/client/browserContext.js:119:52
+      at BrowserContext._wrapApiCall (../../../node_modules/playwright/lib/client/channelOwner.js:77:34)
+      at BrowserContext.newPage (../../../node_modules/playwright/lib/client/browserContext.js:116:21)
+      at PlaywrightEnvironment.setup (../../../node_modules/jest-playwright-preset/lib/PlaywrightEnvironment.js:105:62)
+
+PASS browser: webkit e2e/tests/vfd-plugin/tnc-error-message-validation.e2e.ts (20.618s)
+PASS browser: webkit e2e/tests/vfd-plugin/edit-deal-button-verification.e2e.ts (22.04s)
+PASS browser: webkit e2e/tests/vp-plugin/order-rejection-rate-card-and-details.e2e.ts (17.937s)
+PASS browser: webkit e2e/tests/vp-plugin/accept-time-details-page.e2e.ts (17.861s)
+PASS browser: webkit e2e/tests/vp-plugin/all-outlets-health-page.e2e.ts (17.146s)
+PASS browser: webkit e2e/tests/vppd-plugin/edit-deal-button-verification.e2e.ts (24.038s)
+PASS browser: webkit e2e/tests/vfd-plugin/dealform-has-default-options.e2e.ts (15.445s)
+PASS browser: webkit e2e/tests/vp-plugin/prep-time-details-page.e2e.ts (17.229s)
+PASS browser: webkit e2e/tests/vp-plugin/single-outlet-health-page.e2e.ts (18.721s)
+PASS browser: webkit e2e/tests/vp-plugin/delay-order-details-page.e2e.ts (14.44s)
+PASS browser: webkit e2e/tests/vp-plugin/customer-conversion-card-and-details.e2e.ts (13.717s)
+PASS browser: webkit e2e/tests/vp-plugin/order-revenue-loss-card-and-details.e2e.ts (14.767s)
+PASS browser: webkit e2e/tests/vp-plugin/offline-duration-details-page.e2e.ts (16.796s)
+
+Summary of all failing tests
+FAIL tests/vp-plugin/kpi-summary.e2e.ts
+  ● Test suite failed to run
+
+    browserContext.newPage: Protocol error (Page.setScreenSizeOverride): The page has been closed.
+
+      at Object.captureStackTrace (../../../node_modules/playwright/lib/utils/stackTrace.js:48:19)
+      at Connection.sendMessageToServer (../../../node_modules/playwright/lib/client/connection.js:69:48)
+      at Proxy.<anonymous> (../../../node_modules/playwright/lib/client/channelOwner.js:64:61)
+      at ../../../node_modules/playwright/lib/client/browserContext.js:119:52
+      at BrowserContext._wrapApiCall (../../../node_modules/playwright/lib/client/channelOwner.js:77:34)
+      at BrowserContext.newPage (../../../node_modules/playwright/lib/client/browserContext.js:116:21)
+      at PlaywrightEnvironment.setup (../../../node_modules/jest-playwright-preset/lib/PlaywrightEnvironment.js:105:62)
+
+
+Test Suites: 1 failed, 20 passed, 21 total
+Tests:       36 passed, 36 total
+Snapshots:   0 total
+Time:        162.181s
+Ran all test suites.
+Test results written to: e2e/output/playwright.webkit.json
+error Command failed with exit code 1.
+info Visit https://yarnpkg.com/en/docs/cli/run for documentation about this command.
+$ /Users/c.koh.3/Documents/Projects/react/fp-apac-jedi-skywalker/node_modules/.bin/jest -c e2e/jest-chromium.config.js --json --outputFile=e2e/output/playwright.json --maxWorkers=4
+PASS browser: chromium e2e/tests/vfd-plugin/edit-deal-button-verification.e2e.ts (27.285s)
+PASS browser: chromium e2e/tests/vp-plugin/deal-utilization-card-and-details.e2e.ts (42.97s)
+PASS browser: chromium e2e/tests/vp-plugin/vendor-health.e2e.ts (72.128s)
+PASS browser: chromium e2e/tests/vppd-plugin/deal-creation.e2e.ts (96.752s)
+PASS browser: chromium e2e/tests/vp-plugin/customer-conversion-all-details-check.e2e.ts (31.937s)
+PASS browser: chromium e2e/tests/vp-plugin/vendor-health-single-vendor-account.e2e.ts (48.096s)
+PASS browser: chromium e2e/tests/vfd-plugin/deal-creation.e2e.ts (123.331s)
+PASS browser: chromium e2e/tests/vp-plugin/kpi-summary.e2e.ts (21.518s)
+PASS browser: chromium e2e/tests/vfd-plugin/dealform-persist-vendor-change.e2e.ts (31.879s)
+PASS browser: chromium e2e/tests/vppd-plugin/edit-deal-button-verification.e2e.ts (23.352s)
+PASS browser: chromium e2e/tests/vp-plugin/accept-time-details-page.e2e.ts (17.591s)
+PASS browser: chromium e2e/tests/vfd-plugin/tnc-error-message-validation.e2e.ts (21.088s)
+PASS browser: chromium e2e/tests/vp-plugin/single-outlet-health-page.e2e.ts (19.047s)
+PASS browser: chromium e2e/tests/vp-plugin/offline-duration-details-page.e2e.ts (20.264s)
+PASS browser: chromium e2e/tests/vp-plugin/prep-time-details-page.e2e.ts (19.505s)
+PASS browser: chromium e2e/tests/vp-plugin/order-revenue-loss-card-and-details.e2e.ts (19.097s)
+PASS browser: chromium e2e/tests/vp-plugin/all-outlets-health-page.e2e.ts (20.281s)
+PASS browser: chromium e2e/tests/vp-plugin/delay-order-details-page.e2e.ts (17.248s)
+PASS browser: chromium e2e/tests/vfd-plugin/dealform-has-default-options.e2e.ts (16.481s)
+PASS browser: chromium e2e/tests/vp-plugin/order-rejection-rate-card-and-details.e2e.ts (17.89s)
+PASS browser: chromium e2e/tests/vp-plugin/customer-conversion-card-and-details.e2e.ts (15.603s)
+
+Test Suites: 21 passed, 21 total
+Tests:       38 passed, 38 total
+Snapshots:   0 total
+Time:        185.551s
+Ran all test suites.
+Test results written to: e2e/output/playwright.json
+Browser    Exit Code
+webkit         1
+chrome         0
+error Command failed with exit code 1.
+info Visit https://yarnpkg.com/en/docs/cli/run for documentation about this command.
+error Command failed with exit code 1.
+info Visit https://yarnpkg.com/en/docs/cli/run for documentation about this command.

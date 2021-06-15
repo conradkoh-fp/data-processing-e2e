@@ -1,0 +1,184 @@
+yarn run v1.22.4
+$ sh ./scripts/setup-e2e-local.sh; export $(xargs < ./envs/.env.e2e.local); yarn e2e
+checking for local e2e env file
+./envs/.env.e2e.local exists
+$ E2E_TEST_USERNAME=$E2E_TEST_USERNAME E2E_TEST_PASSWORD=$E2E_TEST_PASSWORD sh ./scripts/run-e2e.sh
+$ /Users/c.koh.3/Documents/Projects/react/fp-apac-jedi-skywalker/node_modules/.bin/jest -c e2e/jest-webkit.config.js --json --outputFile=e2e/output/playwright.webkit.json --maxWorkers=4
+PASS browser: webkit e2e/tests/vp-plugin/deal-utilization-card-and-details.e2e.ts (32.959s)
+PASS browser: webkit e2e/tests/vp-plugin/vendor-health.e2e.ts (45.946s)
+PASS browser: webkit e2e/tests/vp-plugin/vendor-health-single-vendor-account.e2e.ts (28.045s)
+FAIL browser: webkit e2e/tests/vppd-plugin/deal-creation.e2e.ts (66.727s)
+  ● VPPD - Deal Creation › [C369175]Verify pandapro deal creation flow - Fixed Amount
+
+    page.waitForSelector: Unable to adopt element handle from a different document
+    =========================== logs ===========================
+    waiting for selector "#button_login" to be visible
+      selector resolved to visible <button tabindex="0" type="submit" id="button_login" dat…>…</button>
+    ============================================================
+    Note: use DEBUG=pw:api environment variable to capture Playwright logs.
+
+      11 |
+      12 |   // wait for login button to appear
+    > 13 |   await page.waitForSelector('#button_login', { timeout: 30000 });
+         |              ^
+      14 | };
+      15 |
+
+      at Object.captureStackTrace (../../../node_modules/playwright/lib/utils/stackTrace.js:48:19)
+      at Connection.sendMessageToServer (../../../node_modules/playwright/lib/client/connection.js:69:48)
+      at Proxy.<anonymous> (../../../node_modules/playwright/lib/client/channelOwner.js:64:61)
+      at ../../../node_modules/playwright/lib/client/frame.js:202:42
+      at Frame._wrapApiCall (../../../node_modules/playwright/lib/client/channelOwner.js:77:34)
+      at Frame.waitForSelector (../../../node_modules/playwright/lib/client/frame.js:197:21)
+      at ../../../node_modules/playwright/lib/client/page.js:241:60
+      at Page._attributeToPage (../../../node_modules/playwright/lib/client/page.js:231:20)
+      at Page.waitForSelector (../../../node_modules/playwright/lib/client/page.js:241:21)
+      at setup/common/logout.ts:13:14
+
+PASS browser: webkit e2e/tests/vfd-plugin/dealform-persist-vendor-change.e2e.ts (24.506s)
+PASS browser: webkit e2e/tests/vppd-plugin/edit-deal-button-verification.e2e.ts (13.391s)
+PASS browser: webkit e2e/tests/vp-plugin/customer-conversion-all-details-check.e2e.ts (21.41s)
+FAIL browser: webkit e2e/tests/vfd-plugin/deal-creation.e2e.ts (83.026s)
+  ● VFD - Deal Creation › [C260036]Verify the deal creation flow - Percentage Discount
+
+    page.waitForSelector: Unable to adopt element handle from a different document
+    =========================== logs ===========================
+    waiting for selector "#button_login" to be visible
+      selector resolved to visible <button tabindex="0" type="submit" id="button_login" dat…>…</button>
+    ============================================================
+    Note: use DEBUG=pw:api environment variable to capture Playwright logs.
+
+      11 |
+      12 |   // wait for login button to appear
+    > 13 |   await page.waitForSelector('#button_login', { timeout: 30000 });
+         |              ^
+      14 | };
+      15 |
+
+      at Object.captureStackTrace (../../../node_modules/playwright/lib/utils/stackTrace.js:48:19)
+      at Connection.sendMessageToServer (../../../node_modules/playwright/lib/client/connection.js:69:48)
+      at Proxy.<anonymous> (../../../node_modules/playwright/lib/client/channelOwner.js:64:61)
+      at ../../../node_modules/playwright/lib/client/frame.js:202:42
+      at Frame._wrapApiCall (../../../node_modules/playwright/lib/client/channelOwner.js:77:34)
+      at Frame.waitForSelector (../../../node_modules/playwright/lib/client/frame.js:197:21)
+      at ../../../node_modules/playwright/lib/client/page.js:241:60
+      at Page._attributeToPage (../../../node_modules/playwright/lib/client/page.js:231:20)
+      at Page.waitForSelector (../../../node_modules/playwright/lib/client/page.js:241:21)
+      at setup/common/logout.ts:13:14
+
+PASS browser: webkit e2e/tests/vfd-plugin/edit-deal-button-verification.e2e.ts (17.844s)
+PASS browser: webkit e2e/tests/vp-plugin/order-rejection-rate-card-and-details.e2e.ts (11.126s)
+PASS browser: webkit e2e/tests/vp-plugin/kpi-summary.e2e.ts (12.929s)
+PASS browser: webkit e2e/tests/vfd-plugin/tnc-error-message-validation.e2e.ts (15.524s)
+PASS browser: webkit e2e/tests/vp-plugin/delay-order-details-page.e2e.ts (13.774s)
+PASS browser: webkit e2e/tests/vp-plugin/prep-time-details-page.e2e.ts (13.574s)
+PASS browser: webkit e2e/tests/vp-plugin/offline-duration-details-page.e2e.ts (12.317s)
+PASS browser: webkit e2e/tests/vp-plugin/order-revenue-loss-card-and-details.e2e.ts (17.632s)
+PASS browser: webkit e2e/tests/vp-plugin/all-outlets-health-page.e2e.ts (12.127s)
+PASS browser: webkit e2e/tests/vp-plugin/customer-conversion-card-and-details.e2e.ts (12.843s)
+PASS browser: webkit e2e/tests/vp-plugin/single-outlet-health-page.e2e.ts (13.512s)
+PASS browser: webkit e2e/tests/vfd-plugin/dealform-has-default-options.e2e.ts (11.138s)
+PASS browser: webkit e2e/tests/vp-plugin/accept-time-details-page.e2e.ts (12.718s)
+
+Summary of all failing tests
+FAIL tests/vppd-plugin/deal-creation.e2e.ts (66.727s)
+  ● VPPD - Deal Creation › [C369175]Verify pandapro deal creation flow - Fixed Amount
+
+    page.waitForSelector: Unable to adopt element handle from a different document
+    =========================== logs ===========================
+    waiting for selector "#button_login" to be visible
+      selector resolved to visible <button tabindex="0" type="submit" id="button_login" dat…>…</button>
+    ============================================================
+    Note: use DEBUG=pw:api environment variable to capture Playwright logs.
+
+      11 |
+      12 |   // wait for login button to appear
+    > 13 |   await page.waitForSelector('#button_login', { timeout: 30000 });
+         |              ^
+      14 | };
+      15 |
+
+      at Object.captureStackTrace (../../../node_modules/playwright/lib/utils/stackTrace.js:48:19)
+      at Connection.sendMessageToServer (../../../node_modules/playwright/lib/client/connection.js:69:48)
+      at Proxy.<anonymous> (../../../node_modules/playwright/lib/client/channelOwner.js:64:61)
+      at ../../../node_modules/playwright/lib/client/frame.js:202:42
+      at Frame._wrapApiCall (../../../node_modules/playwright/lib/client/channelOwner.js:77:34)
+      at Frame.waitForSelector (../../../node_modules/playwright/lib/client/frame.js:197:21)
+      at ../../../node_modules/playwright/lib/client/page.js:241:60
+      at Page._attributeToPage (../../../node_modules/playwright/lib/client/page.js:231:20)
+      at Page.waitForSelector (../../../node_modules/playwright/lib/client/page.js:241:21)
+      at setup/common/logout.ts:13:14
+
+FAIL tests/vfd-plugin/deal-creation.e2e.ts (83.026s)
+  ● VFD - Deal Creation › [C260036]Verify the deal creation flow - Percentage Discount
+
+    page.waitForSelector: Unable to adopt element handle from a different document
+    =========================== logs ===========================
+    waiting for selector "#button_login" to be visible
+      selector resolved to visible <button tabindex="0" type="submit" id="button_login" dat…>…</button>
+    ============================================================
+    Note: use DEBUG=pw:api environment variable to capture Playwright logs.
+
+      11 |
+      12 |   // wait for login button to appear
+    > 13 |   await page.waitForSelector('#button_login', { timeout: 30000 });
+         |              ^
+      14 | };
+      15 |
+
+      at Object.captureStackTrace (../../../node_modules/playwright/lib/utils/stackTrace.js:48:19)
+      at Connection.sendMessageToServer (../../../node_modules/playwright/lib/client/connection.js:69:48)
+      at Proxy.<anonymous> (../../../node_modules/playwright/lib/client/channelOwner.js:64:61)
+      at ../../../node_modules/playwright/lib/client/frame.js:202:42
+      at Frame._wrapApiCall (../../../node_modules/playwright/lib/client/channelOwner.js:77:34)
+      at Frame.waitForSelector (../../../node_modules/playwright/lib/client/frame.js:197:21)
+      at ../../../node_modules/playwright/lib/client/page.js:241:60
+      at Page._attributeToPage (../../../node_modules/playwright/lib/client/page.js:231:20)
+      at Page.waitForSelector (../../../node_modules/playwright/lib/client/page.js:241:21)
+      at setup/common/logout.ts:13:14
+
+
+Test Suites: 2 failed, 19 passed, 21 total
+Tests:       2 failed, 36 passed, 38 total
+Snapshots:   0 total
+Time:        127.238s
+Ran all test suites.
+Test results written to: e2e/output/playwright.webkit.json
+error Command failed with exit code 1.
+info Visit https://yarnpkg.com/en/docs/cli/run for documentation about this command.
+$ /Users/c.koh.3/Documents/Projects/react/fp-apac-jedi-skywalker/node_modules/.bin/jest -c e2e/jest-chromium.config.js --json --outputFile=e2e/output/playwright.json --maxWorkers=4
+PASS browser: chromium e2e/tests/vp-plugin/deal-utilization-card-and-details.e2e.ts (40.718s)
+PASS browser: chromium e2e/tests/vp-plugin/vendor-health.e2e.ts (54.356s)
+PASS browser: chromium e2e/tests/vppd-plugin/deal-creation.e2e.ts (69.362s)
+PASS browser: chromium e2e/tests/vp-plugin/vendor-health-single-vendor-account.e2e.ts (34.469s)
+PASS browser: chromium e2e/tests/vp-plugin/customer-conversion-all-details-check.e2e.ts (25.276s)
+PASS browser: chromium e2e/tests/vfd-plugin/deal-creation.e2e.ts (85.42s)
+PASS browser: chromium e2e/tests/vp-plugin/kpi-summary.e2e.ts (15.53s)
+PASS browser: chromium e2e/tests/vfd-plugin/dealform-persist-vendor-change.e2e.ts (25.303s)
+PASS browser: chromium e2e/tests/vfd-plugin/tnc-error-message-validation.e2e.ts (16.664s)
+PASS browser: chromium e2e/tests/vfd-plugin/edit-deal-button-verification.e2e.ts (18.395s)
+PASS browser: chromium e2e/tests/vppd-plugin/edit-deal-button-verification.e2e.ts (14.555s)
+PASS browser: chromium e2e/tests/vp-plugin/single-outlet-health-page.e2e.ts (12.997s)
+PASS browser: chromium e2e/tests/vp-plugin/offline-duration-details-page.e2e.ts (13.051s)
+PASS browser: chromium e2e/tests/vp-plugin/order-revenue-loss-card-and-details.e2e.ts (13.184s)
+PASS browser: chromium e2e/tests/vp-plugin/accept-time-details-page.e2e.ts (14.987s)
+PASS browser: chromium e2e/tests/vp-plugin/prep-time-details-page.e2e.ts (13.253s)
+PASS browser: chromium e2e/tests/vp-plugin/all-outlets-health-page.e2e.ts (15.245s)
+PASS browser: chromium e2e/tests/vp-plugin/delay-order-details-page.e2e.ts (13.532s)
+PASS browser: chromium e2e/tests/vp-plugin/order-rejection-rate-card-and-details.e2e.ts (13.85s)
+PASS browser: chromium e2e/tests/vfd-plugin/dealform-has-default-options.e2e.ts (11.552s)
+PASS browser: chromium e2e/tests/vp-plugin/customer-conversion-card-and-details.e2e.ts (10.827s)
+
+Test Suites: 21 passed, 21 total
+Tests:       38 passed, 38 total
+Snapshots:   0 total
+Time:        137.685s
+Ran all test suites.
+Test results written to: e2e/output/playwright.json
+Browser    Exit Code
+webkit         1
+chrome         0
+error Command failed with exit code 1.
+info Visit https://yarnpkg.com/en/docs/cli/run for documentation about this command.
+error Command failed with exit code 1.
+info Visit https://yarnpkg.com/en/docs/cli/run for documentation about this command.
