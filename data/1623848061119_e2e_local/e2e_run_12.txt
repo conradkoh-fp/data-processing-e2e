@@ -1,0 +1,63 @@
+yarn run v1.22.4
+$ sh ./scripts/setup-e2e-local.sh; export $(xargs < ./envs/.env.e2e.local); yarn e2e
+checking for local e2e env file
+./envs/.env.e2e.local exists
+$ E2E_TEST_USERNAME=$E2E_TEST_USERNAME E2E_TEST_PASSWORD=$E2E_TEST_PASSWORD sh ./scripts/run-e2e.sh
+$ /Users/c.koh.3/Documents/Projects/react/fp-apac-jedi-skywalker/node_modules/.bin/jest -c e2e/jest-e2e.config.js --json --outputFile=e2e/output/playwright.webkit.json --maxWorkers=4
+PASS browser: webkit e2e/tests/vp-plugin/customer-conversion-all-details-check.e2e.ts (29.411s)
+PASS browser: webkit e2e/tests/vp-plugin/vendor-health-single-vendor-account.e2e.ts (35.462s)
+PASS browser: webkit e2e/tests/vp-plugin/deal-utilization-card-and-details.e2e.ts (40.518s)
+PASS browser: webkit e2e/tests/vp-plugin/vendor-health.e2e.ts (53.518s)
+PASS browser: webkit e2e/tests/vfd-plugin/edit-deal-button-verification.e2e.ts (19.231s)
+PASS browser: webkit e2e/tests/vp-plugin/offline-duration-details-page.e2e.ts (16.01s)
+PASS browser: webkit e2e/tests/vfd-plugin/dealform-persist-vendor-change.e2e.ts (30.992s)
+PASS browser: webkit e2e/tests/vp-plugin/kpi-summary.e2e.ts (16.633s)
+PASS browser: webkit e2e/tests/vfd-plugin/tnc-error-message-validation.e2e.ts (18.541s)
+PASS browser: webkit e2e/tests/vppd-plugin/edit-deal-button-verification.e2e.ts (17.67s)
+PASS browser: webkit e2e/tests/vp-plugin/order-rejection-rate-card-and-details.e2e.ts (14.709s)
+PASS browser: webkit e2e/tests/vp-plugin/order-revenue-loss-card-and-details.e2e.ts (14.72s)
+PASS browser: webkit e2e/tests/vp-plugin/delay-order-details-page.e2e.ts (16.498s)
+PASS browser: webkit e2e/tests/vp-plugin/prep-time-details-page.e2e.ts (14.109s)
+PASS browser: webkit e2e/tests/vp-plugin/single-outlet-health-page.e2e.ts (14.096s)
+PASS browser: webkit e2e/tests/vfd-plugin/dealform-has-default-options.e2e.ts (13.413s)
+PASS browser: webkit e2e/tests/vp-plugin/customer-conversion-card-and-details.e2e.ts (17.298s)
+PASS browser: webkit e2e/tests/vp-plugin/all-outlets-health-page.e2e.ts (16.337s)
+PASS browser: webkit e2e/tests/vp-plugin/accept-time-details-page.e2e.ts (16.139s)
+
+Test Suites: 19 passed, 19 total
+Tests:       33 passed, 33 total
+Snapshots:   0 total
+Time:        106.322s, estimated 117s
+Ran all test suites.
+Test results written to: e2e/output/playwright.webkit.json
+$ /Users/c.koh.3/Documents/Projects/react/fp-apac-jedi-skywalker/node_modules/.bin/jest -c e2e/jest-e2e.config.js --json --outputFile=e2e/output/playwright.json --maxWorkers=4
+PASS browser: chromium e2e/tests/vfd-plugin/dealform-persist-vendor-change.e2e.ts (32.519s)
+PASS browser: chromium e2e/tests/vp-plugin/vendor-health-single-vendor-account.e2e.ts (40.365s)
+PASS browser: chromium e2e/tests/vp-plugin/deal-utilization-card-and-details.e2e.ts (51.143s)
+PASS browser: chromium e2e/tests/vfd-plugin/edit-deal-button-verification.e2e.ts (22.946s)
+PASS browser: chromium e2e/tests/vp-plugin/vendor-health.e2e.ts (70.049s)
+PASS browser: chromium e2e/tests/vfd-plugin/tnc-error-message-validation.e2e.ts (20.56s)
+PASS browser: chromium e2e/tests/vp-plugin/customer-conversion-all-details-check.e2e.ts (40.16s)
+PASS browser: chromium e2e/tests/vppd-plugin/edit-deal-button-verification.e2e.ts (20.106s)
+PASS browser: chromium e2e/tests/vp-plugin/customer-conversion-card-and-details.e2e.ts (16.419s)
+PASS browser: chromium e2e/tests/vp-plugin/delay-order-details-page.e2e.ts (16.36s)
+PASS browser: chromium e2e/tests/vp-plugin/kpi-summary.e2e.ts (20.568s)
+PASS browser: chromium e2e/tests/vp-plugin/all-outlets-health-page.e2e.ts (18.298s)
+PASS browser: chromium e2e/tests/vp-plugin/accept-time-details-page.e2e.ts (16.53s)
+PASS browser: chromium e2e/tests/vp-plugin/offline-duration-details-page.e2e.ts (18.246s)
+PASS browser: chromium e2e/tests/vp-plugin/order-revenue-loss-card-and-details.e2e.ts (16.674s)
+PASS browser: chromium e2e/tests/vp-plugin/order-rejection-rate-card-and-details.e2e.ts (16.718s)
+PASS browser: chromium e2e/tests/vp-plugin/prep-time-details-page.e2e.ts (16.239s)
+PASS browser: chromium e2e/tests/vfd-plugin/dealform-has-default-options.e2e.ts (12.372s)
+PASS browser: chromium e2e/tests/vp-plugin/single-outlet-health-page.e2e.ts (15.981s)
+
+Test Suites: 19 passed, 19 total
+Tests:       33 passed, 33 total
+Snapshots:   0 total
+Time:        125.808s
+Ran all test suites.
+Test results written to: e2e/output/playwright.json
+Browser    Exit Code
+webkit         0
+chrome         0
+Done in 237.24s.
