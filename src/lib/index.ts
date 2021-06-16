@@ -29,7 +29,7 @@ export async function collectStats(filePath: string, state: StatsState) {
 }
 
 function collectErrorStats(fileContent: string, state: ErrorStatsState) {
-  const extractMatcher = new RegExp("at (.+\\.ts:\\d+:\\d+)", "g");
+  const extractMatcher = new RegExp("at (.+\\.ts:\\d+:\\d+\\))", "g");
   const matches = fileContent.match(extractMatcher);
   if (matches) {
     for (const match of matches) {
