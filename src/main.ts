@@ -9,7 +9,7 @@ import { createTestErrorStatsTable } from "./lib/presentation/errorStats/table";
 import { compareErrorStatsSort } from "./lib/presentation/errorStats/sort";
 (async function main() {
   const testEnv = TestEnv.Local;
-  const mode: string = "override";
+  const mode: string = "";
   const testRunPrefix = mode == "override" ? "" : new Date().getTime() + "_";
   const soureFolder = dataFolder(testEnv);
   //Create all folders required
