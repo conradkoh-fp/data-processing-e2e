@@ -1,0 +1,584 @@
+yarn run v1.22.4
+$ sh ./scripts/setup-e2e-local.sh; export $(xargs < ./envs/.env.e2e.local); yarn e2e
+checking for local e2e env file
+./envs/.env.e2e.local exists
+$ E2E_TEST_USERNAME=$E2E_TEST_USERNAME E2E_TEST_PASSWORD=$E2E_TEST_PASSWORD sh ./scripts/run-e2e.sh
+$ /Users/c.koh.3/Documents/Projects/react/fp-apac-jedi-skywalker/node_modules/.bin/jest -c e2e/jest-webkit.config.js --json --outputFile=e2e/output/playwright.webkit.json --maxWorkers=4
+PASS browser: webkit e2e/tests/vp-plugin/deal-utilization-card-and-details.e2e.ts (29.751s)
+PASS browser: webkit e2e/tests/vp-plugin/vendor-health.e2e.ts (41.292s)
+PASS browser: webkit e2e/tests/vp-plugin/vendor-health-single-vendor-account.e2e.ts (23.962s)
+
+  ●  Cannot log after tests are done. Did you forget to wait for something async in your test?
+    Attempted to log "retry(): running task again #1".
+
+      20 |         return; // exit the loop because we are been successful
+      21 |       }
+    > 22 |       console.log(`retry(): running task again #${i}`);
+         |               ^
+      23 |       //wait for the retry interval before trying again
+      24 |       await new Promise<void>((resolve) => {
+      25 |         setTimeout(() => {
+
+      at BufferedConsole.log (../../../node_modules/@jest/console/build/BufferedConsole.js:199:10)
+      at Object.<anonymous> (utils/retry.ts:22:15)
+      at step (utils/retry.ts:33:23)
+      at Object.next (utils/retry.ts:14:53)
+      at fulfilled (utils/retry.ts:5:58)
+          at runMicrotasks (<anonymous>)
+
+
+  ●  Cannot log after tests are done. Did you forget to wait for something async in your test?
+    Attempted to log "retry(): running task again #1".
+
+      20 |         return; // exit the loop because we are been successful
+      21 |       }
+    > 22 |       console.log(`retry(): running task again #${i}`);
+         |               ^
+      23 |       //wait for the retry interval before trying again
+      24 |       await new Promise<void>((resolve) => {
+      25 |         setTimeout(() => {
+
+      at BufferedConsole.log (../../../node_modules/@jest/console/build/BufferedConsole.js:199:10)
+      at Object.<anonymous> (utils/retry.ts:22:15)
+      at step (utils/retry.ts:33:23)
+      at Object.next (utils/retry.ts:14:53)
+      at fulfilled (utils/retry.ts:5:58)
+
+FAIL browser: webkit e2e/tests/vppd-plugin/deal-creation.e2e.ts (62.151s)
+  ● Console
+
+    console.log e2e/utils/retry.ts:45
+      Error: executeWithTimeout exceeded duration 10000
+    console.log e2e/utils/retry.ts:22
+      retry(): running task again #1
+    console.log e2e/utils/retry.ts:45
+      Error: executeWithTimeout exceeded duration 10000
+    console.log e2e/utils/retry.ts:45
+      Error: executeWithTimeout exceeded duration 10000
+
+  ● VPPD - Deal Creation › [C369165]Verify pandapro deal creation flow - Percentage Discount
+
+    thrown: undefined
+
+      94 |     };
+      95 |   };
+    > 96 |   it('[C369165]Verify pandapro deal creation flow - Percentage Discount', async () => {
+         |   ^
+      97 |     const deal = pandaproDealFixtures[env][DealFixtureType.PercentageDiscount];
+      98 |     const dealDetails = await verifyAndConfirmDeal(deal);
+      99 |     const expected = expectedDealDetails(deal);
+
+      at tests/vppd-plugin/deal-creation.e2e.ts:96:3
+      at Object.<anonymous> (tests/vppd-plugin/deal-creation.e2e.ts:28:1)
+
+  ● VPPD - Deal Creation › [C369175]Verify pandapro deal creation flow - Fixed Amount
+
+    thrown: undefined
+
+      101 |   });
+      102 |
+    > 103 |   it('[C369175]Verify pandapro deal creation flow - Fixed Amount', async () => {
+          |   ^
+      104 |     const deal = pandaproDealFixtures[env][DealFixtureType.FixedAmountDiscount];
+      105 |     const dealDetails = await verifyAndConfirmDeal(deal);
+      106 |     const expected = expectedDealDetails(deal);
+
+      at tests/vppd-plugin/deal-creation.e2e.ts:103:3
+      at Object.<anonymous> (tests/vppd-plugin/deal-creation.e2e.ts:28:1)
+
+  ● VPPD - Deal Creation › [C369176]Verify the pandapro promotion creation flow - Free Delivery Discount
+
+    thrown: undefined
+
+      108 |   });
+      109 |
+    > 110 |   it('[C369176]Verify the pandapro promotion creation flow - Free Delivery Discount', async () => {
+          |   ^
+      111 |     const deal = pandaproDealFixtures[env][DealFixtureType.FreeDelivery];
+      112 |     const dealDetails = await verifyAndConfirmDeal(deal);
+      113 |     const expected = expectedDealDetails(deal);
+
+      at tests/vppd-plugin/deal-creation.e2e.ts:110:3
+      at Object.<anonymous> (tests/vppd-plugin/deal-creation.e2e.ts:28:1)
+
+PASS browser: webkit e2e/tests/vfd-plugin/dealform-persist-vendor-change.e2e.ts (22.328s)
+PASS browser: webkit e2e/tests/vp-plugin/customer-conversion-all-details-check.e2e.ts (19.129s)
+
+  ●  Cannot log after tests are done. Did you forget to wait for something async in your test?
+    Attempted to log "retry(): running task again #1".
+
+      20 |         return; // exit the loop because we are been successful
+      21 |       }
+    > 22 |       console.log(`retry(): running task again #${i}`);
+         |               ^
+      23 |       //wait for the retry interval before trying again
+      24 |       await new Promise<void>((resolve) => {
+      25 |         setTimeout(() => {
+
+      at BufferedConsole.log (../../../node_modules/@jest/console/build/BufferedConsole.js:199:10)
+      at Object.<anonymous> (utils/retry.ts:22:15)
+      at step (utils/retry.ts:33:23)
+      at Object.next (utils/retry.ts:14:53)
+      at fulfilled (utils/retry.ts:5:58)
+          at runMicrotasks (<anonymous>)
+
+FAIL browser: webkit e2e/tests/vfd-plugin/deal-creation.e2e.ts (73.558s)
+  ● Console
+
+    console.log e2e/utils/retry.ts:45
+      Error: executeWithTimeout exceeded duration 10000
+    console.log e2e/utils/retry.ts:22
+      retry(): running task again #1
+    console.log e2e/utils/retry.ts:45
+      Error: executeWithTimeout exceeded duration 10000
+    console.log e2e/utils/retry.ts:45
+      Error: executeWithTimeout exceeded duration 10000
+    console.log e2e/utils/retry.ts:22
+      retry(): running task again #1
+
+  ● VFD - Deal Creation › [C260036]Verify the deal creation flow - Percentage Discount
+
+    thrown: undefined
+
+      107 |   };
+      108 |
+    > 109 |   it('[C260036]Verify the deal creation flow - Percentage Discount', async () => {
+          |   ^
+      110 |     const deal = dealFixtures[env][DealFixtureType.PercentageDiscount];
+      111 |     const dealDetails = await verifyAndConfirmDeal(deal);
+      112 |     const expected = expectedDealDetails(deal);
+
+      at tests/vfd-plugin/deal-creation.e2e.ts:109:3
+      at Object.<anonymous> (tests/vfd-plugin/deal-creation.e2e.ts:33:1)
+
+  ● VFD - Deal Creation › [C266337]Verify the deal creation flow - Fixed Amount Discount
+
+    thrown: undefined
+
+      114 |   });
+      115 |
+    > 116 |   it('[C266337]Verify the deal creation flow - Fixed Amount Discount', async () => {
+          |   ^
+      117 |     const deal = dealFixtures[env][DealFixtureType.FixedAmountDiscount];
+      118 |     const dealDetails = await verifyAndConfirmDeal(deal);
+      119 |     const expected = expectedDealDetails(deal);
+
+      at tests/vfd-plugin/deal-creation.e2e.ts:116:3
+      at Object.<anonymous> (tests/vfd-plugin/deal-creation.e2e.ts:33:1)
+
+  ● VFD - Deal Creation › [C266338]Verify the deal creation flow - Free Delivery
+
+    thrown: undefined
+
+      121 |   });
+      122 |
+    > 123 |   it('[C266338]Verify the deal creation flow - Free Delivery', async () => {
+          |   ^
+      124 |     const deal = dealFixtures[env][DealFixtureType.FreeDelivery];
+      125 |     const dealDetails = await verifyAndConfirmDeal(deal);
+      126 |     const expected = expectedDealDetails(deal);
+
+      at tests/vfd-plugin/deal-creation.e2e.ts:123:3
+      at Object.<anonymous> (tests/vfd-plugin/deal-creation.e2e.ts:33:1)
+
+PASS browser: webkit e2e/tests/vp-plugin/kpi-summary.e2e.ts (13.51s)
+PASS browser: webkit e2e/tests/vppd-plugin/edit-deal-button-verification.e2e.ts (15.638s)
+PASS browser: webkit e2e/tests/vp-plugin/offline-duration-details-page.e2e.ts (8.853s)
+PASS browser: webkit e2e/tests/vp-plugin/prep-time-details-page.e2e.ts (10.157s)
+PASS browser: webkit e2e/tests/vfd-plugin/tnc-error-message-validation.e2e.ts (15.732s)
+PASS browser: webkit e2e/tests/vfd-plugin/edit-deal-button-verification.e2e.ts (18.197s)
+PASS browser: webkit e2e/tests/vfd-plugin/dealform-has-default-options.e2e.ts (10.76s)
+PASS browser: webkit e2e/tests/vp-plugin/order-revenue-loss-card-and-details.e2e.ts (13.374s)
+PASS browser: webkit e2e/tests/vp-plugin/all-outlets-health-page.e2e.ts (10.849s)
+PASS browser: webkit e2e/tests/vp-plugin/single-outlet-health-page.e2e.ts (11.217s)
+PASS browser: webkit e2e/tests/vp-plugin/customer-conversion-card-and-details.e2e.ts (10.822s)
+PASS browser: webkit e2e/tests/vp-plugin/order-rejection-rate-card-and-details.e2e.ts (13.251s)
+PASS browser: webkit e2e/tests/vp-plugin/delay-order-details-page.e2e.ts (9.272s)
+PASS browser: webkit e2e/tests/vp-plugin/accept-time-details-page.e2e.ts (13.081s)
+
+Summary of all failing tests
+FAIL tests/vppd-plugin/deal-creation.e2e.ts (62.151s)
+  ● VPPD - Deal Creation › [C369165]Verify pandapro deal creation flow - Percentage Discount
+
+    thrown: undefined
+
+      94 |     };
+      95 |   };
+    > 96 |   it('[C369165]Verify pandapro deal creation flow - Percentage Discount', async () => {
+         |   ^
+      97 |     const deal = pandaproDealFixtures[env][DealFixtureType.PercentageDiscount];
+      98 |     const dealDetails = await verifyAndConfirmDeal(deal);
+      99 |     const expected = expectedDealDetails(deal);
+
+      at tests/vppd-plugin/deal-creation.e2e.ts:96:3
+      at Object.<anonymous> (tests/vppd-plugin/deal-creation.e2e.ts:28:1)
+
+  ● VPPD - Deal Creation › [C369175]Verify pandapro deal creation flow - Fixed Amount
+
+    thrown: undefined
+
+      101 |   });
+      102 |
+    > 103 |   it('[C369175]Verify pandapro deal creation flow - Fixed Amount', async () => {
+          |   ^
+      104 |     const deal = pandaproDealFixtures[env][DealFixtureType.FixedAmountDiscount];
+      105 |     const dealDetails = await verifyAndConfirmDeal(deal);
+      106 |     const expected = expectedDealDetails(deal);
+
+      at tests/vppd-plugin/deal-creation.e2e.ts:103:3
+      at Object.<anonymous> (tests/vppd-plugin/deal-creation.e2e.ts:28:1)
+
+  ● VPPD - Deal Creation › [C369176]Verify the pandapro promotion creation flow - Free Delivery Discount
+
+    thrown: undefined
+
+      108 |   });
+      109 |
+    > 110 |   it('[C369176]Verify the pandapro promotion creation flow - Free Delivery Discount', async () => {
+          |   ^
+      111 |     const deal = pandaproDealFixtures[env][DealFixtureType.FreeDelivery];
+      112 |     const dealDetails = await verifyAndConfirmDeal(deal);
+      113 |     const expected = expectedDealDetails(deal);
+
+      at tests/vppd-plugin/deal-creation.e2e.ts:110:3
+      at Object.<anonymous> (tests/vppd-plugin/deal-creation.e2e.ts:28:1)
+
+FAIL tests/vfd-plugin/deal-creation.e2e.ts (73.558s)
+  ● VFD - Deal Creation › [C260036]Verify the deal creation flow - Percentage Discount
+
+    thrown: undefined
+
+      107 |   };
+      108 |
+    > 109 |   it('[C260036]Verify the deal creation flow - Percentage Discount', async () => {
+          |   ^
+      110 |     const deal = dealFixtures[env][DealFixtureType.PercentageDiscount];
+      111 |     const dealDetails = await verifyAndConfirmDeal(deal);
+      112 |     const expected = expectedDealDetails(deal);
+
+      at tests/vfd-plugin/deal-creation.e2e.ts:109:3
+      at Object.<anonymous> (tests/vfd-plugin/deal-creation.e2e.ts:33:1)
+
+  ● VFD - Deal Creation › [C266337]Verify the deal creation flow - Fixed Amount Discount
+
+    thrown: undefined
+
+      114 |   });
+      115 |
+    > 116 |   it('[C266337]Verify the deal creation flow - Fixed Amount Discount', async () => {
+          |   ^
+      117 |     const deal = dealFixtures[env][DealFixtureType.FixedAmountDiscount];
+      118 |     const dealDetails = await verifyAndConfirmDeal(deal);
+      119 |     const expected = expectedDealDetails(deal);
+
+      at tests/vfd-plugin/deal-creation.e2e.ts:116:3
+      at Object.<anonymous> (tests/vfd-plugin/deal-creation.e2e.ts:33:1)
+
+  ● VFD - Deal Creation › [C266338]Verify the deal creation flow - Free Delivery
+
+    thrown: undefined
+
+      121 |   });
+      122 |
+    > 123 |   it('[C266338]Verify the deal creation flow - Free Delivery', async () => {
+          |   ^
+      124 |     const deal = dealFixtures[env][DealFixtureType.FreeDelivery];
+      125 |     const dealDetails = await verifyAndConfirmDeal(deal);
+      126 |     const expected = expectedDealDetails(deal);
+
+      at tests/vfd-plugin/deal-creation.e2e.ts:123:3
+      at Object.<anonymous> (tests/vfd-plugin/deal-creation.e2e.ts:33:1)
+
+
+Test Suites: 2 failed, 19 passed, 21 total
+Tests:       6 failed, 34 passed, 40 total
+Snapshots:   0 total
+Time:        113.639s
+Ran all test suites.
+Test results written to: e2e/output/playwright.webkit.json
+error Command failed with exit code 1.
+info Visit https://yarnpkg.com/en/docs/cli/run for documentation about this command.
+$ /Users/c.koh.3/Documents/Projects/react/fp-apac-jedi-skywalker/node_modules/.bin/jest -c e2e/jest-chromium.config.js --json --outputFile=e2e/output/playwright.json --maxWorkers=4
+PASS browser: chromium e2e/tests/vp-plugin/deal-utilization-card-and-details.e2e.ts (32.047s)
+PASS browser: chromium e2e/tests/vp-plugin/vendor-health.e2e.ts (46.3s)
+PASS browser: chromium e2e/tests/vp-plugin/vendor-health-single-vendor-account.e2e.ts (24.79s)
+
+  ●  Cannot log after tests are done. Did you forget to wait for something async in your test?
+    Attempted to log "retry(): running task again #1".
+
+      20 |         return; // exit the loop because we are been successful
+      21 |       }
+    > 22 |       console.log(`retry(): running task again #${i}`);
+         |               ^
+      23 |       //wait for the retry interval before trying again
+      24 |       await new Promise<void>((resolve) => {
+      25 |         setTimeout(() => {
+
+      at BufferedConsole.log (../../../node_modules/@jest/console/build/BufferedConsole.js:199:10)
+      at Object.<anonymous> (utils/retry.ts:22:15)
+      at step (utils/retry.ts:33:23)
+      at Object.next (utils/retry.ts:14:53)
+      at fulfilled (utils/retry.ts:5:58)
+
+FAIL browser: chromium e2e/tests/vppd-plugin/deal-creation.e2e.ts (66.825s)
+  ● Console
+
+    console.log e2e/utils/retry.ts:45
+      Error: executeWithTimeout exceeded duration 10000
+    console.log e2e/utils/retry.ts:22
+      retry(): running task again #1
+    console.log e2e/utils/retry.ts:45
+      Error: executeWithTimeout exceeded duration 10000
+    console.log e2e/utils/retry.ts:22
+      retry(): running task again #1
+    console.log e2e/utils/retry.ts:45
+      Error: executeWithTimeout exceeded duration 10000
+
+  ● VPPD - Deal Creation › [C369165]Verify pandapro deal creation flow - Percentage Discount
+
+    thrown: undefined
+
+      94 |     };
+      95 |   };
+    > 96 |   it('[C369165]Verify pandapro deal creation flow - Percentage Discount', async () => {
+         |   ^
+      97 |     const deal = pandaproDealFixtures[env][DealFixtureType.PercentageDiscount];
+      98 |     const dealDetails = await verifyAndConfirmDeal(deal);
+      99 |     const expected = expectedDealDetails(deal);
+
+      at tests/vppd-plugin/deal-creation.e2e.ts:96:3
+      at Object.<anonymous> (tests/vppd-plugin/deal-creation.e2e.ts:28:1)
+
+  ● VPPD - Deal Creation › [C369175]Verify pandapro deal creation flow - Fixed Amount
+
+    thrown: undefined
+
+      101 |   });
+      102 |
+    > 103 |   it('[C369175]Verify pandapro deal creation flow - Fixed Amount', async () => {
+          |   ^
+      104 |     const deal = pandaproDealFixtures[env][DealFixtureType.FixedAmountDiscount];
+      105 |     const dealDetails = await verifyAndConfirmDeal(deal);
+      106 |     const expected = expectedDealDetails(deal);
+
+      at tests/vppd-plugin/deal-creation.e2e.ts:103:3
+      at Object.<anonymous> (tests/vppd-plugin/deal-creation.e2e.ts:28:1)
+
+  ● VPPD - Deal Creation › [C369176]Verify the pandapro promotion creation flow - Free Delivery Discount
+
+    thrown: undefined
+
+      108 |   });
+      109 |
+    > 110 |   it('[C369176]Verify the pandapro promotion creation flow - Free Delivery Discount', async () => {
+          |   ^
+      111 |     const deal = pandaproDealFixtures[env][DealFixtureType.FreeDelivery];
+      112 |     const dealDetails = await verifyAndConfirmDeal(deal);
+      113 |     const expected = expectedDealDetails(deal);
+
+      at tests/vppd-plugin/deal-creation.e2e.ts:110:3
+      at Object.<anonymous> (tests/vppd-plugin/deal-creation.e2e.ts:28:1)
+
+PASS browser: chromium e2e/tests/vp-plugin/customer-conversion-all-details-check.e2e.ts (23.033s)
+
+  ●  Cannot log after tests are done. Did you forget to wait for something async in your test?
+    Attempted to log "retry(): running task again #1".
+
+      20 |         return; // exit the loop because we are been successful
+      21 |       }
+    > 22 |       console.log(`retry(): running task again #${i}`);
+         |               ^
+      23 |       //wait for the retry interval before trying again
+      24 |       await new Promise<void>((resolve) => {
+      25 |         setTimeout(() => {
+
+      at BufferedConsole.log (../../../node_modules/@jest/console/build/BufferedConsole.js:199:10)
+      at Object.<anonymous> (utils/retry.ts:22:15)
+      at step (utils/retry.ts:33:23)
+      at Object.next (utils/retry.ts:14:53)
+      at fulfilled (utils/retry.ts:5:58)
+
+FAIL browser: chromium e2e/tests/vfd-plugin/deal-creation.e2e.ts (78.224s)
+  ● Console
+
+    console.log e2e/utils/retry.ts:45
+      Error: executeWithTimeout exceeded duration 10000
+    console.log e2e/utils/retry.ts:22
+      retry(): running task again #1
+    console.log e2e/utils/retry.ts:45
+      Error: executeWithTimeout exceeded duration 10000
+    console.log e2e/utils/retry.ts:22
+      retry(): running task again #1
+    console.log e2e/utils/retry.ts:45
+      Error: executeWithTimeout exceeded duration 10000
+
+  ● VFD - Deal Creation › [C260036]Verify the deal creation flow - Percentage Discount
+
+    thrown: undefined
+
+      107 |   };
+      108 |
+    > 109 |   it('[C260036]Verify the deal creation flow - Percentage Discount', async () => {
+          |   ^
+      110 |     const deal = dealFixtures[env][DealFixtureType.PercentageDiscount];
+      111 |     const dealDetails = await verifyAndConfirmDeal(deal);
+      112 |     const expected = expectedDealDetails(deal);
+
+      at tests/vfd-plugin/deal-creation.e2e.ts:109:3
+      at Object.<anonymous> (tests/vfd-plugin/deal-creation.e2e.ts:33:1)
+
+  ● VFD - Deal Creation › [C266337]Verify the deal creation flow - Fixed Amount Discount
+
+    thrown: undefined
+
+      114 |   });
+      115 |
+    > 116 |   it('[C266337]Verify the deal creation flow - Fixed Amount Discount', async () => {
+          |   ^
+      117 |     const deal = dealFixtures[env][DealFixtureType.FixedAmountDiscount];
+      118 |     const dealDetails = await verifyAndConfirmDeal(deal);
+      119 |     const expected = expectedDealDetails(deal);
+
+      at tests/vfd-plugin/deal-creation.e2e.ts:116:3
+      at Object.<anonymous> (tests/vfd-plugin/deal-creation.e2e.ts:33:1)
+
+  ● VFD - Deal Creation › [C266338]Verify the deal creation flow - Free Delivery
+
+    thrown: undefined
+
+      121 |   });
+      122 |
+    > 123 |   it('[C266338]Verify the deal creation flow - Free Delivery', async () => {
+          |   ^
+      124 |     const deal = dealFixtures[env][DealFixtureType.FreeDelivery];
+      125 |     const dealDetails = await verifyAndConfirmDeal(deal);
+      126 |     const expected = expectedDealDetails(deal);
+
+      at tests/vfd-plugin/deal-creation.e2e.ts:123:3
+      at Object.<anonymous> (tests/vfd-plugin/deal-creation.e2e.ts:33:1)
+
+PASS browser: chromium e2e/tests/vfd-plugin/dealform-persist-vendor-change.e2e.ts (23.333s)
+PASS browser: chromium e2e/tests/vfd-plugin/edit-deal-button-verification.e2e.ts (15.418s)
+PASS browser: chromium e2e/tests/vfd-plugin/tnc-error-message-validation.e2e.ts (13.747s)
+PASS browser: chromium e2e/tests/vp-plugin/kpi-summary.e2e.ts (12.382s)
+PASS browser: chromium e2e/tests/vp-plugin/order-revenue-loss-card-and-details.e2e.ts (10.191s)
+PASS browser: chromium e2e/tests/vppd-plugin/edit-deal-button-verification.e2e.ts (14.559s)
+PASS browser: chromium e2e/tests/vp-plugin/offline-duration-details-page.e2e.ts (12.563s)
+PASS browser: chromium e2e/tests/vp-plugin/order-rejection-rate-card-and-details.e2e.ts (11.826s)
+PASS browser: chromium e2e/tests/vp-plugin/accept-time-details-page.e2e.ts (10.14s)
+PASS browser: chromium e2e/tests/vp-plugin/single-outlet-health-page.e2e.ts (11.687s)
+PASS browser: chromium e2e/tests/vp-plugin/customer-conversion-card-and-details.e2e.ts (12.661s)
+PASS browser: chromium e2e/tests/vp-plugin/prep-time-details-page.e2e.ts (10.733s)
+PASS browser: chromium e2e/tests/vp-plugin/delay-order-details-page.e2e.ts (12.32s)
+PASS browser: chromium e2e/tests/vfd-plugin/dealform-has-default-options.e2e.ts (10.775s)
+PASS browser: chromium e2e/tests/vp-plugin/all-outlets-health-page.e2e.ts (11.435s)
+
+Summary of all failing tests
+FAIL tests/vppd-plugin/deal-creation.e2e.ts (66.825s)
+  ● VPPD - Deal Creation › [C369165]Verify pandapro deal creation flow - Percentage Discount
+
+    thrown: undefined
+
+      94 |     };
+      95 |   };
+    > 96 |   it('[C369165]Verify pandapro deal creation flow - Percentage Discount', async () => {
+         |   ^
+      97 |     const deal = pandaproDealFixtures[env][DealFixtureType.PercentageDiscount];
+      98 |     const dealDetails = await verifyAndConfirmDeal(deal);
+      99 |     const expected = expectedDealDetails(deal);
+
+      at tests/vppd-plugin/deal-creation.e2e.ts:96:3
+      at Object.<anonymous> (tests/vppd-plugin/deal-creation.e2e.ts:28:1)
+
+  ● VPPD - Deal Creation › [C369175]Verify pandapro deal creation flow - Fixed Amount
+
+    thrown: undefined
+
+      101 |   });
+      102 |
+    > 103 |   it('[C369175]Verify pandapro deal creation flow - Fixed Amount', async () => {
+          |   ^
+      104 |     const deal = pandaproDealFixtures[env][DealFixtureType.FixedAmountDiscount];
+      105 |     const dealDetails = await verifyAndConfirmDeal(deal);
+      106 |     const expected = expectedDealDetails(deal);
+
+      at tests/vppd-plugin/deal-creation.e2e.ts:103:3
+      at Object.<anonymous> (tests/vppd-plugin/deal-creation.e2e.ts:28:1)
+
+  ● VPPD - Deal Creation › [C369176]Verify the pandapro promotion creation flow - Free Delivery Discount
+
+    thrown: undefined
+
+      108 |   });
+      109 |
+    > 110 |   it('[C369176]Verify the pandapro promotion creation flow - Free Delivery Discount', async () => {
+          |   ^
+      111 |     const deal = pandaproDealFixtures[env][DealFixtureType.FreeDelivery];
+      112 |     const dealDetails = await verifyAndConfirmDeal(deal);
+      113 |     const expected = expectedDealDetails(deal);
+
+      at tests/vppd-plugin/deal-creation.e2e.ts:110:3
+      at Object.<anonymous> (tests/vppd-plugin/deal-creation.e2e.ts:28:1)
+
+FAIL tests/vfd-plugin/deal-creation.e2e.ts (78.224s)
+  ● VFD - Deal Creation › [C260036]Verify the deal creation flow - Percentage Discount
+
+    thrown: undefined
+
+      107 |   };
+      108 |
+    > 109 |   it('[C260036]Verify the deal creation flow - Percentage Discount', async () => {
+          |   ^
+      110 |     const deal = dealFixtures[env][DealFixtureType.PercentageDiscount];
+      111 |     const dealDetails = await verifyAndConfirmDeal(deal);
+      112 |     const expected = expectedDealDetails(deal);
+
+      at tests/vfd-plugin/deal-creation.e2e.ts:109:3
+      at Object.<anonymous> (tests/vfd-plugin/deal-creation.e2e.ts:33:1)
+
+  ● VFD - Deal Creation › [C266337]Verify the deal creation flow - Fixed Amount Discount
+
+    thrown: undefined
+
+      114 |   });
+      115 |
+    > 116 |   it('[C266337]Verify the deal creation flow - Fixed Amount Discount', async () => {
+          |   ^
+      117 |     const deal = dealFixtures[env][DealFixtureType.FixedAmountDiscount];
+      118 |     const dealDetails = await verifyAndConfirmDeal(deal);
+      119 |     const expected = expectedDealDetails(deal);
+
+      at tests/vfd-plugin/deal-creation.e2e.ts:116:3
+      at Object.<anonymous> (tests/vfd-plugin/deal-creation.e2e.ts:33:1)
+
+  ● VFD - Deal Creation › [C266338]Verify the deal creation flow - Free Delivery
+
+    thrown: undefined
+
+      121 |   });
+      122 |
+    > 123 |   it('[C266338]Verify the deal creation flow - Free Delivery', async () => {
+          |   ^
+      124 |     const deal = dealFixtures[env][DealFixtureType.FreeDelivery];
+      125 |     const dealDetails = await verifyAndConfirmDeal(deal);
+      126 |     const expected = expectedDealDetails(deal);
+
+      at tests/vfd-plugin/deal-creation.e2e.ts:123:3
+      at Object.<anonymous> (tests/vfd-plugin/deal-creation.e2e.ts:33:1)
+
+
+Test Suites: 2 failed, 19 passed, 21 total
+Tests:       6 failed, 34 passed, 40 total
+Snapshots:   0 total
+Time:        120.408s
+Ran all test suites.
+Test results written to: e2e/output/playwright.json
+error Command failed with exit code 1.
+info Visit https://yarnpkg.com/en/docs/cli/run for documentation about this command.
+Browser    Exit Code
+webkit         1
+chrome         1
+error Command failed with exit code 1.
+info Visit https://yarnpkg.com/en/docs/cli/run for documentation about this command.
+error Command failed with exit code 1.
+info Visit https://yarnpkg.com/en/docs/cli/run for documentation about this command.

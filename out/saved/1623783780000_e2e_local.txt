@@ -1,106 +1,140 @@
-[chromium] e2e/tests/vp-plugin/deal-utilization-card-and-details.e2e.ts | Duration: Avg (39.85s), Total (797.01s) | Count: Passed (19, Failed (1), Total (20))
-[webkit] e2e/tests/vp-plugin/offline-duration-details-page.e2e.ts | Duration: Avg (13.94s), Total (278.77s) | Count: Passed (19, Failed (1), Total (20))
-[chromium] e2e/tests/vfd-plugin/deal-creation.e2e.ts | Duration: Avg (83.98s), Total (1679.61s) | Count: Passed (20, Failed (0), Total (20))
-[webkit] e2e/tests/vfd-plugin/deal-creation.e2e.ts | Duration: Avg (81.99s), Total (1639.90s) | Count: Passed (20, Failed (0), Total (20))
-[webkit] e2e/tests/vppd-plugin/deal-creation.e2e.ts | Duration: Avg (67.02s), Total (1340.39s) | Count: Passed (20, Failed (0), Total (20))
+[chromium] e2e/tests/vfd-plugin/deal-creation.e2e.ts | Duration: Avg (80.00s), Total (1599.90s) | Count: Passed (5, Failed (15), Total (20))
+[webkit] e2e/tests/vfd-plugin/deal-creation.e2e.ts | Duration: Avg (79.69s), Total (1593.88s) | Count: Passed (5, Failed (15), Total (20))
+[chromium] e2e/tests/vppd-plugin/deal-creation.e2e.ts | Duration: Avg (67.50s), Total (1349.92s) | Count: Passed (5, Failed (15), Total (20))
+[webkit] e2e/tests/vppd-plugin/deal-creation.e2e.ts | Duration: Avg (66.59s), Total (1331.79s) | Count: Passed (5, Failed (15), Total (20))
+[chromium] e2e/tests/vp-plugin/vendor-health.e2e.ts | Duration: Avg (48.82s), Total (976.41s) | Count: Passed (19, Failed (1), Total (20))
 
 Test Stats:
 ╔══════════╤══════════════════════════════════════════════════════════════════╤════════════════╤══════════════════╤════════════════╤════════════════╤═══════════════╗
 ║ Browser  │ Path                                                             │ Duration (avg) │ Duration (total) │ Count (passed) │ Count (failed) │ Count (total) ║
 ╟──────────┼──────────────────────────────────────────────────────────────────┼────────────────┼──────────────────┼────────────────┼────────────────┼───────────────╢
-║ chromium │ e2e/tests/vp-plugin/deal-utilization-card-and-details.e2e.ts     │ 39.85s         │ 797.01s          │ 19             │ 1              │ 20            ║
+║ chromium │ e2e/tests/vfd-plugin/deal-creation.e2e.ts                        │ 80.00s         │ 1599.90s         │ 5              │ 15             │ 20            ║
 ╟──────────┼──────────────────────────────────────────────────────────────────┼────────────────┼──────────────────┼────────────────┼────────────────┼───────────────╢
-║ webkit   │ e2e/tests/vp-plugin/offline-duration-details-page.e2e.ts         │ 13.94s         │ 278.77s          │ 19             │ 1              │ 20            ║
+║ webkit   │ e2e/tests/vfd-plugin/deal-creation.e2e.ts                        │ 79.69s         │ 1593.88s         │ 5              │ 15             │ 20            ║
 ╟──────────┼──────────────────────────────────────────────────────────────────┼────────────────┼──────────────────┼────────────────┼────────────────┼───────────────╢
-║ chromium │ e2e/tests/vfd-plugin/deal-creation.e2e.ts                        │ 83.98s         │ 1679.61s         │ 20             │ 0              │ 20            ║
+║ chromium │ e2e/tests/vppd-plugin/deal-creation.e2e.ts                       │ 67.50s         │ 1349.92s         │ 5              │ 15             │ 20            ║
 ╟──────────┼──────────────────────────────────────────────────────────────────┼────────────────┼──────────────────┼────────────────┼────────────────┼───────────────╢
-║ webkit   │ e2e/tests/vfd-plugin/deal-creation.e2e.ts                        │ 81.99s         │ 1639.90s         │ 20             │ 0              │ 20            ║
+║ webkit   │ e2e/tests/vppd-plugin/deal-creation.e2e.ts                       │ 66.59s         │ 1331.79s         │ 5              │ 15             │ 20            ║
 ╟──────────┼──────────────────────────────────────────────────────────────────┼────────────────┼──────────────────┼────────────────┼────────────────┼───────────────╢
-║ webkit   │ e2e/tests/vppd-plugin/deal-creation.e2e.ts                       │ 67.02s         │ 1340.39s         │ 20             │ 0              │ 20            ║
+║ chromium │ e2e/tests/vp-plugin/vendor-health.e2e.ts                         │ 48.82s         │ 976.41s          │ 19             │ 1              │ 20            ║
 ╟──────────┼──────────────────────────────────────────────────────────────────┼────────────────┼──────────────────┼────────────────┼────────────────┼───────────────╢
-║ chromium │ e2e/tests/vppd-plugin/deal-creation.e2e.ts                       │ 66.79s         │ 1335.88s         │ 20             │ 0              │ 20            ║
+║ chromium │ e2e/tests/vp-plugin/deal-utilization-card-and-details.e2e.ts     │ 36.49s         │ 729.83s          │ 19             │ 1              │ 20            ║
 ╟──────────┼──────────────────────────────────────────────────────────────────┼────────────────┼──────────────────┼────────────────┼────────────────┼───────────────╢
-║ chromium │ e2e/tests/vp-plugin/vendor-health.e2e.ts                         │ 49.55s         │ 990.94s          │ 20             │ 0              │ 20            ║
+║ webkit   │ e2e/tests/vp-plugin/kpi-summary.e2e.ts                           │ 18.37s         │ 367.35s          │ 19             │ 1              │ 20            ║
 ╟──────────┼──────────────────────────────────────────────────────────────────┼────────────────┼──────────────────┼────────────────┼────────────────┼───────────────╢
-║ webkit   │ e2e/tests/vp-plugin/vendor-health.e2e.ts                         │ 42.67s         │ 853.38s          │ 20             │ 0              │ 20            ║
+║ webkit   │ e2e/tests/vp-plugin/vendor-health.e2e.ts                         │ 42.05s         │ 840.93s          │ 20             │ 0              │ 20            ║
 ╟──────────┼──────────────────────────────────────────────────────────────────┼────────────────┼──────────────────┼────────────────┼────────────────┼───────────────╢
-║ webkit   │ e2e/tests/vp-plugin/deal-utilization-card-and-details.e2e.ts     │ 32.56s         │ 651.14s          │ 20             │ 0              │ 20            ║
+║ webkit   │ e2e/tests/vp-plugin/deal-utilization-card-and-details.e2e.ts     │ 32.28s         │ 645.61s          │ 20             │ 0              │ 20            ║
 ╟──────────┼──────────────────────────────────────────────────────────────────┼────────────────┼──────────────────┼────────────────┼────────────────┼───────────────╢
-║ chromium │ e2e/tests/vp-plugin/vendor-health-single-vendor-account.e2e.ts   │ 30.40s         │ 607.90s          │ 20             │ 0              │ 20            ║
+║ chromium │ e2e/tests/vp-plugin/vendor-health-single-vendor-account.e2e.ts   │ 28.29s         │ 565.88s          │ 20             │ 0              │ 20            ║
 ╟──────────┼──────────────────────────────────────────────────────────────────┼────────────────┼──────────────────┼────────────────┼────────────────┼───────────────╢
-║ webkit   │ e2e/tests/vp-plugin/vendor-health-single-vendor-account.e2e.ts   │ 25.90s         │ 518.02s          │ 20             │ 0              │ 20            ║
+║ webkit   │ e2e/tests/vp-plugin/vendor-health-single-vendor-account.e2e.ts   │ 24.83s         │ 496.62s          │ 20             │ 0              │ 20            ║
 ╟──────────┼──────────────────────────────────────────────────────────────────┼────────────────┼──────────────────┼────────────────┼────────────────┼───────────────╢
-║ chromium │ e2e/tests/vp-plugin/customer-conversion-all-details-check.e2e.ts │ 25.30s         │ 505.97s          │ 20             │ 0              │ 20            ║
+║ chromium │ e2e/tests/vfd-plugin/dealform-persist-vendor-change.e2e.ts       │ 24.11s         │ 482.17s          │ 20             │ 0              │ 20            ║
 ╟──────────┼──────────────────────────────────────────────────────────────────┼────────────────┼──────────────────┼────────────────┼────────────────┼───────────────╢
-║ chromium │ e2e/tests/vfd-plugin/dealform-persist-vendor-change.e2e.ts       │ 24.78s         │ 495.69s          │ 20             │ 0              │ 20            ║
+║ chromium │ e2e/tests/vp-plugin/customer-conversion-all-details-check.e2e.ts │ 23.78s         │ 475.52s          │ 20             │ 0              │ 20            ║
 ╟──────────┼──────────────────────────────────────────────────────────────────┼────────────────┼──────────────────┼────────────────┼────────────────┼───────────────╢
-║ webkit   │ e2e/tests/vfd-plugin/dealform-persist-vendor-change.e2e.ts       │ 24.27s         │ 485.47s          │ 20             │ 0              │ 20            ║
+║ webkit   │ e2e/tests/vfd-plugin/dealform-persist-vendor-change.e2e.ts       │ 23.48s         │ 469.56s          │ 20             │ 0              │ 20            ║
 ╟──────────┼──────────────────────────────────────────────────────────────────┼────────────────┼──────────────────┼────────────────┼────────────────┼───────────────╢
-║ webkit   │ e2e/tests/vp-plugin/customer-conversion-all-details-check.e2e.ts │ 22.19s         │ 443.82s          │ 20             │ 0              │ 20            ║
+║ webkit   │ e2e/tests/vp-plugin/customer-conversion-all-details-check.e2e.ts │ 21.07s         │ 421.49s          │ 20             │ 0              │ 20            ║
 ╟──────────┼──────────────────────────────────────────────────────────────────┼────────────────┼──────────────────┼────────────────┼────────────────┼───────────────╢
-║ chromium │ e2e/tests/vfd-plugin/edit-deal-button-verification.e2e.ts        │ 17.14s         │ 342.79s          │ 20             │ 0              │ 20            ║
+║ chromium │ e2e/tests/vfd-plugin/edit-deal-button-verification.e2e.ts        │ 16.53s         │ 330.58s          │ 20             │ 0              │ 20            ║
 ╟──────────┼──────────────────────────────────────────────────────────────────┼────────────────┼──────────────────┼────────────────┼────────────────┼───────────────╢
-║ webkit   │ e2e/tests/vfd-plugin/edit-deal-button-verification.e2e.ts        │ 16.63s         │ 332.61s          │ 20             │ 0              │ 20            ║
+║ webkit   │ e2e/tests/vfd-plugin/edit-deal-button-verification.e2e.ts        │ 16.08s         │ 321.63s          │ 20             │ 0              │ 20            ║
 ╟──────────┼──────────────────────────────────────────────────────────────────┼────────────────┼──────────────────┼────────────────┼────────────────┼───────────────╢
-║ chromium │ e2e/tests/vfd-plugin/tnc-error-message-validation.e2e.ts         │ 16.10s         │ 321.99s          │ 20             │ 0              │ 20            ║
+║ chromium │ e2e/tests/vfd-plugin/tnc-error-message-validation.e2e.ts         │ 15.64s         │ 312.70s          │ 20             │ 0              │ 20            ║
 ╟──────────┼──────────────────────────────────────────────────────────────────┼────────────────┼──────────────────┼────────────────┼────────────────┼───────────────╢
-║ webkit   │ e2e/tests/vppd-plugin/edit-deal-button-verification.e2e.ts       │ 15.91s         │ 318.11s          │ 20             │ 0              │ 20            ║
+║ webkit   │ e2e/tests/vfd-plugin/tnc-error-message-validation.e2e.ts         │ 15.44s         │ 308.74s          │ 20             │ 0              │ 20            ║
 ╟──────────┼──────────────────────────────────────────────────────────────────┼────────────────┼──────────────────┼────────────────┼────────────────┼───────────────╢
-║ chromium │ e2e/tests/vppd-plugin/edit-deal-button-verification.e2e.ts       │ 15.80s         │ 315.97s          │ 20             │ 0              │ 20            ║
+║ webkit   │ e2e/tests/vppd-plugin/edit-deal-button-verification.e2e.ts       │ 15.18s         │ 303.61s          │ 20             │ 0              │ 20            ║
 ╟──────────┼──────────────────────────────────────────────────────────────────┼────────────────┼──────────────────┼────────────────┼────────────────┼───────────────╢
-║ webkit   │ e2e/tests/vfd-plugin/tnc-error-message-validation.e2e.ts         │ 15.64s         │ 312.73s          │ 20             │ 0              │ 20            ║
+║ chromium │ e2e/tests/vppd-plugin/edit-deal-button-verification.e2e.ts       │ 15.14s         │ 302.83s          │ 20             │ 0              │ 20            ║
 ╟──────────┼──────────────────────────────────────────────────────────────────┼────────────────┼──────────────────┼────────────────┼────────────────┼───────────────╢
-║ webkit   │ e2e/tests/vp-plugin/kpi-summary.e2e.ts                           │ 14.76s         │ 295.14s          │ 20             │ 0              │ 20            ║
+║ chromium │ e2e/tests/vp-plugin/kpi-summary.e2e.ts                           │ 13.84s         │ 276.86s          │ 20             │ 0              │ 20            ║
 ╟──────────┼──────────────────────────────────────────────────────────────────┼────────────────┼──────────────────┼────────────────┼────────────────┼───────────────╢
-║ chromium │ e2e/tests/vp-plugin/kpi-summary.e2e.ts                           │ 14.03s         │ 280.63s          │ 20             │ 0              │ 20            ║
+║ chromium │ e2e/tests/vp-plugin/single-outlet-health-page.e2e.ts             │ 12.65s         │ 253.06s          │ 20             │ 0              │ 20            ║
 ╟──────────┼──────────────────────────────────────────────────────────────────┼────────────────┼──────────────────┼────────────────┼────────────────┼───────────────╢
-║ chromium │ e2e/tests/vp-plugin/single-outlet-health-page.e2e.ts             │ 13.23s         │ 264.53s          │ 20             │ 0              │ 20            ║
+║ webkit   │ e2e/tests/vp-plugin/accept-time-details-page.e2e.ts              │ 12.49s         │ 249.78s          │ 20             │ 0              │ 20            ║
 ╟──────────┼──────────────────────────────────────────────────────────────────┼────────────────┼──────────────────┼────────────────┼────────────────┼───────────────╢
-║ chromium │ e2e/tests/vp-plugin/order-revenue-loss-card-and-details.e2e.ts   │ 12.75s         │ 255.07s          │ 20             │ 0              │ 20            ║
+║ webkit   │ e2e/tests/vp-plugin/single-outlet-health-page.e2e.ts             │ 12.29s         │ 245.81s          │ 20             │ 0              │ 20            ║
 ╟──────────┼──────────────────────────────────────────────────────────────────┼────────────────┼──────────────────┼────────────────┼────────────────┼───────────────╢
-║ chromium │ e2e/tests/vp-plugin/delay-order-details-page.e2e.ts              │ 12.71s         │ 254.26s          │ 20             │ 0              │ 20            ║
+║ chromium │ e2e/tests/vp-plugin/customer-conversion-card-and-details.e2e.ts  │ 12.24s         │ 244.75s          │ 20             │ 0              │ 20            ║
 ╟──────────┼──────────────────────────────────────────────────────────────────┼────────────────┼──────────────────┼────────────────┼────────────────┼───────────────╢
-║ chromium │ e2e/tests/vp-plugin/customer-conversion-card-and-details.e2e.ts  │ 12.63s         │ 252.62s          │ 20             │ 0              │ 20            ║
+║ webkit   │ e2e/tests/vp-plugin/offline-duration-details-page.e2e.ts         │ 12.21s         │ 244.27s          │ 20             │ 0              │ 20            ║
 ╟──────────┼──────────────────────────────────────────────────────────────────┼────────────────┼──────────────────┼────────────────┼────────────────┼───────────────╢
-║ chromium │ e2e/tests/vp-plugin/accept-time-details-page.e2e.ts              │ 12.38s         │ 247.55s          │ 20             │ 0              │ 20            ║
+║ chromium │ e2e/tests/vp-plugin/all-outlets-health-page.e2e.ts               │ 12.11s         │ 242.25s          │ 20             │ 0              │ 20            ║
 ╟──────────┼──────────────────────────────────────────────────────────────────┼────────────────┼──────────────────┼────────────────┼────────────────┼───────────────╢
-║ chromium │ e2e/tests/vp-plugin/offline-duration-details-page.e2e.ts         │ 12.33s         │ 246.66s          │ 20             │ 0              │ 20            ║
+║ chromium │ e2e/tests/vp-plugin/offline-duration-details-page.e2e.ts         │ 12.08s         │ 241.63s          │ 20             │ 0              │ 20            ║
 ╟──────────┼──────────────────────────────────────────────────────────────────┼────────────────┼──────────────────┼────────────────┼────────────────┼───────────────╢
-║ webkit   │ e2e/tests/vp-plugin/order-revenue-loss-card-and-details.e2e.ts   │ 12.32s         │ 246.44s          │ 20             │ 0              │ 20            ║
+║ webkit   │ e2e/tests/vp-plugin/customer-conversion-card-and-details.e2e.ts  │ 12.07s         │ 241.41s          │ 20             │ 0              │ 20            ║
 ╟──────────┼──────────────────────────────────────────────────────────────────┼────────────────┼──────────────────┼────────────────┼────────────────┼───────────────╢
-║ webkit   │ e2e/tests/vp-plugin/accept-time-details-page.e2e.ts              │ 12.28s         │ 245.62s          │ 20             │ 0              │ 20            ║
+║ chromium │ e2e/tests/vp-plugin/accept-time-details-page.e2e.ts              │ 11.98s         │ 239.53s          │ 20             │ 0              │ 20            ║
 ╟──────────┼──────────────────────────────────────────────────────────────────┼────────────────┼──────────────────┼────────────────┼────────────────┼───────────────╢
-║ chromium │ e2e/tests/vp-plugin/order-rejection-rate-card-and-details.e2e.ts │ 12.25s         │ 245.01s          │ 20             │ 0              │ 20            ║
+║ chromium │ e2e/tests/vp-plugin/order-rejection-rate-card-and-details.e2e.ts │ 11.84s         │ 236.76s          │ 20             │ 0              │ 20            ║
 ╟──────────┼──────────────────────────────────────────────────────────────────┼────────────────┼──────────────────┼────────────────┼────────────────┼───────────────╢
-║ webkit   │ e2e/tests/vp-plugin/single-outlet-health-page.e2e.ts             │ 12.23s         │ 244.60s          │ 20             │ 0              │ 20            ║
+║ webkit   │ e2e/tests/vp-plugin/order-revenue-loss-card-and-details.e2e.ts   │ 11.79s         │ 235.80s          │ 20             │ 0              │ 20            ║
 ╟──────────┼──────────────────────────────────────────────────────────────────┼────────────────┼──────────────────┼────────────────┼────────────────┼───────────────╢
-║ chromium │ e2e/tests/vp-plugin/prep-time-details-page.e2e.ts                │ 12.21s         │ 244.16s          │ 20             │ 0              │ 20            ║
+║ chromium │ e2e/tests/vp-plugin/delay-order-details-page.e2e.ts              │ 11.79s         │ 235.78s          │ 20             │ 0              │ 20            ║
 ╟──────────┼──────────────────────────────────────────────────────────────────┼────────────────┼──────────────────┼────────────────┼────────────────┼───────────────╢
-║ webkit   │ e2e/tests/vp-plugin/customer-conversion-card-and-details.e2e.ts  │ 12.07s         │ 241.35s          │ 20             │ 0              │ 20            ║
+║ webkit   │ e2e/tests/vp-plugin/prep-time-details-page.e2e.ts                │ 11.76s         │ 235.12s          │ 20             │ 0              │ 20            ║
 ╟──────────┼──────────────────────────────────────────────────────────────────┼────────────────┼──────────────────┼────────────────┼────────────────┼───────────────╢
-║ webkit   │ e2e/tests/vfd-plugin/dealform-has-default-options.e2e.ts         │ 12.01s         │ 240.15s          │ 20             │ 0              │ 20            ║
+║ chromium │ e2e/tests/vp-plugin/order-revenue-loss-card-and-details.e2e.ts   │ 11.68s         │ 233.50s          │ 20             │ 0              │ 20            ║
 ╟──────────┼──────────────────────────────────────────────────────────────────┼────────────────┼──────────────────┼────────────────┼────────────────┼───────────────╢
-║ webkit   │ e2e/tests/vp-plugin/all-outlets-health-page.e2e.ts               │ 11.99s         │ 239.85s          │ 20             │ 0              │ 20            ║
+║ webkit   │ e2e/tests/vp-plugin/delay-order-details-page.e2e.ts              │ 11.62s         │ 232.35s          │ 20             │ 0              │ 20            ║
 ╟──────────┼──────────────────────────────────────────────────────────────────┼────────────────┼──────────────────┼────────────────┼────────────────┼───────────────╢
-║ chromium │ e2e/tests/vp-plugin/all-outlets-health-page.e2e.ts               │ 11.95s         │ 239.09s          │ 20             │ 0              │ 20            ║
+║ webkit   │ e2e/tests/vp-plugin/order-rejection-rate-card-and-details.e2e.ts │ 11.55s         │ 231.09s          │ 20             │ 0              │ 20            ║
 ╟──────────┼──────────────────────────────────────────────────────────────────┼────────────────┼──────────────────┼────────────────┼────────────────┼───────────────╢
-║ webkit   │ e2e/tests/vp-plugin/delay-order-details-page.e2e.ts              │ 11.89s         │ 237.87s          │ 20             │ 0              │ 20            ║
+║ chromium │ e2e/tests/vp-plugin/prep-time-details-page.e2e.ts                │ 11.54s         │ 230.78s          │ 20             │ 0              │ 20            ║
 ╟──────────┼──────────────────────────────────────────────────────────────────┼────────────────┼──────────────────┼────────────────┼────────────────┼───────────────╢
-║ chromium │ e2e/tests/vfd-plugin/dealform-has-default-options.e2e.ts         │ 11.79s         │ 235.75s          │ 20             │ 0              │ 20            ║
+║ webkit   │ e2e/tests/vp-plugin/all-outlets-health-page.e2e.ts               │ 11.43s         │ 228.58s          │ 20             │ 0              │ 20            ║
 ╟──────────┼──────────────────────────────────────────────────────────────────┼────────────────┼──────────────────┼────────────────┼────────────────┼───────────────╢
-║ webkit   │ e2e/tests/vp-plugin/order-rejection-rate-card-and-details.e2e.ts │ 11.76s         │ 235.26s          │ 20             │ 0              │ 20            ║
+║ webkit   │ e2e/tests/vfd-plugin/dealform-has-default-options.e2e.ts         │ 11.25s         │ 224.94s          │ 20             │ 0              │ 20            ║
 ╟──────────┼──────────────────────────────────────────────────────────────────┼────────────────┼──────────────────┼────────────────┼────────────────┼───────────────╢
-║ webkit   │ e2e/tests/vp-plugin/prep-time-details-page.e2e.ts                │ 11.72s         │ 234.41s          │ 20             │ 0              │ 20            ║
+║ chromium │ e2e/tests/vfd-plugin/dealform-has-default-options.e2e.ts         │ 10.54s         │ 210.83s          │ 20             │ 0              │ 20            ║
 ╚══════════╧══════════════════════════════════════════════════════════════════╧════════════════╧══════════════════╧════════════════╧════════════════╧═══════════════╝
 
 
 Error Stats:
-╔════════════════════════════════════════════════════════════════╤═══════╗
-║ Path                                                           │ Count ║
-╟────────────────────────────────────────────────────────────────┼───────╢
-║ tests/vp-plugin/offline-duration-details-page.e2e.ts:47:16     │ 2     ║
-╟────────────────────────────────────────────────────────────────┼───────╢
-║ tests/vp-plugin/deal-utilization-card-and-details.e2e.ts:79:16 │ 2     ║
-╟────────────────────────────────────────────────────────────────┼───────╢
-║ actions/vp-plugin/kpi-details/index.ts:58:14                   │ 2     ║
-╚════════════════════════════════════════════════════════════════╧═══════╝
+╔═════════════════════════════════════════════════════════════════╤═══════╗
+║ Path                                                            │ Count ║
+╟─────────────────────────────────────────────────────────────────┼───────╢
+║ Object.<anonymous> (tests/vppd-plugin/deal-creation.e2e.ts:28:1 │ 176   ║
+╟─────────────────────────────────────────────────────────────────┼───────╢
+║ Object.<anonymous> (tests/vfd-plugin/deal-creation.e2e.ts:33:1  │ 176   ║
+╟─────────────────────────────────────────────────────────────────┼───────╢
+║ Object.<anonymous> (utils/retry.ts:22:15                        │ 63    ║
+╟─────────────────────────────────────────────────────────────────┼───────╢
+║ step (utils/retry.ts:33:23                                      │ 63    ║
+╟─────────────────────────────────────────────────────────────────┼───────╢
+║ Object.next (utils/retry.ts:14:53                               │ 63    ║
+╟─────────────────────────────────────────────────────────────────┼───────╢
+║ fulfilled (utils/retry.ts:5:58                                  │ 63    ║
+╟─────────────────────────────────────────────────────────────────┼───────╢
+║ tests/vppd-plugin/deal-creation.e2e.ts:110:3                    │ 60    ║
+╟─────────────────────────────────────────────────────────────────┼───────╢
+║ tests/vfd-plugin/deal-creation.e2e.ts:123:3                     │ 60    ║
+╟─────────────────────────────────────────────────────────────────┼───────╢
+║ tests/vppd-plugin/deal-creation.e2e.ts:96:3                     │ 58    ║
+╟─────────────────────────────────────────────────────────────────┼───────╢
+║ tests/vppd-plugin/deal-creation.e2e.ts:103:3                    │ 58    ║
+╟─────────────────────────────────────────────────────────────────┼───────╢
+║ tests/vfd-plugin/deal-creation.e2e.ts:109:3                     │ 58    ║
+╟─────────────────────────────────────────────────────────────────┼───────╢
+║ tests/vfd-plugin/deal-creation.e2e.ts:116:3                     │ 58    ║
+╟─────────────────────────────────────────────────────────────────┼───────╢
+║ tests/vp-plugin/kpi-summary.e2e.ts:29:3                         │ 2     ║
+╟─────────────────────────────────────────────────────────────────┼───────╢
+║ Object.<anonymous> (tests/vp-plugin/kpi-summary.e2e.ts:14:1     │ 2     ║
+╟─────────────────────────────────────────────────────────────────┼───────╢
+║ tests/vp-plugin/deal-utilization-card-and-details.e2e.ts:128:16 │ 2     ║
+╟─────────────────────────────────────────────────────────────────┼───────╢
+║ actions/vp-plugin/dashboard/index.ts:18:27                      │ 2     ║
+╟─────────────────────────────────────────────────────────────────┼───────╢
+║ tests/vfd-plugin/deal-creation.e2e.ts:120:25                    │ 2     ║
+╟─────────────────────────────────────────────────────────────────┼───────╢
+║ step (tests/vfd-plugin/deal-creation.e2e.ts:44:23               │ 2     ║
+╟─────────────────────────────────────────────────────────────────┼───────╢
+║ Object.next (tests/vfd-plugin/deal-creation.e2e.ts:25:53        │ 2     ║
+╟─────────────────────────────────────────────────────────────────┼───────╢
+║ fulfilled (tests/vfd-plugin/deal-creation.e2e.ts:16:58          │ 2     ║
+╚═════════════════════════════════════════════════════════════════╧═══════╝
