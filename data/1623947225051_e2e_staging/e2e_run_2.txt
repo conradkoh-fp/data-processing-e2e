@@ -1,0 +1,119 @@
+yarn run v1.22.4
+$ sh ./scripts/setup-e2e-local.sh; export $(xargs < ./envs/.env.e2e.local); yarn e2e
+checking for local e2e env file
+./envs/.env.e2e.local exists
+$ E2E_TEST_USERNAME=$E2E_TEST_USERNAME E2E_TEST_PASSWORD=$E2E_TEST_PASSWORD sh ./scripts/run-e2e.sh
+$ /Users/c.koh.3/Documents/Projects/react/fp-apac-jedi-skywalker/node_modules/.bin/jest -c e2e/jest-e2e.config.js --json --outputFile=e2e/output/playwright.webkit.json --maxWorkers=4
+PASS browser: webkit e2e/tests/vp-plugin/vendor-health-single-vendor-account.e2e.ts (36.739s)
+PASS browser: webkit e2e/tests/vfd-plugin/dealform-persist-vendor-change.e2e.ts (37.045s)
+PASS browser: webkit e2e/tests/vp-plugin/vendor-health.e2e.ts (52.206s)
+PASS browser: webkit e2e/tests/vppd-plugin/edit-deal-button-verification.e2e.ts (19.637s)
+PASS browser: webkit e2e/tests/vp-plugin/customer-conversion-all-details-check.e2e.ts (25.372s)
+FAIL browser: webkit e2e/tests/vp-plugin/deal-utilization-card-and-details.e2e.ts (71.757s)
+  ● VP - Deal Utilization card and details page › [C457063]Verify deals report top value in details page
+
+    page.innerText: Timeout 30000ms exceeded.
+    =========================== logs ===========================
+      retrieving innerText from "[data-testid="st-value"]"
+    ============================================================
+    Note: use DEBUG=pw:api environment variable to capture Playwright logs.
+
+      16 |  */
+      17 | export const inspectSummaryTitle = (page: Page) => async (): Promise<SummaryTitle> => {
+    > 18 |   const value = await page.innerText(summaryTitle.valueText);
+         |                            ^
+      19 |   const title = await page.innerText(summaryTitle.titleText);
+      20 |   const dateRange = await page.innerText(summaryTitle.dateRangeText);
+      21 |   return {
+
+      at Object.captureStackTrace (../../../node_modules/playwright/lib/utils/stackTrace.js:51:19)
+      at Connection.sendMessageToServer (../../../node_modules/playwright/lib/client/connection.js:69:48)
+      at Proxy.<anonymous> (../../../node_modules/playwright/lib/client/channelOwner.js:64:61)
+      at ../../../node_modules/playwright/lib/client/frame.js:301:35
+      at Frame._wrapApiCall (../../../node_modules/playwright/lib/client/channelOwner.js:77:34)
+      at Frame.innerText (../../../node_modules/playwright/lib/client/frame.js:300:21)
+      at ../../../node_modules/playwright/lib/client/page.js:440:60
+      at Page._attributeToPage (../../../node_modules/playwright/lib/client/page.js:202:20)
+      at Page.innerText (../../../node_modules/playwright/lib/client/page.js:440:21)
+      at actions/vp-plugin/kpi-details/index.ts:18:28
+      at step (actions/vp-plugin/kpi-details/index.ts:33:23)
+      at Object.next (actions/vp-plugin/kpi-details/index.ts:14:53)
+      at actions/vp-plugin/kpi-details/index.ts:8:71
+      at Object.<anonymous>.__awaiter (actions/vp-plugin/kpi-details/index.ts:4:12)
+      at actions/vp-plugin/kpi-details/index.ts:17:52
+      at tests/vp-plugin/deal-utilization-card-and-details.e2e.ts:97:57
+      at step (tests/vp-plugin/deal-utilization-card-and-details.e2e.ts:63:23)
+      at Object.next (tests/vp-plugin/deal-utilization-card-and-details.e2e.ts:44:53)
+      at fulfilled (tests/vp-plugin/deal-utilization-card-and-details.e2e.ts:35:58)
+
+PASS browser: webkit e2e/tests/vfd-plugin/edit-deal-button-verification.e2e.ts (23.255s)
+PASS browser: webkit e2e/tests/vfd-plugin/tnc-error-message-validation.e2e.ts (19.532s)
+PASS browser: webkit e2e/tests/vp-plugin/delay-order-details-page.e2e.ts (16.759s)
+PASS browser: webkit e2e/tests/vp-plugin/all-outlets-health-page.e2e.ts (12.758s)
+PASS browser: webkit e2e/tests/vp-plugin/customer-conversion-card-and-details.e2e.ts (13.481s)
+PASS browser: webkit e2e/tests/vp-plugin/order-rejection-rate-card-and-details.e2e.ts (15.667s)
+PASS browser: webkit e2e/tests/vp-plugin/order-revenue-loss-card-and-details.e2e.ts (15.523s)
+PASS browser: webkit e2e/tests/vfd-plugin/dealform-has-default-options.e2e.ts (15.925s)
+PASS browser: webkit e2e/tests/vp-plugin/prep-time-details-page.e2e.ts (14.532s)
+PASS browser: webkit e2e/tests/vp-plugin/offline-duration-details-page.e2e.ts (14.515s)
+PASS browser: webkit e2e/tests/vp-plugin/accept-time-details-page.e2e.ts (14.821s)
+PASS browser: webkit e2e/tests/vp-plugin/single-outlet-health-page.e2e.ts (15.408s)
+FAIL browser: webkit e2e/tests/vp-plugin/kpi-summary.e2e.ts (102.235s)
+  ● VP - KPI Summary › [C367701] Verify the KPI summary screen details with different timeframe selection
+
+    thrown: "Exceeded timeout of 100000 ms for a test.
+    Use jest.setTimeout(newTimeout) to increase the timeout value, if this is a long-running test."
+
+      27 |   });
+      28 |
+    > 29 |   it('[C367701] Verify the KPI summary screen details with different timeframe selection', async () => {
+         |   ^
+      30 |     let lastSevenDaysStartDate = format(sub(new Date(), { days: 7 }), 'yyyy-MM-dd');
+      31 |     let reqCalledWithStartDate = new Promise((resolve) => {
+      32 |       page.on(
+
+      at tests/vp-plugin/kpi-summary.e2e.ts:29:3
+      at Object.<anonymous> (tests/vp-plugin/kpi-summary.e2e.ts:14:1)
+
+Test Suites: 2 failed, 17 passed, 19 total
+Tests:       2 failed, 31 passed, 33 total
+Snapshots:   0 total
+Time:        166.142s
+Ran all test suites.
+Test results written to: e2e/output/playwright.webkit.json
+error Command failed with exit code 1.
+info Visit https://yarnpkg.com/en/docs/cli/run for documentation about this command.
+$ /Users/c.koh.3/Documents/Projects/react/fp-apac-jedi-skywalker/node_modules/.bin/jest -c e2e/jest-e2e.config.js --json --outputFile=e2e/output/playwright.json --maxWorkers=4
+PASS browser: chromium e2e/tests/vp-plugin/kpi-summary.e2e.ts (22.276s)
+PASS browser: chromium e2e/tests/vfd-plugin/dealform-persist-vendor-change.e2e.ts (32.607s)
+PASS browser: chromium e2e/tests/vp-plugin/deal-utilization-card-and-details.e2e.ts (43.682s)
+PASS browser: chromium e2e/tests/vp-plugin/vendor-health.e2e.ts (59.864s)
+PASS browser: chromium e2e/tests/vp-plugin/vendor-health-single-vendor-account.e2e.ts (37.784s)
+PASS browser: chromium e2e/tests/vp-plugin/customer-conversion-all-details-check.e2e.ts (30.351s)
+PASS browser: chromium e2e/tests/vfd-plugin/edit-deal-button-verification.e2e.ts (24.398s)
+PASS browser: chromium e2e/tests/vfd-plugin/tnc-error-message-validation.e2e.ts (21.88s)
+PASS browser: chromium e2e/tests/vp-plugin/delay-order-details-page.e2e.ts (19.296s)
+PASS browser: chromium e2e/tests/vppd-plugin/edit-deal-button-verification.e2e.ts (24.823s)
+PASS browser: chromium e2e/tests/vfd-plugin/dealform-has-default-options.e2e.ts (19.071s)
+PASS browser: chromium e2e/tests/vp-plugin/order-revenue-loss-card-and-details.e2e.ts (16.448s)
+PASS browser: chromium e2e/tests/vp-plugin/order-rejection-rate-card-and-details.e2e.ts (16.935s)
+PASS browser: chromium e2e/tests/vp-plugin/single-outlet-health-page.e2e.ts (18.621s)
+PASS browser: chromium e2e/tests/vp-plugin/accept-time-details-page.e2e.ts (16.537s)
+PASS browser: chromium e2e/tests/vp-plugin/offline-duration-details-page.e2e.ts (15.736s)
+PASS browser: chromium e2e/tests/vp-plugin/prep-time-details-page.e2e.ts (17.353s)
+PASS browser: chromium e2e/tests/vp-plugin/customer-conversion-card-and-details.e2e.ts (16.426s)
+PASS browser: chromium e2e/tests/vp-plugin/all-outlets-health-page.e2e.ts (17.391s)
+
+Test Suites: 19 passed, 19 total
+Tests:       33 passed, 33 total
+Snapshots:   0 total
+Time:        122.328s, estimated 135s
+Ran all test suites.
+Test results written to: e2e/output/playwright.json
+Browser    Exit Code
+webkit         1
+chrome         0
+error Command failed with exit code 1.
+info Visit https://yarnpkg.com/en/docs/cli/run for documentation about this command.
+error Command failed with exit code 1.
+info Visit https://yarnpkg.com/en/docs/cli/run for documentation about this command.

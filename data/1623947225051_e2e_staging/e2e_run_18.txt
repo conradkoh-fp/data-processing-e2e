@@ -1,0 +1,206 @@
+yarn run v1.22.4
+$ sh ./scripts/setup-e2e-local.sh; export $(xargs < ./envs/.env.e2e.local); yarn e2e
+checking for local e2e env file
+./envs/.env.e2e.local exists
+$ E2E_TEST_USERNAME=$E2E_TEST_USERNAME E2E_TEST_PASSWORD=$E2E_TEST_PASSWORD sh ./scripts/run-e2e.sh
+$ /Users/c.koh.3/Documents/Projects/react/fp-apac-jedi-skywalker/node_modules/.bin/jest -c e2e/jest-e2e.config.js --json --outputFile=e2e/output/playwright.webkit.json --maxWorkers=4
+FAIL browser: webkit e2e/tests/vfd-plugin/dealform-persist-vendor-change.e2e.ts (42.673s)
+  ● VFD - vendor selection change › [C259594]Verify dealform state persist after changing vendor
+
+    page.waitForSelector: Timeout 30000ms exceeded.
+    =========================== logs ===========================
+    waiting for selector "[data-testid="wrapped-select-dealtype"]"
+    ============================================================
+    Note: use DEBUG=pw:api environment variable to capture Playwright logs.
+
+      158 |   const firstAvailableOption = 'li[class^="MuiButtonBase-root MuiListItem-root"]';
+      159 |   const nonDefaultOption = firstAvailableOption + '[data-isdefault="false"]';
+    > 160 |   const selectField = await page.waitForSelector(fieldSelector, { state: 'attached' });
+          |                                  ^
+      161 |   await selectField.click();
+      162 |   try {
+      163 |     await page.click(nonDefaultOption, { timeout: 3000 });
+
+      at Object.captureStackTrace (../../../node_modules/playwright/lib/utils/stackTrace.js:51:19)
+      at Connection.sendMessageToServer (../../../node_modules/playwright/lib/client/connection.js:69:48)
+      at Proxy.<anonymous> (../../../node_modules/playwright/lib/client/channelOwner.js:64:61)
+      at ../../../node_modules/playwright/lib/client/frame.js:193:42
+      at Frame._wrapApiCall (../../../node_modules/playwright/lib/client/channelOwner.js:77:34)
+      at Frame.waitForSelector (../../../node_modules/playwright/lib/client/frame.js:188:21)
+      at ../../../node_modules/playwright/lib/client/page.js:212:60
+      at Page._attributeToPage (../../../node_modules/playwright/lib/client/page.js:202:20)
+      at Page.waitForSelector (../../../node_modules/playwright/lib/client/page.js:212:21)
+      at actions/vfd-plugin/deals-overview/index.ts:160:34
+      at step (actions/vfd-plugin/deals-overview/index.ts:33:23)
+      at Object.next (actions/vfd-plugin/deals-overview/index.ts:14:53)
+      at actions/vfd-plugin/deals-overview/index.ts:8:71
+      at Object.<anonymous>.__awaiter (actions/vfd-plugin/deals-overview/index.ts:4:12)
+      at actions/vfd-plugin/deals-overview/index.ts:157:74
+      at actions/vfd-plugin/deals-overview/index.ts:151:35
+      at step (actions/vfd-plugin/deals-overview/index.ts:33:23)
+      at Object.next (actions/vfd-plugin/deals-overview/index.ts:14:53)
+      at actions/vfd-plugin/deals-overview/index.ts:8:71
+      at Object.<anonymous>.__awaiter (actions/vfd-plugin/deals-overview/index.ts:4:12)
+      at actions/vfd-plugin/deals-overview/index.ts:150:49
+      at tests/vfd-plugin/dealform-persist-vendor-change.e2e.ts:24:33
+      at step (tests/vfd-plugin/dealform-persist-vendor-change.e2e.ts:33:23)
+      at Object.next (tests/vfd-plugin/dealform-persist-vendor-change.e2e.ts:14:53)
+      at fulfilled (tests/vfd-plugin/dealform-persist-vendor-change.e2e.ts:5:58)
+
+FAIL browser: webkit e2e/tests/vp-plugin/vendor-health-single-vendor-account.e2e.ts (77.271s)
+  ● VP - Vendor Health Feature for account with single vendor › [C411571] Verify if the user account is single outlet, summary screen should display number of metrics are healthy
+
+    page.innerText: Timeout 30000ms exceeded.
+    =========================== logs ===========================
+      retrieving innerText from "div[data-testid="outlet-health-topcard"] p[data-testid="pc-pri-title"]"
+    ============================================================
+    Note: use DEBUG=pw:api environment variable to capture Playwright logs.
+
+      67 |   it('[C411571] Verify if the user account is single outlet, summary screen should display number of metrics are healthy', async () => {
+      68 |     const { healthyMetricsCount, totalMetricsCount } = apiResponse.data[0];
+    > 69 |     const title = await page.innerText(`${outletTopCard} ${cardTitle}`);
+         |                              ^
+      70 |     const value = await page.innerText(`${outletTopCard} ${topCardValue}`);
+      71 |     const subtext = await page.innerText(`${outletTopCard} ${topCardSubtext}`);
+      72 |
+
+      at Object.captureStackTrace (../../../node_modules/playwright/lib/utils/stackTrace.js:51:19)
+      at Connection.sendMessageToServer (../../../node_modules/playwright/lib/client/connection.js:69:48)
+      at Proxy.<anonymous> (../../../node_modules/playwright/lib/client/channelOwner.js:64:61)
+      at ../../../node_modules/playwright/lib/client/frame.js:301:35
+      at Frame._wrapApiCall (../../../node_modules/playwright/lib/client/channelOwner.js:77:34)
+      at Frame.innerText (../../../node_modules/playwright/lib/client/frame.js:300:21)
+      at ../../../node_modules/playwright/lib/client/page.js:440:60
+      at Page._attributeToPage (../../../node_modules/playwright/lib/client/page.js:202:20)
+      at Page.innerText (../../../node_modules/playwright/lib/client/page.js:440:21)
+      at tests/vp-plugin/vendor-health-single-vendor-account.e2e.ts:69:30
+      at step (tests/vp-plugin/vendor-health-single-vendor-account.e2e.ts:33:23)
+      at Object.next (tests/vp-plugin/vendor-health-single-vendor-account.e2e.ts:14:53)
+      at tests/vp-plugin/vendor-health-single-vendor-account.e2e.ts:8:71
+      at Object.<anonymous>.__awaiter (tests/vp-plugin/vendor-health-single-vendor-account.e2e.ts:4:12)
+      at Object.<anonymous> (tests/vp-plugin/vendor-health-single-vendor-account.e2e.ts:67:124)
+
+PASS browser: webkit e2e/tests/vp-plugin/customer-conversion-all-details-check.e2e.ts (42.548s)
+FAIL browser: webkit e2e/tests/vp-plugin/deal-utilization-card-and-details.e2e.ts (90.165s)
+  ● VP - Deal Utilization card and details page › [C456533]Verify deals report summary card details
+
+    page.waitForSelector: Timeout 30000ms exceeded.
+    =========================== logs ===========================
+    waiting for selector "a[data-testid="dealsReport"]" to be visible
+    ============================================================
+    Note: use DEBUG=pw:api environment variable to capture Playwright logs.
+
+      77 |
+      78 |     // inspect kpi card in dashboard
+    > 79 |     await page.waitForSelector(dealUtilizationCard);
+         |                ^
+      80 |     const hasTrendIcon = await inspectTrendIconExist(page)(dealUtilizationCard);
+      81 |     const kpiCardDetails = await inspectKpiCard(page)(dealUtilizationCard);
+      82 |     expect(kpiCardDetails).toMatchObject({
+
+      at Object.captureStackTrace (../../../node_modules/playwright/lib/utils/stackTrace.js:51:19)
+      at Connection.sendMessageToServer (../../../node_modules/playwright/lib/client/connection.js:69:48)
+      at Proxy.<anonymous> (../../../node_modules/playwright/lib/client/channelOwner.js:64:61)
+      at ../../../node_modules/playwright/lib/client/frame.js:193:42
+      at Frame._wrapApiCall (../../../node_modules/playwright/lib/client/channelOwner.js:77:34)
+      at Frame.waitForSelector (../../../node_modules/playwright/lib/client/frame.js:188:21)
+      at ../../../node_modules/playwright/lib/client/page.js:212:60
+      at Page._attributeToPage (../../../node_modules/playwright/lib/client/page.js:202:20)
+      at Page.waitForSelector (../../../node_modules/playwright/lib/client/page.js:212:21)
+      at tests/vp-plugin/deal-utilization-card-and-details.e2e.ts:79:16
+      at step (tests/vp-plugin/deal-utilization-card-and-details.e2e.ts:63:23)
+      at Object.next (tests/vp-plugin/deal-utilization-card-and-details.e2e.ts:44:53)
+      at tests/vp-plugin/deal-utilization-card-and-details.e2e.ts:38:71
+      at Object.<anonymous>.__awaiter (tests/vp-plugin/deal-utilization-card-and-details.e2e.ts:34:12)
+      at Object.<anonymous> (tests/vp-plugin/deal-utilization-card-and-details.e2e.ts:75:59)
+
+PASS browser: webkit e2e/tests/vfd-plugin/edit-deal-button-verification.e2e.ts (21.12s)
+FAIL browser: webkit e2e/tests/vp-plugin/vendor-health.e2e.ts (101.806s)
+  ● VP - Vendor Health Feature › [C411572] Verify if the user account is chain outlet, summary screen should display number of outlets are healthy
+
+    page.innerText: Timeout 30000ms exceeded.
+    =========================== logs ===========================
+      retrieving innerText from "div[data-testid="vendor-health-topcard"] p[data-testid="pc-pri-title"]"
+    ============================================================
+    Note: use DEBUG=pw:api environment variable to capture Playwright logs.
+
+      76 |   it('[C411572] Verify if the user account is chain outlet, summary screen should display number of outlets are healthy', async () => {
+      77 |     const { healthyOutletCount, totalOutletCount } = apiResponse.computed;
+    > 78 |     const title = await page.innerText(`${vendorTopCard} ${cardTitle}`);
+         |                              ^
+      79 |     const value = await page.innerText(`${vendorTopCard} ${topCardValue}`);
+      80 |     const subtext = await page.innerText(`${vendorTopCard} ${topCardSubtext}`);
+      81 |
+
+      at Object.captureStackTrace (../../../node_modules/playwright/lib/utils/stackTrace.js:51:19)
+      at Connection.sendMessageToServer (../../../node_modules/playwright/lib/client/connection.js:69:48)
+      at Proxy.<anonymous> (../../../node_modules/playwright/lib/client/channelOwner.js:64:61)
+      at ../../../node_modules/playwright/lib/client/frame.js:301:35
+      at Frame._wrapApiCall (../../../node_modules/playwright/lib/client/channelOwner.js:77:34)
+      at Frame.innerText (../../../node_modules/playwright/lib/client/frame.js:300:21)
+      at ../../../node_modules/playwright/lib/client/page.js:440:60
+      at Page._attributeToPage (../../../node_modules/playwright/lib/client/page.js:202:20)
+      at Page.innerText (../../../node_modules/playwright/lib/client/page.js:440:21)
+      at tests/vp-plugin/vendor-health.e2e.ts:78:30
+      at step (tests/vp-plugin/vendor-health.e2e.ts:33:23)
+      at Object.next (tests/vp-plugin/vendor-health.e2e.ts:14:53)
+      at tests/vp-plugin/vendor-health.e2e.ts:8:71
+      at Object.<anonymous>.__awaiter (tests/vp-plugin/vendor-health.e2e.ts:4:12)
+      at Object.<anonymous> (tests/vp-plugin/vendor-health.e2e.ts:76:123)
+
+PASS browser: webkit e2e/tests/vp-plugin/kpi-summary.e2e.ts (18.071s)
+PASS browser: webkit e2e/tests/vppd-plugin/edit-deal-button-verification.e2e.ts (21.662s)
+PASS browser: webkit e2e/tests/vp-plugin/single-outlet-health-page.e2e.ts (15.492s)
+PASS browser: webkit e2e/tests/vp-plugin/prep-time-details-page.e2e.ts (15.204s)
+PASS browser: webkit e2e/tests/vfd-plugin/tnc-error-message-validation.e2e.ts (22.203s)
+PASS browser: webkit e2e/tests/vp-plugin/order-revenue-loss-card-and-details.e2e.ts (16.572s)
+PASS browser: webkit e2e/tests/vp-plugin/all-outlets-health-page.e2e.ts (14.597s)
+PASS browser: webkit e2e/tests/vp-plugin/accept-time-details-page.e2e.ts (16.906s)
+PASS browser: webkit e2e/tests/vp-plugin/order-rejection-rate-card-and-details.e2e.ts (18.376s)
+PASS browser: webkit e2e/tests/vp-plugin/offline-duration-details-page.e2e.ts (16.132s)
+PASS browser: webkit e2e/tests/vp-plugin/customer-conversion-card-and-details.e2e.ts (15.172s)
+PASS browser: webkit e2e/tests/vfd-plugin/dealform-has-default-options.e2e.ts (15.013s)
+PASS browser: webkit e2e/tests/vp-plugin/delay-order-details-page.e2e.ts (15.869s)
+
+Test Suites: 4 failed, 15 passed, 19 total
+Tests:       4 failed, 29 passed, 33 total
+Snapshots:   0 total
+Time:        152.795s
+Ran all test suites.
+Test results written to: e2e/output/playwright.webkit.json
+error Command failed with exit code 1.
+info Visit https://yarnpkg.com/en/docs/cli/run for documentation about this command.
+$ /Users/c.koh.3/Documents/Projects/react/fp-apac-jedi-skywalker/node_modules/.bin/jest -c e2e/jest-e2e.config.js --json --outputFile=e2e/output/playwright.json --maxWorkers=4
+PASS browser: chromium e2e/tests/vfd-plugin/dealform-persist-vendor-change.e2e.ts (33.019s)
+PASS browser: chromium e2e/tests/vp-plugin/vendor-health-single-vendor-account.e2e.ts (43.559s)
+PASS browser: chromium e2e/tests/vp-plugin/deal-utilization-card-and-details.e2e.ts (49.112s)
+PASS browser: chromium e2e/tests/vp-plugin/customer-conversion-all-details-check.e2e.ts (30.867s)
+PASS browser: chromium e2e/tests/vfd-plugin/tnc-error-message-validation.e2e.ts (22.645s)
+PASS browser: chromium e2e/tests/vp-plugin/vendor-health.e2e.ts (69.076s)
+PASS browser: chromium e2e/tests/vppd-plugin/edit-deal-button-verification.e2e.ts (24.853s)
+PASS browser: chromium e2e/tests/vp-plugin/order-rejection-rate-card-and-details.e2e.ts (16.562s)
+PASS browser: chromium e2e/tests/vp-plugin/kpi-summary.e2e.ts (19.989s)
+PASS browser: chromium e2e/tests/vfd-plugin/edit-deal-button-verification.e2e.ts (25.407s)
+PASS browser: chromium e2e/tests/vp-plugin/accept-time-details-page.e2e.ts (17.156s)
+PASS browser: chromium e2e/tests/vp-plugin/order-revenue-loss-card-and-details.e2e.ts (25.572s)
+PASS browser: chromium e2e/tests/vp-plugin/delay-order-details-page.e2e.ts (26.983s)
+PASS browser: chromium e2e/tests/vp-plugin/offline-duration-details-page.e2e.ts (28.854s)
+PASS browser: chromium e2e/tests/vp-plugin/single-outlet-health-page.e2e.ts (29.591s)
+PASS browser: chromium e2e/tests/vp-plugin/prep-time-details-page.e2e.ts (23.244s)
+PASS browser: chromium e2e/tests/vp-plugin/customer-conversion-card-and-details.e2e.ts (19.506s)
+PASS browser: chromium e2e/tests/vfd-plugin/dealform-has-default-options.e2e.ts (18.048s)
+PASS browser: chromium e2e/tests/vp-plugin/all-outlets-health-page.e2e.ts (17.955s)
+
+Test Suites: 19 passed, 19 total
+Tests:       33 passed, 33 total
+Snapshots:   0 total
+Time:        140.184s, estimated 150s
+Ran all test suites.
+Test results written to: e2e/output/playwright.json
+Browser    Exit Code
+webkit         1
+chrome         0
+error Command failed with exit code 1.
+info Visit https://yarnpkg.com/en/docs/cli/run for documentation about this command.
+error Command failed with exit code 1.
+info Visit https://yarnpkg.com/en/docs/cli/run for documentation about this command.
