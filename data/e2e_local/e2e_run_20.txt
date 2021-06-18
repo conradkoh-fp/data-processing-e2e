@@ -1,0 +1,290 @@
+yarn run v1.22.4
+$ sh ./scripts/setup-e2e-local.sh; export $(xargs < ./envs/.env.e2e.local); yarn e2e
+checking for local e2e env file
+./envs/.env.e2e.local exists
+$ E2E_TEST_USERNAME=$E2E_TEST_USERNAME E2E_TEST_PASSWORD=$E2E_TEST_PASSWORD sh ./scripts/run-e2e.sh
+$ /Users/c.koh.3/Documents/Projects/react/fp-apac-jedi-skywalker/node_modules/.bin/jest -c e2e/jest-e2e.config.js --json --outputFile=e2e/output/playwright.webkit.json --maxWorkers=4
+PASS browser: webkit e2e/tests/vp-plugin/customer-conversion-all-details-check.e2e.ts (38.942s)
+PASS browser: webkit e2e/tests/vp-plugin/vendor-health-single-vendor-account.e2e.ts (41.483s)
+PASS browser: webkit e2e/tests/vp-plugin/deal-utilization-card-and-details.e2e.ts (47.845s)
+PASS browser: webkit e2e/tests/vp-plugin/vendor-health.e2e.ts (62.497s)
+PASS browser: webkit e2e/tests/vfd-plugin/tnc-error-message-validation.e2e.ts (23.91s)
+PASS browser: webkit e2e/tests/vp-plugin/kpi-summary.e2e.ts (22.021s)
+  ● Console
+
+    console.log e2e/tests/vp-plugin/kpi-summary.e2e.ts:30
+      { browser: 'webkit', RUN_ID: '20' }
+
+PASS browser: webkit e2e/tests/vfd-plugin/dealform-persist-vendor-change.e2e.ts (35.443s)
+PASS browser: webkit e2e/tests/vp-plugin/offline-duration-details-page.e2e.ts (17.045s)
+PASS browser: webkit e2e/tests/vppd-plugin/edit-deal-button-verification.e2e.ts (28.467s)
+PASS browser: webkit e2e/tests/vfd-plugin/edit-deal-button-verification.e2e.ts (27.068s)
+PASS browser: webkit e2e/tests/vfd-plugin/dealform-has-default-options.e2e.ts (20.437s)
+PASS browser: webkit e2e/tests/vp-plugin/accept-time-details-page.e2e.ts (18.599s)
+PASS browser: webkit e2e/tests/vp-plugin/prep-time-details-page.e2e.ts (16.176s)
+PASS browser: webkit e2e/tests/vp-plugin/single-outlet-health-page.e2e.ts (19.399s)
+PASS browser: webkit e2e/tests/vp-plugin/order-revenue-loss-card-and-details.e2e.ts (17.545s)
+PASS browser: webkit e2e/tests/vp-plugin/customer-conversion-card-and-details.e2e.ts (17.822s)
+PASS browser: webkit e2e/tests/vp-plugin/all-outlets-health-page.e2e.ts (17.243s)
+PASS browser: webkit e2e/tests/vp-plugin/order-rejection-rate-card-and-details.e2e.ts (18.985s)
+PASS browser: webkit e2e/tests/vp-plugin/delay-order-details-page.e2e.ts (19.574s)
+
+Test Suites: 19 passed, 19 total
+Tests:       33 passed, 33 total
+Snapshots:   0 total
+Time:        133.132s, estimated 142s
+Ran all test suites.
+Test results written to: e2e/output/playwright.webkit.json
+$ /Users/c.koh.3/Documents/Projects/react/fp-apac-jedi-skywalker/node_modules/.bin/jest -c e2e/jest-e2e.config.js --json --outputFile=e2e/output/playwright.json --maxWorkers=4
+PASS browser: chromium e2e/tests/vp-plugin/customer-conversion-all-details-check.e2e.ts (45.217s)
+PASS browser: chromium e2e/tests/vp-plugin/vendor-health-single-vendor-account.e2e.ts (55.038s)
+PASS browser: chromium e2e/tests/vp-plugin/deal-utilization-card-and-details.e2e.ts (58.684s)
+PASS browser: chromium e2e/tests/vp-plugin/vendor-health.e2e.ts (74.156s)
+FAIL browser: chromium e2e/tests/vfd-plugin/dealform-persist-vendor-change.e2e.ts (36.175s)
+  ● VFD - vendor selection change › [C259594]Verify dealform state persist after changing vendor
+
+    page.waitForSelector: Timeout 30000ms exceeded.
+    =========================== logs ===========================
+    waiting for selector "data-testid=master-navigation" to be visible
+    ============================================================
+    Note: use DEBUG=pw:api environment variable to capture Playwright logs.
+
+      16 |   await page.fill('input[name=password]', password);
+      17 |   await page.click('#button_login');
+    > 18 |   await page.waitForSelector('data-testid=master-navigation', { timeout: 30000 });
+         |              ^
+      19 |   if (options && options.redirectUrl) {
+      20 |     await goTo(page, env)(options.redirectUrl);
+      21 |   }
+
+      at Object.captureStackTrace (../../../node_modules/playwright/lib/utils/stackTrace.js:51:19)
+      at Connection.sendMessageToServer (../../../node_modules/playwright/lib/client/connection.js:69:48)
+      at Proxy.<anonymous> (../../../node_modules/playwright/lib/client/channelOwner.js:64:61)
+      at ../../../node_modules/playwright/lib/client/frame.js:193:42
+      at Frame._wrapApiCall (../../../node_modules/playwright/lib/client/channelOwner.js:77:34)
+      at Frame.waitForSelector (../../../node_modules/playwright/lib/client/frame.js:188:21)
+      at ../../../node_modules/playwright/lib/client/page.js:212:60
+      at Page._attributeToPage (../../../node_modules/playwright/lib/client/page.js:202:20)
+      at Page.waitForSelector (../../../node_modules/playwright/lib/client/page.js:212:21)
+      at setup/common/login.ts:18:14
+      at step (setup/common/login.ts:33:23)
+      at Object.next (setup/common/login.ts:14:53)
+      at fulfilled (setup/common/login.ts:5:58)
+
+FAIL browser: chromium e2e/tests/vppd-plugin/edit-deal-button-verification.e2e.ts (35.183s)
+  ● VPPD - edit promotion button clicked › [C363392]Verify page goes back & selected deal form values are retained
+
+    page.waitForSelector: Timeout 30000ms exceeded.
+    =========================== logs ===========================
+    waiting for selector "data-testid=master-navigation" to be visible
+    ============================================================
+    Note: use DEBUG=pw:api environment variable to capture Playwright logs.
+
+      16 |   await page.fill('input[name=password]', password);
+      17 |   await page.click('#button_login');
+    > 18 |   await page.waitForSelector('data-testid=master-navigation', { timeout: 30000 });
+         |              ^
+      19 |   if (options && options.redirectUrl) {
+      20 |     await goTo(page, env)(options.redirectUrl);
+      21 |   }
+
+      at Object.captureStackTrace (../../../node_modules/playwright/lib/utils/stackTrace.js:51:19)
+      at Connection.sendMessageToServer (../../../node_modules/playwright/lib/client/connection.js:69:48)
+      at Proxy.<anonymous> (../../../node_modules/playwright/lib/client/channelOwner.js:64:61)
+      at ../../../node_modules/playwright/lib/client/frame.js:193:42
+      at Frame._wrapApiCall (../../../node_modules/playwright/lib/client/channelOwner.js:77:34)
+      at Frame.waitForSelector (../../../node_modules/playwright/lib/client/frame.js:188:21)
+      at ../../../node_modules/playwright/lib/client/page.js:212:60
+      at Page._attributeToPage (../../../node_modules/playwright/lib/client/page.js:202:20)
+      at Page.waitForSelector (../../../node_modules/playwright/lib/client/page.js:212:21)
+      at setup/common/login.ts:18:14
+      at step (setup/common/login.ts:33:23)
+      at Object.next (setup/common/login.ts:14:53)
+      at fulfilled (setup/common/login.ts:5:58)
+
+FAIL browser: chromium e2e/tests/vfd-plugin/edit-deal-button-verification.e2e.ts (34.584s)
+  ● VFD - edit promotion button clicked › [C260079]Verify page goes back & selected deal form values are retained
+
+    page.waitForSelector: Timeout 30000ms exceeded.
+    =========================== logs ===========================
+    waiting for selector "data-testid=master-navigation" to be visible
+    ============================================================
+    Note: use DEBUG=pw:api environment variable to capture Playwright logs.
+
+      16 |   await page.fill('input[name=password]', password);
+      17 |   await page.click('#button_login');
+    > 18 |   await page.waitForSelector('data-testid=master-navigation', { timeout: 30000 });
+         |              ^
+      19 |   if (options && options.redirectUrl) {
+      20 |     await goTo(page, env)(options.redirectUrl);
+      21 |   }
+
+      at Object.captureStackTrace (../../../node_modules/playwright/lib/utils/stackTrace.js:51:19)
+      at Connection.sendMessageToServer (../../../node_modules/playwright/lib/client/connection.js:69:48)
+      at Proxy.<anonymous> (../../../node_modules/playwright/lib/client/channelOwner.js:64:61)
+      at ../../../node_modules/playwright/lib/client/frame.js:193:42
+      at Frame._wrapApiCall (../../../node_modules/playwright/lib/client/channelOwner.js:77:34)
+      at Frame.waitForSelector (../../../node_modules/playwright/lib/client/frame.js:188:21)
+      at ../../../node_modules/playwright/lib/client/page.js:212:60
+      at Page._attributeToPage (../../../node_modules/playwright/lib/client/page.js:202:20)
+      at Page.waitForSelector (../../../node_modules/playwright/lib/client/page.js:212:21)
+      at setup/common/login.ts:18:14
+      at step (setup/common/login.ts:33:23)
+      at Object.next (setup/common/login.ts:14:53)
+      at fulfilled (setup/common/login.ts:5:58)
+
+FAIL browser: chromium e2e/tests/vfd-plugin/tnc-error-message-validation.e2e.ts (33.772s)
+  ● VFD - Terms and Conditions agreement validation › [C260100]Verify error message shown if terms and conditions are not clicked
+
+    page.waitForSelector: Timeout 30000ms exceeded.
+    =========================== logs ===========================
+    waiting for selector "data-testid=master-navigation" to be visible
+    ============================================================
+    Note: use DEBUG=pw:api environment variable to capture Playwright logs.
+
+      16 |   await page.fill('input[name=password]', password);
+      17 |   await page.click('#button_login');
+    > 18 |   await page.waitForSelector('data-testid=master-navigation', { timeout: 30000 });
+         |              ^
+      19 |   if (options && options.redirectUrl) {
+      20 |     await goTo(page, env)(options.redirectUrl);
+      21 |   }
+
+      at Object.captureStackTrace (../../../node_modules/playwright/lib/utils/stackTrace.js:51:19)
+      at Connection.sendMessageToServer (../../../node_modules/playwright/lib/client/connection.js:69:48)
+      at Proxy.<anonymous> (../../../node_modules/playwright/lib/client/channelOwner.js:64:61)
+      at ../../../node_modules/playwright/lib/client/frame.js:193:42
+      at Frame._wrapApiCall (../../../node_modules/playwright/lib/client/channelOwner.js:77:34)
+      at Frame.waitForSelector (../../../node_modules/playwright/lib/client/frame.js:188:21)
+      at ../../../node_modules/playwright/lib/client/page.js:212:60
+      at Page._attributeToPage (../../../node_modules/playwright/lib/client/page.js:202:20)
+      at Page.waitForSelector (../../../node_modules/playwright/lib/client/page.js:212:21)
+      at setup/common/login.ts:18:14
+      at step (setup/common/login.ts:33:23)
+      at Object.next (setup/common/login.ts:14:53)
+      at fulfilled (setup/common/login.ts:5:58)
+
+PASS browser: chromium e2e/tests/vp-plugin/delay-order-details-page.e2e.ts (35.873s)
+PASS browser: chromium e2e/tests/vfd-plugin/dealform-has-default-options.e2e.ts (40.175s)
+PASS browser: chromium e2e/tests/vp-plugin/single-outlet-health-page.e2e.ts (23.313s)
+FAIL browser: chromium e2e/tests/vp-plugin/kpi-summary.e2e.ts (61.994s)
+  ● Console
+
+    console.log e2e/tests/vp-plugin/kpi-summary.e2e.ts:30
+      { browser: 'chromium', RUN_ID: '20' }
+
+  ● VP - KPI Summary › [C367701] Verify the KPI summary screen details with different timeframe selection
+
+    page.waitForSelector: Timeout 30000ms exceeded.
+    =========================== logs ===========================
+    waiting for selector "data-testid=date-switcher-date-btn" to be visible
+    ============================================================
+    Note: use DEBUG=pw:api environment variable to capture Playwright logs.
+
+      44 |
+      45 |     // Verify the default timeframe as "last 7 days" and all KPI cards summary details
+    > 46 |     await page.waitForSelector('data-testid=date-switcher-date-btn');
+         |                ^
+      47 |     await page.click('data-testid=date-switcher-date-btn >> text="last 7 days"');
+      48 |     await page.waitForLoadState('networkidle', { timeout: 10000 });
+      49 |     await context.tracing.stop({
+
+      at Object.captureStackTrace (../../../node_modules/playwright/lib/utils/stackTrace.js:51:19)
+      at Connection.sendMessageToServer (../../../node_modules/playwright/lib/client/connection.js:69:48)
+      at Proxy.<anonymous> (../../../node_modules/playwright/lib/client/channelOwner.js:64:61)
+      at ../../../node_modules/playwright/lib/client/frame.js:193:42
+      at Frame._wrapApiCall (../../../node_modules/playwright/lib/client/channelOwner.js:77:34)
+      at Frame.waitForSelector (../../../node_modules/playwright/lib/client/frame.js:188:21)
+      at ../../../node_modules/playwright/lib/client/page.js:212:60
+      at Page._attributeToPage (../../../node_modules/playwright/lib/client/page.js:202:20)
+      at Page.waitForSelector (../../../node_modules/playwright/lib/client/page.js:212:21)
+      at tests/vp-plugin/kpi-summary.e2e.ts:46:16
+      at step (tests/vp-plugin/kpi-summary.e2e.ts:33:23)
+      at Object.next (tests/vp-plugin/kpi-summary.e2e.ts:14:53)
+      at fulfilled (tests/vp-plugin/kpi-summary.e2e.ts:5:58)
+
+  ● VP - KPI Summary › [C367694] Verify the vendor is able to see the KPIs for multiple restaurants
+
+    page.waitForSelector: Timeout 30000ms exceeded.
+    =========================== logs ===========================
+    waiting for selector "data-testid=master-navigation" to be visible
+    ============================================================
+    Note: use DEBUG=pw:api environment variable to capture Playwright logs.
+
+      16 |   await page.fill('input[name=password]', password);
+      17 |   await page.click('#button_login');
+    > 18 |   await page.waitForSelector('data-testid=master-navigation', { timeout: 30000 });
+         |              ^
+      19 |   if (options && options.redirectUrl) {
+      20 |     await goTo(page, env)(options.redirectUrl);
+      21 |   }
+
+      at Object.captureStackTrace (../../../node_modules/playwright/lib/utils/stackTrace.js:51:19)
+      at Connection.sendMessageToServer (../../../node_modules/playwright/lib/client/connection.js:69:48)
+      at Proxy.<anonymous> (../../../node_modules/playwright/lib/client/channelOwner.js:64:61)
+      at ../../../node_modules/playwright/lib/client/frame.js:193:42
+      at Frame._wrapApiCall (../../../node_modules/playwright/lib/client/channelOwner.js:77:34)
+      at Frame.waitForSelector (../../../node_modules/playwright/lib/client/frame.js:188:21)
+      at ../../../node_modules/playwright/lib/client/page.js:212:60
+      at Page._attributeToPage (../../../node_modules/playwright/lib/client/page.js:202:20)
+      at Page.waitForSelector (../../../node_modules/playwright/lib/client/page.js:212:21)
+      at setup/common/login.ts:18:14
+      at step (setup/common/login.ts:33:23)
+      at Object.next (setup/common/login.ts:14:53)
+      at fulfilled (setup/common/login.ts:5:58)
+
+  ● VP - KPI Summary › [C367694] Verify the vendor is able to see the KPIs for multiple restaurants
+
+    page.waitForSelector: Timeout 30000ms exceeded.
+    =========================== logs ===========================
+    waiting for selector "[data-testid="multiselect-filter-vendors-select"]"
+    ============================================================
+    Note: use DEBUG=pw:api environment variable to capture Playwright logs.
+
+      59 |
+      60 |     // Select first 2 vendors from dropdown
+    > 61 |     const vendorSelector = await page.waitForSelector(
+         |                                       ^
+      62 |       '[data-testid="multiselect-filter-vendors-select"]',
+      63 |       {
+      64 |         state: 'attached',
+
+      at Object.captureStackTrace (../../../node_modules/playwright/lib/utils/stackTrace.js:51:19)
+      at Connection.sendMessageToServer (../../../node_modules/playwright/lib/client/connection.js:69:48)
+      at Proxy.<anonymous> (../../../node_modules/playwright/lib/client/channelOwner.js:64:61)
+      at ../../../node_modules/playwright/lib/client/frame.js:193:42
+      at Frame._wrapApiCall (../../../node_modules/playwright/lib/client/channelOwner.js:77:34)
+      at Frame.waitForSelector (../../../node_modules/playwright/lib/client/frame.js:188:21)
+      at ../../../node_modules/playwright/lib/client/page.js:212:60
+      at Page._attributeToPage (../../../node_modules/playwright/lib/client/page.js:202:20)
+      at Page.waitForSelector (../../../node_modules/playwright/lib/client/page.js:212:21)
+      at tests/vp-plugin/kpi-summary.e2e.ts:61:39
+      at step (tests/vp-plugin/kpi-summary.e2e.ts:33:23)
+      at Object.next (tests/vp-plugin/kpi-summary.e2e.ts:14:53)
+      at tests/vp-plugin/kpi-summary.e2e.ts:8:71
+      at Object.<anonymous>.__awaiter (tests/vp-plugin/kpi-summary.e2e.ts:4:12)
+      at Object.<anonymous> (tests/vp-plugin/kpi-summary.e2e.ts:56:86)
+
+PASS browser: chromium e2e/tests/vp-plugin/order-rejection-rate-card-and-details.e2e.ts (20.735s)
+PASS browser: chromium e2e/tests/vp-plugin/customer-conversion-card-and-details.e2e.ts (19.07s)
+PASS browser: chromium e2e/tests/vp-plugin/accept-time-details-page.e2e.ts (20.237s)
+PASS browser: chromium e2e/tests/vp-plugin/order-revenue-loss-card-and-details.e2e.ts (17.924s)
+PASS browser: chromium e2e/tests/vp-plugin/offline-duration-details-page.e2e.ts (18.783s)
+PASS browser: chromium e2e/tests/vp-plugin/all-outlets-health-page.e2e.ts (21.454s)
+PASS browser: chromium e2e/tests/vp-plugin/prep-time-details-page.e2e.ts (20.606s)
+
+Test Suites: 5 failed, 14 passed, 19 total
+Tests:       6 failed, 27 passed, 33 total
+Snapshots:   0 total
+Time:        173.389s
+Ran all test suites.
+Test results written to: e2e/output/playwright.json
+error Command failed with exit code 1.
+info Visit https://yarnpkg.com/en/docs/cli/run for documentation about this command.
+Browser    Exit Code
+webkit         0
+chrome         1
+error Command failed with exit code 1.
+info Visit https://yarnpkg.com/en/docs/cli/run for documentation about this command.
+error Command failed with exit code 1.
+info Visit https://yarnpkg.com/en/docs/cli/run for documentation about this command.

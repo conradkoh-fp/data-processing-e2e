@@ -1,11 +1,12 @@
 import fs from "fs";
 import { ErrorStat } from "./domain/entities/ErrorStat";
+import { RunStat } from "./domain/entities/RunStat";
 import { Test } from "./domain/entities/Test";
 import { TestError } from "./domain/entities/TestError";
 import { TestStat } from "./domain/entities/TestStat";
 import { TestEnv } from "./env";
 import { formatDuration } from "./presentation/testStats/format";
-
+import path from "path";
 export function dataFolder(e: TestEnv) {
   return e === TestEnv.Local ? "e2e_local" : "e2e_staging";
 }
@@ -24,11 +25,71 @@ export async function collectStats(filePath: string, state: StatsState) {
       err ? reject(err) : resolve(data);
     });
   });
-  collectTestStats(fileContent, state.test);
+  const pathParsed = path.parse(filePath);
+  const runId = `${pathParsed.name}`;
+  collectTestStats(runId, fileContent, state.test);
   collectErrorStats(fileContent, state.errors);
+  collectRunStats(runId, fileContent, state.runs);
+}
+
+function collectRunStats(
+  runId: string,
+  fileContent: string,
+  state: RunsStatsState
+) {
+  const seqRegex = /e2e_run_(\d+)/g;
+  const matches = seqRegex.exec(runId);
+  if (!matches) {
+    throw new Error("Failed to get match from run id: " + runId);
+  }
+  const seq = parseInt(matches[1]);
+  const tests = parseTestResults(runId, fileContent);
+  const runStat: RunStat = tests.reduce(
+    (state, test) => {
+      if (!test.passed) {
+        if (!state.errorCount[test.browser]) {
+          state.errorCount[test.browser] = 0;
+        }
+        state.errorCount[test.browser] += 1;
+        state.failingTests.push({
+          browser: test.browser,
+          testPath: test.path,
+        });
+      }
+      return state;
+    },
+    {
+      runId,
+      seq,
+      errorCount: {},
+      failingTests: [],
+      errorLines: Object.values(
+        parseErrorStats(fileContent).reduce<{ [filePath: string]: ErrorStat }>(
+          (state, error) => {
+            if (!state[error.filepath]) {
+              state[error.filepath] = {
+                filepath: error.filepath,
+                count: 0,
+              };
+            }
+            state[error.filepath].count++;
+            return state;
+          },
+          {}
+        )
+      ),
+    } as RunStat
+  );
+  state[runId] = runStat;
 }
 
 function collectErrorStats(fileContent: string, state: ErrorStatsState) {
+  const data = parseErrorStats(fileContent);
+  data.forEach((t) => addErrorStatToState(t, state));
+}
+
+function parseErrorStats(fileContent: string): TestError[] {
+  const testErrors: TestError[] = [];
   const extractMatcher = new RegExp("at (.+\\.ts:\\d+:\\d+\\))", "g");
   const matches = fileContent.match(extractMatcher);
   if (matches) {
@@ -39,12 +100,13 @@ function collectErrorStats(fileContent: string, state: ErrorStatsState) {
         const data: TestError = {
           filepath: parsedContent[1],
         };
-        addErrorStatToState(data, state);
+        testErrors.push(data);
       } else {
         throw new Error("Failed to parse content: " + match);
       }
     }
   }
+  return testErrors;
 }
 
 function addErrorStatToState(data: TestError, state: ErrorStatsState) {
@@ -62,19 +124,30 @@ function testErrorAggKey(d: TestError) {
   return `${d.filepath}`;
 }
 
-function collectTestStats(fileContent: string, state: TestStatsState) {
+function collectTestStats(
+  runId: string,
+  fileContent: string,
+  state: TestStatsState
+) {
+  const tests = parseTestResults(runId, fileContent);
+  tests.forEach((t) => addTestStatToState(t, state));
+}
+
+function parseTestResults(runId: string, fileContent: string) {
   const extractMatcher = new RegExp(
     "(PASS|FAIL) browser: (chromium|webkit) (.+) \\(([0-9\\.]+)s\\)",
     "g"
   );
   const matches = fileContent.match(extractMatcher);
+  const results: Test[] = [];
 
   if (matches) {
     for (const match of matches) {
       const newMatcher = new RegExp(extractMatcher);
       const parsedContent = newMatcher.exec(match);
       if (parsedContent) {
-        const data = {
+        const data: Test = {
+          runId,
           passed: parsedContent[1] == "PASS",
           browser: parsedContent[2],
           path: parsedContent[3],
@@ -84,12 +157,13 @@ function collectTestStats(fileContent: string, state: TestStatsState) {
         if (!isFinite(data.duration)) {
           throw new Error("Invalid duration detected: " + parsedContent[4]);
         }
-        addTestStatToState(data, state);
+        results.push(data);
       } else {
         throw new Error("Failed to parse: " + match);
       }
     }
   }
+  return results;
 }
 
 export function addTestStatToState(test: Test, state: TestStatsState) {
@@ -124,9 +198,11 @@ export function addTestStatToState(test: Test, state: TestStatsState) {
 export type StatsState = {
   test: TestStatsState;
   errors: ErrorStatsState;
+  runs: RunsStatsState;
 };
 
 export type TestStatsState = { [key: string]: TestStat };
 export type ErrorStatsState = { [key: string]: ErrorStat };
+export type RunsStatsState = { [key: string]: RunStat };
 
 export const testAggKey = (t: Test): string => `${t.browser}+${t.path}`;

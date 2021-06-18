@@ -7,9 +7,11 @@ import { TestEnv } from "./lib/env";
 import { compareTestStatsSort } from "./lib/presentation/testStats/sort";
 import { createTestErrorStatsTable } from "./lib/presentation/errorStats/table";
 import { compareErrorStatsSort } from "./lib/presentation/errorStats/sort";
+import { createRunStatsTable } from "./lib/presentation/runStats/table";
+import { compareRunStatsSort } from "./lib/presentation/runStats/sort";
 (async function main() {
   const testEnv = TestEnv.Local;
-  const mode: string = "";
+  const mode: string = "override";
   const testRunPrefix = mode == "override" ? "" : new Date().getTime() + "_";
   const soureFolder = dataFolder(testEnv);
   //Create all folders required
@@ -27,6 +29,7 @@ import { compareErrorStatsSort } from "./lib/presentation/errorStats/sort";
   const stats: StatsState = {
     test: {},
     errors: {},
+    runs: {},
   };
   for (const file of files) {
     const filepath = path.join(dirroot, file);
@@ -50,6 +53,13 @@ import { compareErrorStatsSort } from "./lib/presentation/errorStats/sort";
     content += `Error Stats:\n`;
     content += createTestErrorStatsTable(
       Object.values(stats.errors).sort(compareErrorStatsSort)
+    );
+
+    content += "\n";
+    content += "\n";
+    content += `Run Stats:\n`;
+    content += createRunStatsTable(
+      Object.values(stats.runs).sort(compareRunStatsSort)
     );
     fs.writeFile(outFile, content, {}, (err) => {
       err ? reject(err) : resolve();
