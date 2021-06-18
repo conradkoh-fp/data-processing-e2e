@@ -1,4 +1,4 @@
-import { ErrorStat } from "./ErrorStat";
+import { RunErrorStat } from "./RunErrorStat";
 
 export interface RunStat {
   runId: string;
@@ -8,5 +8,5 @@ export interface RunStat {
     browser: string;
     testPath: string;
   }[];
-  errorLines: ErrorStat[];
+  errorLines: RunErrorStat[];
 }

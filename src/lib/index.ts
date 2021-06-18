@@ -7,6 +7,7 @@ import { TestStat } from "./domain/entities/TestStat";
 import { TestEnv } from "./env";
 import { formatDuration } from "./presentation/testStats/format";
 import path from "path";
+import { RunErrorStat } from "./domain/entities/RunErrorStat";
 export function dataFolder(e: TestEnv) {
   return e === TestEnv.Local ? "e2e_local" : "e2e_staging";
 }
@@ -28,7 +29,7 @@ export async function collectStats(filePath: string, state: StatsState) {
   const pathParsed = path.parse(filePath);
   const runId = `${pathParsed.name}`;
   collectTestStats(runId, fileContent, state.test);
-  collectErrorStats(fileContent, state.errors);
+  collectErrorStats(runId, fileContent, state.errors);
   collectRunStats(runId, fileContent, state.runs);
 }
 
@@ -64,31 +65,34 @@ function collectRunStats(
       errorCount: {},
       failingTests: [],
       errorLines: Object.values(
-        parseErrorStats(fileContent).reduce<{ [filePath: string]: ErrorStat }>(
-          (state, error) => {
-            if (!state[error.filepath]) {
-              state[error.filepath] = {
-                filepath: error.filepath,
-                count: 0,
-              };
-            }
-            state[error.filepath].count++;
-            return state;
-          },
-          {}
-        )
+        parseErrorStats(runId, fileContent).reduce<{
+          [filePath: string]: RunErrorStat;
+        }>((state, error) => {
+          if (!state[error.filepath]) {
+            state[error.filepath] = {
+              filepath: error.filepath,
+              count: 0,
+            };
+          }
+          state[error.filepath].count++;
+          return state;
+        }, {})
       ),
     } as RunStat
   );
   state[runId] = runStat;
 }
 
-function collectErrorStats(fileContent: string, state: ErrorStatsState) {
-  const data = parseErrorStats(fileContent);
+function collectErrorStats(
+  runId: string,
+  fileContent: string,
+  state: ErrorStatsState
+) {
+  const data = parseErrorStats(runId, fileContent);
   data.forEach((t) => addErrorStatToState(t, state));
 }
 
-function parseErrorStats(fileContent: string): TestError[] {
+function parseErrorStats(runId: string, fileContent: string): TestError[] {
   const testErrors: TestError[] = [];
   const extractMatcher = new RegExp("at (.+\\.ts:\\d+:\\d+\\))", "g");
   const matches = fileContent.match(extractMatcher);
@@ -99,6 +103,7 @@ function parseErrorStats(fileContent: string): TestError[] {
       if (parsedContent) {
         const data: TestError = {
           filepath: parsedContent[1],
+          runId,
         };
         testErrors.push(data);
       } else {
@@ -115,9 +120,17 @@ function addErrorStatToState(data: TestError, state: ErrorStatsState) {
     state[key] = {
       filepath: data.filepath,
       count: 0,
+      runs: {},
+    };
+  }
+  if (!state[key].runs[data.runId]) {
+    state[key].runs[data.runId] = {
+      runId: data.runId,
+      count: 0,
     };
   }
   state[key].count += 1;
+  state[key].runs[data.runId].count += 1;
 }
 
 function testErrorAggKey(d: TestError) {

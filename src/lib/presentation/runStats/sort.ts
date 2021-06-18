@@ -1,4 +1,4 @@
-import { ErrorStat } from "../../domain/entities/ErrorStat";
+import { RunErrorStat } from "../../domain/entities/RunErrorStat";
 import { RunStat } from "../../domain/entities/RunStat";
 export function compareRunStatsSort(a: RunStat, b: RunStat) {
   if (a.seq > b.seq) {
@@ -9,7 +9,7 @@ export function compareRunStatsSort(a: RunStat, b: RunStat) {
   return 0;
 }
 
-export function compareRunErrorsSort(a: ErrorStat, b: ErrorStat) {
+export function compareRunErrorsSort(a: RunErrorStat, b: RunErrorStat) {
   if (a.count > b.count) {
     return -1;
   } else if (a.count < b.count) {
