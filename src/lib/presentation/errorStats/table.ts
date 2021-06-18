@@ -3,7 +3,7 @@ import { ErrorStat } from "../../domain/entities/ErrorStat";
 
 export function createTestErrorStatsTable(results: ErrorStat[]) {
   return table([
-    ["Path", "Count", "Test Runs"],
+    ["Path", "Count", "Occurred in Runs"],
     ...results.map((s) => [
       s.filepath,
       s.count,
