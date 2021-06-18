@@ -1,7 +1,6 @@
 import fs from "fs";
 import path from "path";
-import mkdirp from "mkdirp";
-import { dataFolder, collectStats, formatTestStat, StatsState } from "./lib";
+import { collectStats, formatTestStat, StatsState } from "./lib";
 import { createTestStatsTable } from "./lib/presentation/testStats/table";
 import { TestEnv } from "./lib/env";
 import { compareTestStatsSort } from "./lib/presentation/testStats/sort";
@@ -9,20 +8,21 @@ import { createTestErrorStatsTable } from "./lib/presentation/errorStats/table";
 import { compareErrorStatsSort } from "./lib/presentation/errorStats/sort";
 import { createRunStatsTable } from "./lib/presentation/runStats/table";
 import { compareRunStatsSort } from "./lib/presentation/runStats/sort";
+import { Mode } from "./Mode";
+import { setup } from "./setup";
+
 (async function main() {
   const testEnv = TestEnv.Local;
-  const mode: string = "override";
-  const testRunPrefix = mode == "override" ? "" : new Date().getTime() + "_";
-  const soureFolder = dataFolder(testEnv);
-  //Create all folders required
-  const outFolder = path.join(__dirname, "../out");
-  const dirroot = path.join(__dirname, "../data", soureFolder);
-  await Promise.all([mkdirp(outFolder), mkdirp(dirroot)]);
-  const outFileName = testRunPrefix + dataFolder(testEnv) + ".txt";
-  const outFile = path.join(outFolder, outFileName);
+  let { sourceFolder, outFile } = await setup({
+    mode: Mode.Reprocess,
+    env: testEnv,
+    options: {
+      runName: "1623980474699_e2e_staging", //Override for when reprocessing
+    },
+  });
   //Get files to be parsed
   const files = await new Promise<string[]>((resolve, reject) => {
-    fs.readdir(dirroot, { withFileTypes: true }, (err, files) => {
+    fs.readdir(sourceFolder, { withFileTypes: true }, (err, files) => {
       err ? reject(err) : resolve(files.map((v) => v.name));
     });
   });
@@ -32,7 +32,7 @@ import { compareRunStatsSort } from "./lib/presentation/runStats/sort";
     runs: {},
   };
   for (const file of files) {
-    const filepath = path.join(dirroot, file);
+    const filepath = path.join(sourceFolder, file);
     await collectStats(filepath, stats);
   }
 

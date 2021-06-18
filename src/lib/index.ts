@@ -94,7 +94,8 @@ function collectErrorStats(
 
 function parseErrorStats(runId: string, fileContent: string): TestError[] {
   const testErrors: TestError[] = [];
-  const extractMatcher = new RegExp("at (.+\\.ts:\\d+:\\d+\\))", "g");
+  // const extractMatcher = new RegExp("at (.+\\.ts:\\d+:\\d+\\))", "g");
+  const extractMatcher = /at (.+\.ts[^s]+)$/g;
   const matches = fileContent.match(extractMatcher);
   if (matches) {
     for (const match of matches) {
