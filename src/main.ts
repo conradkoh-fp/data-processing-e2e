@@ -2,7 +2,6 @@ import fs from "fs";
 import path from "path";
 import { collectStats, formatTestStat, StatsState } from "./lib";
 import { createTestStatsTable } from "./lib/presentation/testStats/table";
-import { TestEnv } from "./lib/env";
 import { compareTestStatsSort } from "./lib/presentation/testStats/sort";
 import { createTestErrorStatsTable } from "./lib/presentation/errorStats/table";
 import { compareErrorStatsSort } from "./lib/presentation/errorStats/sort";

@@ -25,5 +25,11 @@ mkdir -p /Users/c.koh.3/Downloads/e2e_results/data/e2e_local && seq 1 20 | xargs
 Debug 20 times on a single test with tracing
 
 ```
-seq 1 20 | xargs -I{} sh -c "RUN_ID={} yarn e2e:local_single e2e/tests/vp-plugin/kpi-summary.e2e.ts > /Users/c.koh.3/Downloads/e2e_results/data/e2e_local/e2e_run_{}.txt 2>&1"
+mkdir -p /Users/c.koh.3/Downloads/e2e_results/data/e2e_local_single && seq 1 20 | xargs -I{} sh -c "RUN_ID={} yarn e2e:local_single e2e/tests/vp-plugin/customer-conversion-all-details-check.e2e.ts > /Users/c.koh.3/Downloads/e2e_results/data/e2e_local_single/e2e_run_{}.txt 2>&1"
+```
+
+Debug 40 times on a single test in parallel with tracing
+
+```
+mkdir -p /Users/c.koh.3/Downloads/e2e_results/data/e2e_local_single && seq 1 20 | xargs -P -I{} sh -c "RUN_ID={} yarn e2e:local_single e2e/tests/vp-plugin/customer-conversion-all-details-check.e2e.ts > /Users/c.koh.3/Downloads/e2e_results/data/e2e_local_single/e2e_run_{}.txt 2>&1"
 ```
