@@ -1,0 +1,647 @@
+yarn run v1.22.4
+$ sh ./scripts/setup-e2e-local.sh; export $(xargs < ./envs/.env.e2e.local); yarn e2e
+checking for local e2e env file
+./envs/.env.e2e.local exists
+$ E2E_TEST_USERNAME=$E2E_TEST_USERNAME E2E_TEST_PASSWORD=$E2E_TEST_PASSWORD sh ./scripts/run-e2e.sh
+$ /Users/c.koh.3/Documents/Projects/react/fp-apac-jedi-skywalker/node_modules/.bin/jest -c e2e/jest-e2e.config.js --json --outputFile=e2e/output/playwright.webkit.json --maxWorkers=4
+PASS browser: webkit e2e/tests/vp-plugin/deal-utilization-card-and-details.e2e.ts (65.672s)
+PASS browser: webkit e2e/tests/vfd-plugin/dealform-persist-vendor-change.e2e.ts (33.82s)
+PASS browser: webkit e2e/tests/vfd-plugin/edit-deal-button-verification.e2e.ts (21.536s)
+FAIL browser: webkit e2e/tests/vp-plugin/customer-conversion-all-details-check.e2e.ts (143.971s)
+  ● VP - Customer Conversion Individual details page check › [C541138]Verify "Customer conversion-Saw your store" funnel graph details
+
+    TimeoutError: page.waitForNavigation: Timeout 30000ms exceeded.
+    =========================== logs ===========================
+    waiting for navigation until "networkidle"
+    ============================================================
+    Note: use DEBUG=pw:api environment variable to capture Playwright logs.
+
+      at ../../../node_modules/playwright/lib/client/waiter.js:49:51
+      at Waiter.waitForPromise (../../../node_modules/playwright/lib/client/waiter.js:62:28)
+      at ../../../node_modules/playwright/lib/client/frame.js:120:36
+      at Frame._wrapApiCall (../../../node_modules/playwright/lib/client/channelOwner.js:77:28)
+
+  ● VP - Customer Conversion Individual details page check › [C682218]Verify "Customer conversion-Entered your store" funnel graph details
+
+    TimeoutError: page.waitForNavigation: Timeout 30000ms exceeded.
+    =========================== logs ===========================
+    waiting for navigation until "networkidle"
+    ============================================================
+    Note: use DEBUG=pw:api environment variable to capture Playwright logs.
+
+      at ../../../node_modules/playwright/lib/client/waiter.js:49:51
+      at Waiter.waitForPromise (../../../node_modules/playwright/lib/client/waiter.js:62:28)
+      at ../../../node_modules/playwright/lib/client/frame.js:120:36
+      at Frame._wrapApiCall (../../../node_modules/playwright/lib/client/channelOwner.js:77:28)
+
+  ● VP - Customer Conversion Individual details page check › [C682219]Verify "Customer conversion-Placed orders" funnel graph details
+
+    TimeoutError: page.waitForNavigation: Timeout 30000ms exceeded.
+    =========================== logs ===========================
+    waiting for navigation until "networkidle"
+    ============================================================
+    Note: use DEBUG=pw:api environment variable to capture Playwright logs.
+
+      at ../../../node_modules/playwright/lib/client/waiter.js:49:51
+      at Waiter.waitForPromise (../../../node_modules/playwright/lib/client/waiter.js:62:28)
+      at ../../../node_modules/playwright/lib/client/frame.js:120:36
+      at Frame._wrapApiCall (../../../node_modules/playwright/lib/client/channelOwner.js:77:28)
+
+FAIL browser: webkit e2e/tests/vp-plugin/vendor-health-single-vendor-account.e2e.ts (149.149s)
+  ● VP - Vendor Health Feature for account with single vendor › [C412809] Verify if the user account is single outlet, details page overview should display number of metrics are healthy
+
+    TimeoutError: page.waitForNavigation: Timeout 30000ms exceeded.
+    =========================== logs ===========================
+    waiting for navigation until "networkidle"
+    ============================================================
+    Note: use DEBUG=pw:api environment variable to capture Playwright logs.
+
+      at ../../../node_modules/playwright/lib/client/waiter.js:49:51
+      at Waiter.waitForPromise (../../../node_modules/playwright/lib/client/waiter.js:62:28)
+      at ../../../node_modules/playwright/lib/client/frame.js:120:36
+      at Frame._wrapApiCall (../../../node_modules/playwright/lib/client/channelOwner.js:77:28)
+
+  ● VP - Vendor Health Feature for account with single vendor › [C416042] Verify if the user account is single, details page should display list of all KPIs with value and target of each KPI in bottom half
+
+    TimeoutError: page.waitForNavigation: Timeout 30000ms exceeded.
+    =========================== logs ===========================
+    waiting for navigation until "networkidle"
+    ============================================================
+    Note: use DEBUG=pw:api environment variable to capture Playwright logs.
+
+      at ../../../node_modules/playwright/lib/client/waiter.js:49:51
+      at Waiter.waitForPromise (../../../node_modules/playwright/lib/client/waiter.js:62:28)
+      at ../../../node_modules/playwright/lib/client/frame.js:120:36
+      at Frame._wrapApiCall (../../../node_modules/playwright/lib/client/channelOwner.js:77:28)
+
+  ● VP - Vendor Health Feature for account with single vendor › [C413078] Verify if the user account is single outlet, details page should display health and reward static image in bottom
+
+    TimeoutError: page.waitForNavigation: Timeout 30000ms exceeded.
+    =========================== logs ===========================
+    waiting for navigation until "networkidle"
+    ============================================================
+    Note: use DEBUG=pw:api environment variable to capture Playwright logs.
+
+      at ../../../node_modules/playwright/lib/client/waiter.js:49:51
+      at Waiter.waitForPromise (../../../node_modules/playwright/lib/client/waiter.js:62:28)
+      at ../../../node_modules/playwright/lib/client/frame.js:120:36
+      at Frame._wrapApiCall (../../../node_modules/playwright/lib/client/channelOwner.js:77:28)
+
+PASS browser: webkit e2e/tests/vp-plugin/kpi-summary.e2e.ts (15.375s)
+FAIL browser: webkit e2e/tests/vppd-plugin/edit-deal-button-verification.e2e.ts (42.468s)
+  ● VPPD - edit promotion button clicked › [C363392]Verify page goes back & selected deal form values are retained
+
+    page.waitForSelector: Timeout 30000ms exceeded.
+    =========================== logs ===========================
+    waiting for selector "[data-testid="wrapped-select-dealtype"]"
+    ============================================================
+    Note: use DEBUG=pw:api environment variable to capture Playwright logs.
+
+      10 |   fieldToSelect: string
+      11 | ): Promise<void> => {
+    > 12 |   const field = await page.waitForSelector(fieldSelector, { state: 'attached' });
+         |                            ^
+      13 |   await retry(
+      14 |     async () => {
+      15 |       let fieldToSelectIsVisible = false;
+
+      at Object.captureStackTrace (../../../node_modules/playwright/lib/utils/stackTrace.js:51:19)
+      at Connection.sendMessageToServer (../../../node_modules/playwright/lib/client/connection.js:69:48)
+      at Proxy.<anonymous> (../../../node_modules/playwright/lib/client/channelOwner.js:64:61)
+      at ../../../node_modules/playwright/lib/client/frame.js:193:42
+      at Frame._wrapApiCall (../../../node_modules/playwright/lib/client/channelOwner.js:77:34)
+      at Frame.waitForSelector (../../../node_modules/playwright/lib/client/frame.js:188:21)
+      at ../../../node_modules/playwright/lib/client/page.js:212:60
+      at Page._attributeToPage (../../../node_modules/playwright/lib/client/page.js:202:20)
+      at Page.waitForSelector (../../../node_modules/playwright/lib/client/page.js:212:21)
+      at utils/dealHelper/selectField.ts:12:28
+      at step (utils/dealHelper/selectField.ts:33:23)
+      at Object.next (utils/dealHelper/selectField.ts:14:53)
+      at utils/dealHelper/selectField.ts:8:71
+      at Object.<anonymous>.__awaiter (utils/dealHelper/selectField.ts:4:12)
+      at utils/dealHelper/selectField.ts:10:24
+      at actions/vppd-plugin/deals-overview/index.ts:25:26
+      at step (actions/vppd-plugin/deals-overview/index.ts:33:23)
+      at Object.next (actions/vppd-plugin/deals-overview/index.ts:14:53)
+      at actions/vppd-plugin/deals-overview/index.ts:8:71
+      at Object.<anonymous>.__awaiter (actions/vppd-plugin/deals-overview/index.ts:4:12)
+      at actions/vppd-plugin/deals-overview/index.ts:22:90
+      at tests/vppd-plugin/edit-deal-button-verification.e2e.ts:17:29
+      at step (tests/vppd-plugin/edit-deal-button-verification.e2e.ts:63:23)
+      at Object.next (tests/vppd-plugin/edit-deal-button-verification.e2e.ts:44:53)
+      at fulfilled (tests/vppd-plugin/edit-deal-button-verification.e2e.ts:35:58)
+
+PASS browser: webkit e2e/tests/vfd-plugin/tnc-error-message-validation.e2e.ts (20.726s)
+FAIL browser: webkit e2e/tests/vp-plugin/vendor-health.e2e.ts (202.093s)
+  ● VP - Vendor Health Feature › [C412698] Verify if the user account is chain outlet, details page overview should display number of outlets are healthy
+
+    TimeoutError: page.waitForNavigation: Timeout 30000ms exceeded.
+    =========================== logs ===========================
+    waiting for navigation until "networkidle"
+    ============================================================
+    Note: use DEBUG=pw:api environment variable to capture Playwright logs.
+
+      at ../../../node_modules/playwright/lib/client/waiter.js:49:51
+      at Waiter.waitForPromise (../../../node_modules/playwright/lib/client/waiter.js:62:28)
+      at ../../../node_modules/playwright/lib/client/frame.js:120:36
+      at Frame._wrapApiCall (../../../node_modules/playwright/lib/client/channelOwner.js:77:28)
+
+  ● VP - Vendor Health Feature › [C412699] Verify if the user account is chain, details page should display card for top 4 worst performing outlets in top half
+
+    TimeoutError: page.waitForNavigation: Timeout 30000ms exceeded.
+    =========================== logs ===========================
+    waiting for navigation until "networkidle"
+    ============================================================
+    Note: use DEBUG=pw:api environment variable to capture Playwright logs.
+
+      at ../../../node_modules/playwright/lib/client/waiter.js:49:51
+      at Waiter.waitForPromise (../../../node_modules/playwright/lib/client/waiter.js:62:28)
+      at ../../../node_modules/playwright/lib/client/frame.js:120:36
+      at Frame._wrapApiCall (../../../node_modules/playwright/lib/client/channelOwner.js:77:28)
+
+  ● VP - Vendor Health Feature › [C413074] Verify if the user account is chain, details page should display list of all KPIs with count of outlets are healthy for each KPI in bottom half
+
+    TimeoutError: page.waitForNavigation: Timeout 30000ms exceeded.
+    =========================== logs ===========================
+    waiting for navigation until "networkidle"
+    ============================================================
+    Note: use DEBUG=pw:api environment variable to capture Playwright logs.
+
+      at ../../../node_modules/playwright/lib/client/waiter.js:49:51
+      at Waiter.waitForPromise (../../../node_modules/playwright/lib/client/waiter.js:62:28)
+      at ../../../node_modules/playwright/lib/client/frame.js:120:36
+      at Frame._wrapApiCall (../../../node_modules/playwright/lib/client/channelOwner.js:77:28)
+
+  ● VP - Vendor Health Feature › [C418949] Verify if the user account is chain, details page should display health and reward static image in bottom
+
+    TimeoutError: page.waitForNavigation: Timeout 30000ms exceeded.
+    =========================== logs ===========================
+    waiting for navigation until "networkidle"
+    ============================================================
+    Note: use DEBUG=pw:api environment variable to capture Playwright logs.
+
+      at ../../../node_modules/playwright/lib/client/waiter.js:49:51
+      at Waiter.waitForPromise (../../../node_modules/playwright/lib/client/waiter.js:62:28)
+      at ../../../node_modules/playwright/lib/client/frame.js:120:36
+      at Frame._wrapApiCall (../../../node_modules/playwright/lib/client/channelOwner.js:77:28)
+
+FAIL browser: webkit e2e/tests/vp-plugin/delay-order-details-page.e2e.ts (42.278s)
+  ● VP - Delay Orders details page › [C367698]Verify the "restaurant delay rate" KPI card, insight and details screen details
+
+    TimeoutError: page.waitForNavigation: Timeout 30000ms exceeded.
+    =========================== logs ===========================
+    waiting for navigation until "networkidle"
+    ============================================================
+    Note: use DEBUG=pw:api environment variable to capture Playwright logs.
+
+      at ../../../node_modules/playwright/lib/client/waiter.js:49:51
+      at Waiter.waitForPromise (../../../node_modules/playwright/lib/client/waiter.js:62:28)
+      at ../../../node_modules/playwright/lib/client/frame.js:120:36
+      at Frame._wrapApiCall (../../../node_modules/playwright/lib/client/channelOwner.js:77:28)
+
+FAIL browser: webkit e2e/tests/vp-plugin/single-outlet-health-page.e2e.ts (46.413s)
+  ● VP - Single Outlet Health Details page › [C412892]Verify if user account is chain, clicking the outlet card on details page redirects to single outlet details page
+
+    TimeoutError: page.waitForNavigation: Timeout 30000ms exceeded.
+    =========================== logs ===========================
+    waiting for navigation until "networkidle"
+    ============================================================
+    Note: use DEBUG=pw:api environment variable to capture Playwright logs.
+
+      at ../../../node_modules/playwright/lib/client/waiter.js:49:51
+      at Waiter.waitForPromise (../../../node_modules/playwright/lib/client/waiter.js:62:28)
+      at ../../../node_modules/playwright/lib/client/frame.js:120:36
+      at Frame._wrapApiCall (../../../node_modules/playwright/lib/client/channelOwner.js:77:28)
+
+FAIL browser: webkit e2e/tests/vp-plugin/all-outlets-health-page.e2e.ts (44.408s)
+  ● VP - All Outlets Health Page › [C467401]Verify all outlets health status in single page if chain outlet user has more than 4 outlets
+
+    TimeoutError: page.waitForNavigation: Timeout 30000ms exceeded.
+    =========================== logs ===========================
+    waiting for navigation until "networkidle"
+    ============================================================
+    Note: use DEBUG=pw:api environment variable to capture Playwright logs.
+
+      at ../../../node_modules/playwright/lib/client/waiter.js:49:51
+      at Waiter.waitForPromise (../../../node_modules/playwright/lib/client/waiter.js:62:28)
+      at ../../../node_modules/playwright/lib/client/frame.js:120:36
+      at Frame._wrapApiCall (../../../node_modules/playwright/lib/client/channelOwner.js:77:28)
+
+PASS browser: webkit e2e/tests/vfd-plugin/dealform-has-default-options.e2e.ts (13.558s)
+FAIL browser: webkit e2e/tests/vp-plugin/prep-time-details-page.e2e.ts (43.771s)
+  ● VP - Prep Time details page › [C367697]Verify the "Avg food preparation time" KPI card, insight and details screen details
+
+    TimeoutError: page.waitForNavigation: Timeout 30000ms exceeded.
+    =========================== logs ===========================
+    waiting for navigation until "networkidle"
+    ============================================================
+    Note: use DEBUG=pw:api environment variable to capture Playwright logs.
+
+      at ../../../node_modules/playwright/lib/client/waiter.js:49:51
+      at Waiter.waitForPromise (../../../node_modules/playwright/lib/client/waiter.js:62:28)
+      at ../../../node_modules/playwright/lib/client/frame.js:120:36
+      at Frame._wrapApiCall (../../../node_modules/playwright/lib/client/channelOwner.js:77:28)
+
+FAIL browser: webkit e2e/tests/vp-plugin/accept-time-details-page.e2e.ts (44.004s)
+  ● VP - Accept Time details page › [C367699]Verify the "Avg restaurant acceptance time" KPI card, insight and details screen details
+
+    TimeoutError: page.waitForNavigation: Timeout 30000ms exceeded.
+    =========================== logs ===========================
+    waiting for navigation until "networkidle"
+    ============================================================
+    Note: use DEBUG=pw:api environment variable to capture Playwright logs.
+
+      at ../../../node_modules/playwright/lib/client/waiter.js:49:51
+      at Waiter.waitForPromise (../../../node_modules/playwright/lib/client/waiter.js:62:28)
+      at ../../../node_modules/playwright/lib/client/frame.js:120:36
+      at Frame._wrapApiCall (../../../node_modules/playwright/lib/client/channelOwner.js:77:28)
+
+FAIL browser: webkit e2e/tests/vp-plugin/customer-conversion-card-and-details.e2e.ts (46.129s)
+  ● VP - Customer Conversion card and details page › [C367700]Verify the "Customer conversion" KPI summary card and funnel content details
+
+    TimeoutError: page.waitForNavigation: Timeout 30000ms exceeded.
+    =========================== logs ===========================
+    waiting for navigation until "networkidle"
+    ============================================================
+    Note: use DEBUG=pw:api environment variable to capture Playwright logs.
+
+      at ../../../node_modules/playwright/lib/client/waiter.js:49:51
+      at Waiter.waitForPromise (../../../node_modules/playwright/lib/client/waiter.js:62:28)
+      at ../../../node_modules/playwright/lib/client/frame.js:120:36
+      at Frame._wrapApiCall (../../../node_modules/playwright/lib/client/channelOwner.js:77:28)
+
+FAIL browser: webkit e2e/tests/vp-plugin/offline-duration-details-page.e2e.ts (41.475s)
+  ● VP - Offline Duration details page › [C367696]Verify the "offline duration" KPI card, insight and details screen details
+
+    TimeoutError: page.waitForNavigation: Timeout 30000ms exceeded.
+    =========================== logs ===========================
+    waiting for navigation until "networkidle"
+    ============================================================
+    Note: use DEBUG=pw:api environment variable to capture Playwright logs.
+
+      at ../../../node_modules/playwright/lib/client/waiter.js:49:51
+      at Waiter.waitForPromise (../../../node_modules/playwright/lib/client/waiter.js:62:28)
+      at ../../../node_modules/playwright/lib/client/frame.js:120:36
+      at Frame._wrapApiCall (../../../node_modules/playwright/lib/client/channelOwner.js:77:28)
+
+FAIL browser: webkit e2e/tests/vp-plugin/order-rejection-rate-card-and-details.e2e.ts (44.6s)
+  ● VP - Order Rejection Rate card and details page › [C537064]Verify the "Restaurant Order Rejection Rate" KPI card, insight and details screen details
+
+    TimeoutError: page.waitForNavigation: Timeout 30000ms exceeded.
+    =========================== logs ===========================
+    waiting for navigation until "networkidle"
+    ============================================================
+    Note: use DEBUG=pw:api environment variable to capture Playwright logs.
+
+      at ../../../node_modules/playwright/lib/client/waiter.js:49:51
+      at Waiter.waitForPromise (../../../node_modules/playwright/lib/client/waiter.js:62:28)
+      at ../../../node_modules/playwright/lib/client/frame.js:120:36
+      at Frame._wrapApiCall (../../../node_modules/playwright/lib/client/channelOwner.js:77:28)
+
+FAIL browser: webkit e2e/tests/vp-plugin/order-revenue-loss-card-and-details.e2e.ts (41.64s)
+  ● VP - Order Revenue Loss card and details page › [C367695]Verify the "Order revenue loss" KPI card, insight and details screen details
+
+    TimeoutError: page.waitForNavigation: Timeout 30000ms exceeded.
+    =========================== logs ===========================
+    waiting for navigation until "networkidle"
+    ============================================================
+    Note: use DEBUG=pw:api environment variable to capture Playwright logs.
+
+      at ../../../node_modules/playwright/lib/client/waiter.js:49:51
+      at Waiter.waitForPromise (../../../node_modules/playwright/lib/client/waiter.js:62:28)
+      at ../../../node_modules/playwright/lib/client/frame.js:120:36
+      at Frame._wrapApiCall (../../../node_modules/playwright/lib/client/channelOwner.js:77:28)
+
+Test Suites: 13 failed, 6 passed, 19 total
+Tests:       20 failed, 13 passed, 33 total
+Snapshots:   0 total
+Time:        293.586s
+Ran all test suites.
+Test results written to: e2e/output/playwright.webkit.json
+error Command failed with exit code 1.
+info Visit https://yarnpkg.com/en/docs/cli/run for documentation about this command.
+$ /Users/c.koh.3/Documents/Projects/react/fp-apac-jedi-skywalker/node_modules/.bin/jest -c e2e/jest-e2e.config.js --json --outputFile=e2e/output/playwright.json --maxWorkers=4
+FAIL browser: chromium e2e/tests/vp-plugin/single-outlet-health-page.e2e.ts (47.368s)
+  ● VP - Single Outlet Health Details page › [C412892]Verify if user account is chain, clicking the outlet card on details page redirects to single outlet details page
+
+    TimeoutError: page.waitForNavigation: Timeout 30000ms exceeded.
+    =========================== logs ===========================
+    waiting for navigation until "networkidle"
+    ============================================================
+    Note: use DEBUG=pw:api environment variable to capture Playwright logs.
+
+      at ../../../node_modules/playwright/lib/client/waiter.js:49:51
+      at Waiter.waitForPromise (../../../node_modules/playwright/lib/client/waiter.js:62:28)
+      at ../../../node_modules/playwright/lib/client/frame.js:120:36
+      at Frame._wrapApiCall (../../../node_modules/playwright/lib/client/channelOwner.js:77:28)
+
+FAIL browser: chromium e2e/tests/vp-plugin/customer-conversion-card-and-details.e2e.ts (47.561s)
+  ● VP - Customer Conversion card and details page › [C367700]Verify the "Customer conversion" KPI summary card and funnel content details
+
+    TimeoutError: page.waitForNavigation: Timeout 30000ms exceeded.
+    =========================== logs ===========================
+    waiting for navigation until "networkidle"
+    ============================================================
+    Note: use DEBUG=pw:api environment variable to capture Playwright logs.
+
+      at ../../../node_modules/playwright/lib/client/waiter.js:49:51
+      at Waiter.waitForPromise (../../../node_modules/playwright/lib/client/waiter.js:62:28)
+      at ../../../node_modules/playwright/lib/client/frame.js:120:36
+      at Frame._wrapApiCall (../../../node_modules/playwright/lib/client/channelOwner.js:77:28)
+
+FAIL browser: chromium e2e/tests/vp-plugin/customer-conversion-all-details-check.e2e.ts (129.577s)
+  ● VP - Customer Conversion Individual details page check › [C541138]Verify "Customer conversion-Saw your store" funnel graph details
+
+    TimeoutError: page.waitForNavigation: Timeout 30000ms exceeded.
+    =========================== logs ===========================
+    waiting for navigation until "networkidle"
+    ============================================================
+    Note: use DEBUG=pw:api environment variable to capture Playwright logs.
+
+      at ../../../node_modules/playwright/lib/client/waiter.js:49:51
+      at Waiter.waitForPromise (../../../node_modules/playwright/lib/client/waiter.js:62:28)
+      at ../../../node_modules/playwright/lib/client/frame.js:120:36
+      at Frame._wrapApiCall (../../../node_modules/playwright/lib/client/channelOwner.js:77:28)
+
+  ● VP - Customer Conversion Individual details page check › [C682218]Verify "Customer conversion-Entered your store" funnel graph details
+
+    TimeoutError: page.waitForNavigation: Timeout 30000ms exceeded.
+    =========================== logs ===========================
+    waiting for navigation until "networkidle"
+    ============================================================
+    Note: use DEBUG=pw:api environment variable to capture Playwright logs.
+
+      at ../../../node_modules/playwright/lib/client/waiter.js:49:51
+      at Waiter.waitForPromise (../../../node_modules/playwright/lib/client/waiter.js:62:28)
+      at ../../../node_modules/playwright/lib/client/frame.js:120:36
+      at Frame._wrapApiCall (../../../node_modules/playwright/lib/client/channelOwner.js:77:28)
+
+  ● VP - Customer Conversion Individual details page check › [C682219]Verify "Customer conversion-Placed orders" funnel graph details
+
+    TimeoutError: page.waitForNavigation: Timeout 30000ms exceeded.
+    =========================== logs ===========================
+    waiting for navigation until "networkidle"
+    ============================================================
+    Note: use DEBUG=pw:api environment variable to capture Playwright logs.
+
+      at ../../../node_modules/playwright/lib/client/waiter.js:49:51
+      at Waiter.waitForPromise (../../../node_modules/playwright/lib/client/waiter.js:62:28)
+      at ../../../node_modules/playwright/lib/client/frame.js:120:36
+      at Frame._wrapApiCall (../../../node_modules/playwright/lib/client/channelOwner.js:77:28)
+
+FAIL browser: chromium e2e/tests/vp-plugin/vendor-health-single-vendor-account.e2e.ts (136.298s)
+  ● VP - Vendor Health Feature for account with single vendor › [C412809] Verify if the user account is single outlet, details page overview should display number of metrics are healthy
+
+    TimeoutError: page.waitForNavigation: Timeout 30000ms exceeded.
+    =========================== logs ===========================
+    waiting for navigation until "networkidle"
+    ============================================================
+    Note: use DEBUG=pw:api environment variable to capture Playwright logs.
+
+      at ../../../node_modules/playwright/lib/client/waiter.js:49:51
+      at Waiter.waitForPromise (../../../node_modules/playwright/lib/client/waiter.js:62:28)
+      at ../../../node_modules/playwright/lib/client/frame.js:120:36
+      at Frame._wrapApiCall (../../../node_modules/playwright/lib/client/channelOwner.js:77:28)
+
+  ● VP - Vendor Health Feature for account with single vendor › [C416042] Verify if the user account is single, details page should display list of all KPIs with value and target of each KPI in bottom half
+
+    TimeoutError: page.waitForNavigation: Timeout 30000ms exceeded.
+    =========================== logs ===========================
+    waiting for navigation until "networkidle"
+    ============================================================
+    Note: use DEBUG=pw:api environment variable to capture Playwright logs.
+
+      at ../../../node_modules/playwright/lib/client/waiter.js:49:51
+      at Waiter.waitForPromise (../../../node_modules/playwright/lib/client/waiter.js:62:28)
+      at ../../../node_modules/playwright/lib/client/frame.js:120:36
+      at Frame._wrapApiCall (../../../node_modules/playwright/lib/client/channelOwner.js:77:28)
+
+  ● VP - Vendor Health Feature for account with single vendor › [C413078] Verify if the user account is single outlet, details page should display health and reward static image in bottom
+
+    TimeoutError: page.waitForNavigation: Timeout 30000ms exceeded.
+    =========================== logs ===========================
+    waiting for navigation until "networkidle"
+    ============================================================
+    Note: use DEBUG=pw:api environment variable to capture Playwright logs.
+
+      at ../../../node_modules/playwright/lib/client/waiter.js:49:51
+      at Waiter.waitForPromise (../../../node_modules/playwright/lib/client/waiter.js:62:28)
+      at ../../../node_modules/playwright/lib/client/frame.js:120:36
+      at Frame._wrapApiCall (../../../node_modules/playwright/lib/client/channelOwner.js:77:28)
+
+FAIL browser: chromium e2e/tests/vp-plugin/order-rejection-rate-card-and-details.e2e.ts (47.132s)
+  ● VP - Order Rejection Rate card and details page › [C537064]Verify the "Restaurant Order Rejection Rate" KPI card, insight and details screen details
+
+    TimeoutError: page.waitForNavigation: Timeout 30000ms exceeded.
+    =========================== logs ===========================
+    waiting for navigation until "networkidle"
+    ============================================================
+    Note: use DEBUG=pw:api environment variable to capture Playwright logs.
+
+      at ../../../node_modules/playwright/lib/client/waiter.js:49:51
+      at Waiter.waitForPromise (../../../node_modules/playwright/lib/client/waiter.js:62:28)
+      at ../../../node_modules/playwright/lib/client/frame.js:120:36
+      at Frame._wrapApiCall (../../../node_modules/playwright/lib/client/channelOwner.js:77:28)
+
+FAIL browser: chromium e2e/tests/vp-plugin/all-outlets-health-page.e2e.ts (44.784s)
+  ● VP - All Outlets Health Page › [C467401]Verify all outlets health status in single page if chain outlet user has more than 4 outlets
+
+    TimeoutError: page.waitForNavigation: Timeout 30000ms exceeded.
+    =========================== logs ===========================
+    waiting for navigation until "networkidle"
+    ============================================================
+    Note: use DEBUG=pw:api environment variable to capture Playwright logs.
+
+      at ../../../node_modules/playwright/lib/client/waiter.js:49:51
+      at Waiter.waitForPromise (../../../node_modules/playwright/lib/client/waiter.js:62:28)
+      at ../../../node_modules/playwright/lib/client/frame.js:120:36
+      at Frame._wrapApiCall (../../../node_modules/playwright/lib/client/channelOwner.js:77:28)
+
+FAIL browser: chromium e2e/tests/vp-plugin/accept-time-details-page.e2e.ts (45.531s)
+  ● VP - Accept Time details page › [C367699]Verify the "Avg restaurant acceptance time" KPI card, insight and details screen details
+
+    TimeoutError: page.waitForNavigation: Timeout 30000ms exceeded.
+    =========================== logs ===========================
+    waiting for navigation until "networkidle"
+    ============================================================
+    Note: use DEBUG=pw:api environment variable to capture Playwright logs.
+
+      at ../../../node_modules/playwright/lib/client/waiter.js:49:51
+      at Waiter.waitForPromise (../../../node_modules/playwright/lib/client/waiter.js:62:28)
+      at ../../../node_modules/playwright/lib/client/frame.js:120:36
+      at Frame._wrapApiCall (../../../node_modules/playwright/lib/client/channelOwner.js:77:28)
+
+FAIL browser: chromium e2e/tests/vp-plugin/prep-time-details-page.e2e.ts (45.459s)
+  ● VP - Prep Time details page › [C367697]Verify the "Avg food preparation time" KPI card, insight and details screen details
+
+    TimeoutError: page.waitForNavigation: Timeout 30000ms exceeded.
+    =========================== logs ===========================
+    waiting for navigation until "networkidle"
+    ============================================================
+    Note: use DEBUG=pw:api environment variable to capture Playwright logs.
+
+      at ../../../node_modules/playwright/lib/client/waiter.js:49:51
+      at Waiter.waitForPromise (../../../node_modules/playwright/lib/client/waiter.js:62:28)
+      at ../../../node_modules/playwright/lib/client/frame.js:120:36
+      at Frame._wrapApiCall (../../../node_modules/playwright/lib/client/channelOwner.js:77:28)
+
+FAIL browser: chromium e2e/tests/vp-plugin/vendor-health.e2e.ts (193.36s)
+  ● VP - Vendor Health Feature › [C412698] Verify if the user account is chain outlet, details page overview should display number of outlets are healthy
+
+    TimeoutError: page.waitForNavigation: Timeout 30000ms exceeded.
+    =========================== logs ===========================
+    waiting for navigation until "networkidle"
+    ============================================================
+    Note: use DEBUG=pw:api environment variable to capture Playwright logs.
+
+      at ../../../node_modules/playwright/lib/client/waiter.js:49:51
+      at Waiter.waitForPromise (../../../node_modules/playwright/lib/client/waiter.js:62:28)
+      at ../../../node_modules/playwright/lib/client/frame.js:120:36
+      at Frame._wrapApiCall (../../../node_modules/playwright/lib/client/channelOwner.js:77:28)
+
+  ● VP - Vendor Health Feature › [C412699] Verify if the user account is chain, details page should display card for top 4 worst performing outlets in top half
+
+    TimeoutError: page.waitForNavigation: Timeout 30000ms exceeded.
+    =========================== logs ===========================
+    waiting for navigation until "networkidle"
+    ============================================================
+    Note: use DEBUG=pw:api environment variable to capture Playwright logs.
+
+      at ../../../node_modules/playwright/lib/client/waiter.js:49:51
+      at Waiter.waitForPromise (../../../node_modules/playwright/lib/client/waiter.js:62:28)
+      at ../../../node_modules/playwright/lib/client/frame.js:120:36
+      at Frame._wrapApiCall (../../../node_modules/playwright/lib/client/channelOwner.js:77:28)
+
+  ● VP - Vendor Health Feature › [C413074] Verify if the user account is chain, details page should display list of all KPIs with count of outlets are healthy for each KPI in bottom half
+
+    TimeoutError: page.waitForNavigation: Timeout 30000ms exceeded.
+    =========================== logs ===========================
+    waiting for navigation until "networkidle"
+    ============================================================
+    Note: use DEBUG=pw:api environment variable to capture Playwright logs.
+
+      at ../../../node_modules/playwright/lib/client/waiter.js:49:51
+      at Waiter.waitForPromise (../../../node_modules/playwright/lib/client/waiter.js:62:28)
+      at ../../../node_modules/playwright/lib/client/frame.js:120:36
+      at Frame._wrapApiCall (../../../node_modules/playwright/lib/client/channelOwner.js:77:28)
+
+  ● VP - Vendor Health Feature › [C418949] Verify if the user account is chain, details page should display health and reward static image in bottom
+
+    TimeoutError: page.waitForNavigation: Timeout 30000ms exceeded.
+    =========================== logs ===========================
+    waiting for navigation until "networkidle"
+    ============================================================
+    Note: use DEBUG=pw:api environment variable to capture Playwright logs.
+
+      at ../../../node_modules/playwright/lib/client/waiter.js:49:51
+      at Waiter.waitForPromise (../../../node_modules/playwright/lib/client/waiter.js:62:28)
+      at ../../../node_modules/playwright/lib/client/frame.js:120:36
+      at Frame._wrapApiCall (../../../node_modules/playwright/lib/client/channelOwner.js:77:28)
+
+FAIL browser: chromium e2e/tests/vppd-plugin/edit-deal-button-verification.e2e.ts (42.058s)
+  ● VPPD - edit promotion button clicked › [C363392]Verify page goes back & selected deal form values are retained
+
+    page.waitForSelector: Timeout 30000ms exceeded.
+    =========================== logs ===========================
+    waiting for selector "[data-testid="wrapped-select-dealtype"]"
+    ============================================================
+    Note: use DEBUG=pw:api environment variable to capture Playwright logs.
+
+      10 |   fieldToSelect: string
+      11 | ): Promise<void> => {
+    > 12 |   const field = await page.waitForSelector(fieldSelector, { state: 'attached' });
+         |                            ^
+      13 |   await retry(
+      14 |     async () => {
+      15 |       let fieldToSelectIsVisible = false;
+
+      at Object.captureStackTrace (../../../node_modules/playwright/lib/utils/stackTrace.js:51:19)
+      at Connection.sendMessageToServer (../../../node_modules/playwright/lib/client/connection.js:69:48)
+      at Proxy.<anonymous> (../../../node_modules/playwright/lib/client/channelOwner.js:64:61)
+      at ../../../node_modules/playwright/lib/client/frame.js:193:42
+      at Frame._wrapApiCall (../../../node_modules/playwright/lib/client/channelOwner.js:77:34)
+      at Frame.waitForSelector (../../../node_modules/playwright/lib/client/frame.js:188:21)
+      at ../../../node_modules/playwright/lib/client/page.js:212:60
+      at Page._attributeToPage (../../../node_modules/playwright/lib/client/page.js:202:20)
+      at Page.waitForSelector (../../../node_modules/playwright/lib/client/page.js:212:21)
+      at utils/dealHelper/selectField.ts:12:28
+      at step (utils/dealHelper/selectField.ts:33:23)
+      at Object.next (utils/dealHelper/selectField.ts:14:53)
+      at utils/dealHelper/selectField.ts:8:71
+      at Object.<anonymous>.__awaiter (utils/dealHelper/selectField.ts:4:12)
+      at utils/dealHelper/selectField.ts:10:24
+      at actions/vppd-plugin/deals-overview/index.ts:25:26
+      at step (actions/vppd-plugin/deals-overview/index.ts:33:23)
+      at Object.next (actions/vppd-plugin/deals-overview/index.ts:14:53)
+      at actions/vppd-plugin/deals-overview/index.ts:8:71
+      at Object.<anonymous>.__awaiter (actions/vppd-plugin/deals-overview/index.ts:4:12)
+      at actions/vppd-plugin/deals-overview/index.ts:22:90
+      at tests/vppd-plugin/edit-deal-button-verification.e2e.ts:17:29
+      at step (tests/vppd-plugin/edit-deal-button-verification.e2e.ts:63:23)
+      at Object.next (tests/vppd-plugin/edit-deal-button-verification.e2e.ts:44:53)
+      at fulfilled (tests/vppd-plugin/edit-deal-button-verification.e2e.ts:35:58)
+
+FAIL browser: chromium e2e/tests/vp-plugin/delay-order-details-page.e2e.ts (44.587s)
+  ● VP - Delay Orders details page › [C367698]Verify the "restaurant delay rate" KPI card, insight and details screen details
+
+    TimeoutError: page.waitForNavigation: Timeout 30000ms exceeded.
+    =========================== logs ===========================
+    waiting for navigation until "networkidle"
+    ============================================================
+    Note: use DEBUG=pw:api environment variable to capture Playwright logs.
+
+      at ../../../node_modules/playwright/lib/client/waiter.js:49:51
+      at Waiter.waitForPromise (../../../node_modules/playwright/lib/client/waiter.js:62:28)
+      at ../../../node_modules/playwright/lib/client/frame.js:120:36
+      at Frame._wrapApiCall (../../../node_modules/playwright/lib/client/channelOwner.js:77:28)
+
+FAIL browser: chromium e2e/tests/vp-plugin/order-revenue-loss-card-and-details.e2e.ts (44.844s)
+  ● VP - Order Revenue Loss card and details page › [C367695]Verify the "Order revenue loss" KPI card, insight and details screen details
+
+    TimeoutError: page.waitForNavigation: Timeout 30000ms exceeded.
+    =========================== logs ===========================
+    waiting for navigation until "networkidle"
+    ============================================================
+    Note: use DEBUG=pw:api environment variable to capture Playwright logs.
+
+      at ../../../node_modules/playwright/lib/client/waiter.js:49:51
+      at Waiter.waitForPromise (../../../node_modules/playwright/lib/client/waiter.js:62:28)
+      at ../../../node_modules/playwright/lib/client/frame.js:120:36
+      at Frame._wrapApiCall (../../../node_modules/playwright/lib/client/channelOwner.js:77:28)
+
+FAIL browser: chromium e2e/tests/vp-plugin/offline-duration-details-page.e2e.ts (45.758s)
+  ● VP - Offline Duration details page › [C367696]Verify the "offline duration" KPI card, insight and details screen details
+
+    TimeoutError: page.waitForNavigation: Timeout 30000ms exceeded.
+    =========================== logs ===========================
+    waiting for navigation until "networkidle"
+    ============================================================
+    Note: use DEBUG=pw:api environment variable to capture Playwright logs.
+
+      at ../../../node_modules/playwright/lib/client/waiter.js:49:51
+      at Waiter.waitForPromise (../../../node_modules/playwright/lib/client/waiter.js:62:28)
+      at ../../../node_modules/playwright/lib/client/frame.js:120:36
+      at Frame._wrapApiCall (../../../node_modules/playwright/lib/client/channelOwner.js:77:28)
+
+PASS browser: chromium e2e/tests/vfd-plugin/edit-deal-button-verification.e2e.ts (24.284s)
+PASS browser: chromium e2e/tests/vfd-plugin/dealform-persist-vendor-change.e2e.ts (33.514s)
+PASS browser: chromium e2e/tests/vfd-plugin/tnc-error-message-validation.e2e.ts (20.983s)
+PASS browser: chromium e2e/tests/vp-plugin/deal-utilization-card-and-details.e2e.ts (50.389s)
+PASS browser: chromium e2e/tests/vp-plugin/kpi-summary.e2e.ts (18.814s)
+PASS browser: chromium e2e/tests/vfd-plugin/dealform-has-default-options.e2e.ts (15.935s)
+
+Test Suites: 13 failed, 6 passed, 19 total
+Tests:       20 failed, 13 passed, 33 total
+Snapshots:   0 total
+Time:        277.643s
+Ran all test suites.
+Test results written to: e2e/output/playwright.json
+error Command failed with exit code 1.
+info Visit https://yarnpkg.com/en/docs/cli/run for documentation about this command.
+Browser    Exit Code
+webkit         1
+chrome         1
+error Command failed with exit code 1.
+info Visit https://yarnpkg.com/en/docs/cli/run for documentation about this command.
+error Command failed with exit code 1.
+info Visit https://yarnpkg.com/en/docs/cli/run for documentation about this command.

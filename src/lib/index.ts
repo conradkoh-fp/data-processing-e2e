@@ -96,7 +96,6 @@ function parseErrorStats(runId: string, fileContent: string): TestError[] {
   const testErrors: TestError[] = [];
   const extractMatcher = /at (.+\.ts[^\s]+)/g;
   const matches = fileContent.match(extractMatcher);
-  console.log({ matches });
   if (matches) {
     for (const match of matches) {
       const newMatcher = new RegExp(extractMatcher);

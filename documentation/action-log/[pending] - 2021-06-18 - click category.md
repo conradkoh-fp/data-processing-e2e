@@ -129,7 +129,6 @@ export const clickCategory = (page: Page) => async (
     await category.click();
   }
   await page.waitForLoadState();
-  await page.waitForNavigation({ waitUntil: 'networkidle' });
 };
 };
 

@@ -87,7 +87,7 @@ export const clickKpiCard = (page: Page) => async (cardSelector: string) => {
 export const clickKpiCard = (page: Page) => async (cardSelector: string) => {
   const card = await page.waitForSelector(cardSelector);
   await card.click();
-  await page.waitForNavigation({ waitUntil: 'networkidle' });
+  // await page.waitForNavigation({ waitUntil: 'networkidle' }); - removed, causes tests to fail
   await page.waitForLoadState();
 };
 
