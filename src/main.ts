@@ -12,12 +12,10 @@ import { Mode } from "./Mode";
 import { setup } from "./setup";
 
 (async function main() {
-  const testEnv = TestEnv.Local;
   let { sourceFolder, outFile } = await setup({
-    mode: Mode.Reprocess,
-    env: testEnv,
+    mode: Mode.Archive,
     options: {
-      runName: "1623980474699_e2e_staging", //Override for when reprocessing
+      runName: "e2e_local", //Override for when reprocessing
     },
   });
   //Get files to be parsed

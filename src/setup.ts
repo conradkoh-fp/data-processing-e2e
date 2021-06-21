@@ -1,29 +1,29 @@
-import { dataFolder } from "./lib";
-import { TestEnv } from "./lib/env";
 import { Mode } from "./Mode";
 import fs from "fs";
 import path from "path";
 import mkdirp from "mkdirp";
 export interface SetupConfig {
   mode: Mode;
-  env: TestEnv;
-  options?: {
-    runName?: string;
+  options: {
+    runName: string;
   };
 }
 
 export async function setup(config: SetupConfig) {
-  const { mode, env } = config;
-  let runName = dataFolder(env); //Default run name
+  const { mode } = config;
+  let runName = config.options?.runName;
   switch (mode) {
     case Mode.Archive: {
       //In archive mode, we move folders first and update the name before processing
-      const oldname = dataFolder(env);
-      const newname = new Date().getTime() + "_" + dataFolder(env);
+      const oldname = runName;
+      const newname = new Date().getTime() + "_" + runName;
+      const makeRelPath = (...rel: string[]) => {
+        return path.join(__dirname, ...rel);
+      };
+      if (!fs.existsSync(makeRelPath("../data", oldname))) {
+        throw new Error("Archive mode must specify a valid source file path");
+      }
       await new Promise<void>((resolve, reject) => {
-        const makeRelPath = (...rel: string[]) => {
-          return path.join(__dirname, ...rel);
-        };
         fs.rename(
           makeRelPath("../data", oldname),
           makeRelPath("../data", newname),
