@@ -1,0 +1,253 @@
+yarn run v1.22.4
+$ sh ./scripts/setup-e2e-local.sh; export $(xargs < ./envs/.env.e2e.local); yarn e2e
+checking for local e2e env file
+./envs/.env.e2e.local exists
+$ E2E_TEST_USERNAME=$E2E_TEST_USERNAME E2E_TEST_PASSWORD=$E2E_TEST_PASSWORD sh ./scripts/run-e2e.sh
+$ /Users/c.koh.3/Documents/Projects/react/fp-apac-jedi-skywalker/node_modules/.bin/jest -c e2e/jest-e2e.config.js --json --outputFile=e2e/output/playwright.webkit.json --maxWorkers=4
+PASS browser: webkit e2e/tests/vp-plugin/customer-conversion-all-details-check.e2e.ts (35.368s)
+  ● Console
+
+    console.log e2e/setup/common/login.ts:39
+      Login succeeeded in 12.15 seconds
+
+PASS browser: webkit e2e/tests/vp-plugin/vendor-health-single-vendor-account.e2e.ts (37.898s)
+  ● Console
+
+    console.log e2e/setup/common/login.ts:39
+      Login succeeeded in 11.36 seconds
+
+PASS browser: webkit e2e/tests/vp-plugin/deal-utilization-card-and-details.e2e.ts (38.807s)
+  ● Console
+
+    console.log e2e/setup/common/login.ts:39
+      Login succeeeded in 11.293 seconds
+
+PASS browser: webkit e2e/tests/vp-plugin/vendor-health.e2e.ts (55.242s)
+  ● Console
+
+    console.log e2e/setup/common/login.ts:39
+      Login succeeeded in 11.333 seconds
+
+PASS browser: webkit e2e/tests/vppd-plugin/edit-deal-button-verification.e2e.ts (18.7s)
+  ● Console
+
+    console.log e2e/setup/common/login.ts:39
+      Login succeeeded in 10.739 seconds
+
+PASS browser: webkit e2e/tests/vfd-plugin/edit-deal-button-verification.e2e.ts (19.486s)
+  ● Console
+
+    console.log e2e/setup/common/login.ts:39
+      Login succeeeded in 11.246 seconds
+
+PASS browser: webkit e2e/tests/vfd-plugin/dealform-persist-vendor-change.e2e.ts (26.998s)
+  ● Console
+
+    console.log e2e/setup/common/login.ts:39
+      Login succeeeded in 11.377 seconds
+
+PASS browser: webkit e2e/tests/vp-plugin/single-outlet-health-page.e2e.ts (12.903s)
+  ● Console
+
+    console.log e2e/setup/common/login.ts:39
+      Login succeeeded in 10.885 seconds
+
+PASS browser: webkit e2e/tests/vp-plugin/order-rejection-rate-card-and-details.e2e.ts (12.123s)
+  ● Console
+
+    console.log e2e/setup/common/login.ts:39
+      Login succeeeded in 10.406 seconds
+
+PASS browser: webkit e2e/tests/vfd-plugin/tnc-error-message-validation.e2e.ts (18.367s)
+  ● Console
+
+    console.log e2e/setup/common/login.ts:39
+      Login succeeeded in 11.805 seconds
+
+PASS browser: webkit e2e/tests/vp-plugin/kpi-summary.e2e.ts (13.899s)
+  ● Console
+
+    console.log e2e/setup/common/login.ts:39
+      Login succeeeded in 10.297 seconds
+
+PASS browser: webkit e2e/tests/vfd-plugin/dealform-has-default-options.e2e.ts (11.591s)
+  ● Console
+
+    console.log e2e/setup/common/login.ts:39
+      Login succeeeded in 9.848 seconds
+
+PASS browser: webkit e2e/tests/vp-plugin/accept-time-details-page.e2e.ts (14.375s)
+  ● Console
+
+    console.log e2e/setup/common/login.ts:39
+      Login succeeeded in 12.664 seconds
+
+PASS browser: webkit e2e/tests/vp-plugin/all-outlets-health-page.e2e.ts (11.247s)
+  ● Console
+
+    console.log e2e/setup/common/login.ts:39
+      Login succeeeded in 9.71 seconds
+
+PASS browser: webkit e2e/tests/vp-plugin/order-revenue-loss-card-and-details.e2e.ts (14.154s)
+  ● Console
+
+    console.log e2e/setup/common/login.ts:39
+      Login succeeeded in 12.721 seconds
+
+PASS browser: webkit e2e/tests/vp-plugin/prep-time-details-page.e2e.ts (11.182s)
+  ● Console
+
+    console.log e2e/setup/common/login.ts:39
+      Login succeeeded in 9.191 seconds
+
+PASS browser: webkit e2e/tests/vp-plugin/customer-conversion-card-and-details.e2e.ts (13.453s)
+  ● Console
+
+    console.log e2e/setup/common/login.ts:39
+      Login succeeeded in 11.67 seconds
+
+PASS browser: webkit e2e/tests/vp-plugin/offline-duration-details-page.e2e.ts (12.818s)
+  ● Console
+
+    console.log e2e/setup/common/login.ts:39
+      Login succeeeded in 11.264 seconds
+
+PASS browser: webkit e2e/tests/vp-plugin/delay-order-details-page.e2e.ts (11.871s)
+  ● Console
+
+    console.log e2e/setup/common/login.ts:39
+      Login succeeeded in 10.39 seconds
+
+
+Test Suites: 19 passed, 19 total
+Tests:       33 passed, 33 total
+Snapshots:   0 total
+Time:        103.414s, estimated 105s
+Ran all test suites.
+Test results written to: e2e/output/playwright.webkit.json
+$ /Users/c.koh.3/Documents/Projects/react/fp-apac-jedi-skywalker/node_modules/.bin/jest -c e2e/jest-e2e.config.js --json --outputFile=e2e/output/playwright.json --maxWorkers=4
+PASS browser: chromium e2e/tests/vp-plugin/vendor-health-single-vendor-account.e2e.ts (39.08s)
+  ● Console
+
+    console.log e2e/setup/common/login.ts:39
+      Login succeeeded in 11.505 seconds
+
+PASS browser: chromium e2e/tests/vp-plugin/customer-conversion-all-details-check.e2e.ts (44.327s)
+  ● Console
+
+    console.log e2e/setup/common/login.ts:39
+      Login succeeeded in 11.69 seconds
+
+PASS browser: chromium e2e/tests/vp-plugin/deal-utilization-card-and-details.e2e.ts (49.156s)
+  ● Console
+
+    console.log e2e/setup/common/login.ts:39
+      Login succeeeded in 11.566 seconds
+
+PASS browser: chromium e2e/tests/vfd-plugin/edit-deal-button-verification.e2e.ts (18.617s)
+  ● Console
+
+    console.log e2e/setup/common/login.ts:39
+      Login succeeeded in 10.655 seconds
+
+PASS browser: chromium e2e/tests/vfd-plugin/dealform-persist-vendor-change.e2e.ts (26.118s)
+  ● Console
+
+    console.log e2e/setup/common/login.ts:39
+      Login succeeeded in 10.632 seconds
+
+PASS browser: chromium e2e/tests/vppd-plugin/edit-deal-button-verification.e2e.ts (19.908s)
+  ● Console
+
+    console.log e2e/setup/common/login.ts:39
+      Login succeeeded in 10.965 seconds
+
+PASS browser: chromium e2e/tests/vp-plugin/vendor-health.e2e.ts (70.561s)
+  ● Console
+
+    console.log e2e/setup/common/login.ts:39
+      Login succeeeded in 11.58 seconds
+
+PASS browser: chromium e2e/tests/vp-plugin/accept-time-details-page.e2e.ts (13.46s)
+  ● Console
+
+    console.log e2e/setup/common/login.ts:39
+      Login succeeeded in 11.936 seconds
+
+PASS browser: chromium e2e/tests/vfd-plugin/tnc-error-message-validation.e2e.ts (16.538s)
+  ● Console
+
+    console.log e2e/setup/common/login.ts:39
+      Login succeeeded in 10.202 seconds
+
+PASS browser: chromium e2e/tests/vp-plugin/order-revenue-loss-card-and-details.e2e.ts (14.492s)
+  ● Console
+
+    console.log e2e/setup/common/login.ts:39
+      Login succeeeded in 13.256 seconds
+
+PASS browser: chromium e2e/tests/vp-plugin/kpi-summary.e2e.ts (15.633s)
+  ● Console
+
+    console.log e2e/setup/common/login.ts:39
+      Login succeeeded in 12.18 seconds
+
+PASS browser: chromium e2e/tests/vp-plugin/customer-conversion-card-and-details.e2e.ts (12.609s)
+  ● Console
+
+    console.log e2e/setup/common/login.ts:39
+      Login succeeeded in 11.441 seconds
+
+PASS browser: chromium e2e/tests/vp-plugin/single-outlet-health-page.e2e.ts (14.36s)
+  ● Console
+
+    console.log e2e/setup/common/login.ts:39
+      Login succeeeded in 12.322 seconds
+
+PASS browser: chromium e2e/tests/vp-plugin/offline-duration-details-page.e2e.ts (12.31s)
+  ● Console
+
+    console.log e2e/setup/common/login.ts:39
+      Login succeeeded in 10.934 seconds
+
+PASS browser: chromium e2e/tests/vp-plugin/order-rejection-rate-card-and-details.e2e.ts (12.915s)
+  ● Console
+
+    console.log e2e/setup/common/login.ts:39
+      Login succeeeded in 11.649 seconds
+
+PASS browser: chromium e2e/tests/vp-plugin/delay-order-details-page.e2e.ts (13.622s)
+  ● Console
+
+    console.log e2e/setup/common/login.ts:39
+      Login succeeeded in 12.095 seconds
+
+PASS browser: chromium e2e/tests/vfd-plugin/dealform-has-default-options.e2e.ts (13.113s)
+  ● Console
+
+    console.log e2e/setup/common/login.ts:39
+      Login succeeeded in 11.568 seconds
+
+PASS browser: chromium e2e/tests/vp-plugin/all-outlets-health-page.e2e.ts (11.488s)
+  ● Console
+
+    console.log e2e/setup/common/login.ts:39
+      Login succeeeded in 10.397 seconds
+
+PASS browser: chromium e2e/tests/vp-plugin/prep-time-details-page.e2e.ts (11.676s)
+  ● Console
+
+    console.log e2e/setup/common/login.ts:39
+      Login succeeeded in 10.521 seconds
+
+
+Test Suites: 19 passed, 19 total
+Tests:       33 passed, 33 total
+Snapshots:   0 total
+Time:        112.414s
+Ran all test suites.
+Test results written to: e2e/output/playwright.json
+Browser    Exit Code
+webkit         0
+chrome         0
+Done in 219.28s.

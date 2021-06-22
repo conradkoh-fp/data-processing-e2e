@@ -12,7 +12,7 @@ import { setup } from "./setup";
 
 (async function main() {
   let { sourceFolder, outFile } = await setup({
-    mode: Mode.Archive,
+    mode: Mode.Reprocess,
     options: {
       runName: "e2e_local", //Override for when reprocessing
     },

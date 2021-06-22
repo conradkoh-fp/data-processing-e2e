@@ -1,0 +1,382 @@
+yarn run v1.22.4
+$ sh ./scripts/setup-e2e-local.sh; export $(xargs < ./envs/.env.e2e.local); yarn e2e
+checking for local e2e env file
+./envs/.env.e2e.local exists
+$ E2E_TEST_USERNAME=$E2E_TEST_USERNAME E2E_TEST_PASSWORD=$E2E_TEST_PASSWORD sh ./scripts/run-e2e.sh
+$ /Users/c.koh.3/Documents/Projects/react/fp-apac-jedi-skywalker/node_modules/.bin/jest -c e2e/jest-e2e.config.js --json --outputFile=e2e/output/playwright.webkit.json --maxWorkers=4
+PASS browser: webkit e2e/tests/vp-plugin/customer-conversion-all-details-check.e2e.ts (36.777s)
+  ● Console
+
+    console.log e2e/setup/common/login.ts:39
+      Login succeeeded in 11.678 seconds
+
+PASS browser: webkit e2e/tests/vp-plugin/vendor-health-single-vendor-account.e2e.ts (38.003s)
+  ● Console
+
+    console.log e2e/setup/common/login.ts:39
+      Login succeeeded in 11.045 seconds
+
+PASS browser: webkit e2e/tests/vp-plugin/deal-utilization-card-and-details.e2e.ts (39.692s)
+  ● Console
+
+    console.log e2e/setup/common/login.ts:39
+      Login succeeeded in 11.368 seconds
+
+PASS browser: webkit e2e/tests/vppd-plugin/edit-deal-button-verification.e2e.ts (16.807s)
+  ● Console
+
+    console.log e2e/setup/common/login.ts:39
+      Login succeeeded in 9.805 seconds
+
+PASS browser: webkit e2e/tests/vp-plugin/vendor-health.e2e.ts (55.572s)
+  ● Console
+
+    console.log e2e/setup/common/login.ts:39
+      Login succeeeded in 11.022 seconds
+
+PASS browser: webkit e2e/tests/vfd-plugin/edit-deal-button-verification.e2e.ts (17.783s)
+  ● Console
+
+    console.log e2e/setup/common/login.ts:39
+      Login succeeeded in 10.579 seconds
+
+PASS browser: webkit e2e/tests/vfd-plugin/dealform-persist-vendor-change.e2e.ts (27.437s)
+  ● Console
+
+    console.log e2e/setup/common/login.ts:39
+      Login succeeeded in 11.912 seconds
+
+PASS browser: webkit e2e/tests/vp-plugin/all-outlets-health-page.e2e.ts (10.509s)
+  ● Console
+
+    console.log e2e/setup/common/login.ts:39
+      Login succeeeded in 9.086 seconds
+
+PASS browser: webkit e2e/tests/vp-plugin/kpi-summary.e2e.ts (14.025s)
+  ● Console
+
+    console.log e2e/setup/common/login.ts:39
+      Login succeeeded in 10.893 seconds
+
+PASS browser: webkit e2e/tests/vfd-plugin/tnc-error-message-validation.e2e.ts (17.981s)
+  ● Console
+
+    console.log e2e/setup/common/login.ts:39
+      Login succeeeded in 11.367 seconds
+
+PASS browser: webkit e2e/tests/vp-plugin/order-rejection-rate-card-and-details.e2e.ts (10.977s)
+  ● Console
+
+    console.log e2e/setup/common/login.ts:39
+      Login succeeeded in 9.663 seconds
+
+PASS browser: webkit e2e/tests/vp-plugin/offline-duration-details-page.e2e.ts (13.553s)
+  ● Console
+
+    console.log e2e/setup/common/login.ts:39
+      Login succeeeded in 11.709 seconds
+
+PASS browser: webkit e2e/tests/vfd-plugin/dealform-has-default-options.e2e.ts (12.547s)
+  ● Console
+
+    console.log e2e/setup/common/login.ts:39
+      Login succeeeded in 10.728 seconds
+
+PASS browser: webkit e2e/tests/vp-plugin/order-revenue-loss-card-and-details.e2e.ts (10.262s)
+  ● Console
+
+    console.log e2e/setup/common/login.ts:39
+      Login succeeeded in 8.877 seconds
+
+PASS browser: webkit e2e/tests/vp-plugin/single-outlet-health-page.e2e.ts (12.637s)
+  ● Console
+
+    console.log e2e/setup/common/login.ts:39
+      Login succeeeded in 10.43 seconds
+
+PASS browser: webkit e2e/tests/vp-plugin/delay-order-details-page.e2e.ts (13.12s)
+  ● Console
+
+    console.log e2e/setup/common/login.ts:39
+      Login succeeeded in 11.334 seconds
+
+PASS browser: webkit e2e/tests/vp-plugin/accept-time-details-page.e2e.ts (13.018s)
+  ● Console
+
+    console.log e2e/setup/common/login.ts:39
+      Login succeeeded in 11.21 seconds
+
+PASS browser: webkit e2e/tests/vp-plugin/customer-conversion-card-and-details.e2e.ts (10.987s)
+  ● Console
+
+    console.log e2e/setup/common/login.ts:39
+      Login succeeeded in 9.618 seconds
+
+PASS browser: webkit e2e/tests/vp-plugin/prep-time-details-page.e2e.ts (12.103s)
+  ● Console
+
+    console.log e2e/setup/common/login.ts:39
+      Login succeeeded in 10.537 seconds
+
+
+Test Suites: 19 passed, 19 total
+Tests:       33 passed, 33 total
+Snapshots:   0 total
+Time:        98.667s, estimated 109s
+Ran all test suites.
+Test results written to: e2e/output/playwright.webkit.json
+$ /Users/c.koh.3/Documents/Projects/react/fp-apac-jedi-skywalker/node_modules/.bin/jest -c e2e/jest-e2e.config.js --json --outputFile=e2e/output/playwright.json --maxWorkers=4
+PASS browser: chromium e2e/tests/vp-plugin/vendor-health-single-vendor-account.e2e.ts (42.242s)
+  ● Console
+
+    console.log e2e/setup/common/login.ts:39
+      Login succeeeded in 12.597 seconds
+
+PASS browser: chromium e2e/tests/vp-plugin/customer-conversion-all-details-check.e2e.ts (43.062s)
+  ● Console
+
+    console.log e2e/setup/common/login.ts:39
+      Login succeeeded in 11.88 seconds
+
+PASS browser: chromium e2e/tests/vp-plugin/deal-utilization-card-and-details.e2e.ts (47.118s)
+  ● Console
+
+    console.log e2e/setup/common/login.ts:39
+      Login succeeeded in 12.788 seconds
+
+PASS browser: chromium e2e/tests/vfd-plugin/tnc-error-message-validation.e2e.ts (17.959s)
+  ● Console
+
+    console.log e2e/setup/common/login.ts:39
+      Login succeeeded in 11.481 seconds
+
+PASS browser: chromium e2e/tests/vp-plugin/vendor-health.e2e.ts (63.79s)
+  ● Console
+
+    console.log e2e/setup/common/login.ts:39
+      Login succeeeded in 11.281 seconds
+
+PASS browser: chromium e2e/tests/vfd-plugin/edit-deal-button-verification.e2e.ts (19.845s)
+  ● Console
+
+    console.log e2e/setup/common/login.ts:39
+      Login succeeeded in 11.464 seconds
+
+PASS browser: chromium e2e/tests/vfd-plugin/dealform-persist-vendor-change.e2e.ts (28.123s)
+  ● Console
+
+    console.log e2e/setup/common/login.ts:39
+      Login succeeeded in 12.492 seconds
+
+PASS browser: chromium e2e/tests/vp-plugin/delay-order-details-page.e2e.ts (11.999s)
+  ● Console
+
+    console.log e2e/setup/common/login.ts:39
+      Login succeeeded in 10.623 seconds
+
+PASS browser: chromium e2e/tests/vp-plugin/accept-time-details-page.e2e.ts (13.847s)
+  ● Console
+
+    console.log e2e/setup/common/login.ts:39
+      Login succeeeded in 12.396 seconds
+
+FAIL browser: chromium e2e/tests/vppd-plugin/edit-deal-button-verification.e2e.ts (41.805s)
+  ● Console
+
+    console.log e2e/utils/dealsApi/index.ts:11
+      DEALS API retry attempt #1
+    console.log e2e/setup/common/login.ts:39
+      Login succeeeded in 8.038 seconds
+
+  ● VPPD - edit promotion button clicked › [C363392]Verify page goes back & selected deal form values are retained
+
+    page.waitForSelector: Timeout 30000ms exceeded.
+    =========================== logs ===========================
+    waiting for selector "[data-testid="wrapped-select-dealtype"]"
+    ============================================================
+    Note: use DEBUG=pw:api environment variable to capture Playwright logs.
+
+      10 |   fieldToSelect: string
+      11 | ): Promise<void> => {
+    > 12 |   const field = await page.waitForSelector(fieldSelector, { state: 'attached' });
+         |                            ^
+      13 |   await retry(
+      14 |     async () => {
+      15 |       let fieldToSelectIsVisible = false;
+
+      at Object.captureStackTrace (../../../node_modules/playwright/lib/utils/stackTrace.js:51:19)
+      at Connection.sendMessageToServer (../../../node_modules/playwright/lib/client/connection.js:69:48)
+      at Proxy.<anonymous> (../../../node_modules/playwright/lib/client/channelOwner.js:64:61)
+      at ../../../node_modules/playwright/lib/client/frame.js:193:42
+      at Frame._wrapApiCall (../../../node_modules/playwright/lib/client/channelOwner.js:77:34)
+      at Frame.waitForSelector (../../../node_modules/playwright/lib/client/frame.js:188:21)
+      at ../../../node_modules/playwright/lib/client/page.js:212:60
+      at Page._attributeToPage (../../../node_modules/playwright/lib/client/page.js:202:20)
+      at Page.waitForSelector (../../../node_modules/playwright/lib/client/page.js:212:21)
+      at utils/dealHelper/selectField.ts:12:28
+      at step (utils/dealHelper/selectField.ts:33:23)
+      at Object.next (utils/dealHelper/selectField.ts:14:53)
+      at utils/dealHelper/selectField.ts:8:71
+      at Object.<anonymous>.__awaiter (utils/dealHelper/selectField.ts:4:12)
+      at utils/dealHelper/selectField.ts:10:24
+      at actions/vppd-plugin/deals-overview/index.ts:25:26
+      at step (actions/vppd-plugin/deals-overview/index.ts:33:23)
+      at Object.next (actions/vppd-plugin/deals-overview/index.ts:14:53)
+      at actions/vppd-plugin/deals-overview/index.ts:8:71
+      at Object.<anonymous>.__awaiter (actions/vppd-plugin/deals-overview/index.ts:4:12)
+      at actions/vppd-plugin/deals-overview/index.ts:22:90
+      at tests/vppd-plugin/edit-deal-button-verification.e2e.ts:17:29
+      at step (tests/vppd-plugin/edit-deal-button-verification.e2e.ts:63:23)
+      at Object.next (tests/vppd-plugin/edit-deal-button-verification.e2e.ts:44:53)
+      at fulfilled (tests/vppd-plugin/edit-deal-button-verification.e2e.ts:35:58)
+
+FAIL browser: chromium e2e/tests/vp-plugin/offline-duration-details-page.e2e.ts (36.156s)
+  ● Console
+
+    console.log e2e/setup/common/login.ts:39
+      Login succeeeded in 5.609 seconds
+
+  ● VP - Offline Duration details page › [C367696]Verify the "offline duration" KPI card, insight and details screen details
+
+    clickCategory() unable to click category text="Operational Metrics"
+
+      48 |     category = await page.waitForSelector(categorySelector);
+      49 |   } catch {
+    > 50 |     throw new Error(`clickCategory() unable to click category ${categorySelector}`);
+         |           ^
+      51 |   }
+      52 |   const classes = await category.getAttribute('class');
+      53 |   const currentCategoryState = classes.includes('Mui-expanded')
+
+      at actions/vp-plugin/dashboard/index.ts:50:11
+      at step (actions/vp-plugin/dashboard/index.ts:33:23)
+      at Object.throw (actions/vp-plugin/dashboard/index.ts:14:53)
+      at rejected (actions/vp-plugin/dashboard/index.ts:6:65)
+
+PASS browser: chromium e2e/tests/vp-plugin/single-outlet-health-page.e2e.ts (13.156s)
+  ● Console
+
+    console.log e2e/setup/common/login.ts:39
+      Login succeeeded in 11.53 seconds
+
+PASS browser: chromium e2e/tests/vp-plugin/prep-time-details-page.e2e.ts (11.21s)
+  ● Console
+
+    console.log e2e/setup/common/login.ts:39
+      Login succeeeded in 9.991 seconds
+
+PASS browser: chromium e2e/tests/vfd-plugin/dealform-has-default-options.e2e.ts (13.088s)
+  ● Console
+
+    console.log e2e/setup/common/login.ts:39
+      Login succeeeded in 11.571 seconds
+
+PASS browser: chromium e2e/tests/vp-plugin/customer-conversion-card-and-details.e2e.ts (11.712s)
+  ● Console
+
+    console.log e2e/setup/common/login.ts:39
+      Login succeeeded in 10.609 seconds
+
+PASS browser: chromium e2e/tests/vp-plugin/order-rejection-rate-card-and-details.e2e.ts (10.127s)
+  ● Console
+
+    console.log e2e/setup/common/login.ts:39
+      Login succeeeded in 9.135 seconds
+
+PASS browser: chromium e2e/tests/vp-plugin/all-outlets-health-page.e2e.ts (12.458s)
+  ● Console
+
+    console.log e2e/setup/common/login.ts:39
+      Login succeeeded in 11.038 seconds
+
+PASS browser: chromium e2e/tests/vp-plugin/order-revenue-loss-card-and-details.e2e.ts (11.842s)
+  ● Console
+
+    console.log e2e/setup/common/login.ts:39
+      Login succeeeded in 10.733 seconds
+
+FAIL browser: chromium e2e/tests/vp-plugin/kpi-summary.e2e.ts (70.118s)
+  ● Console
+
+    console.log e2e/setup/common/login.ts:39
+      Login succeeeded in 8.731 seconds
+
+  ● VP - KPI Summary › [C367701] Verify the KPI summary screen details with different timeframe selection
+
+    page.waitForSelector: Timeout 30000ms exceeded.
+    =========================== logs ===========================
+    waiting for selector "data-testid=date-switcher-date-btn" to be visible
+    ============================================================
+    Note: use DEBUG=pw:api environment variable to capture Playwright logs.
+
+      26 |
+      27 |     // Verify the default timeframe as "last 7 days" and all KPI cards summary details
+    > 28 |     await page.waitForSelector('data-testid=date-switcher-date-btn');
+         |                ^
+      29 |     let foundResp: Response;
+      30 |     await Promise.all([
+      31 |       page.waitForResponse((resp) => {
+
+      at Object.captureStackTrace (../../../node_modules/playwright/lib/utils/stackTrace.js:51:19)
+      at Connection.sendMessageToServer (../../../node_modules/playwright/lib/client/connection.js:69:48)
+      at Proxy.<anonymous> (../../../node_modules/playwright/lib/client/channelOwner.js:64:61)
+      at ../../../node_modules/playwright/lib/client/frame.js:193:42
+      at Frame._wrapApiCall (../../../node_modules/playwright/lib/client/channelOwner.js:77:34)
+      at Frame.waitForSelector (../../../node_modules/playwright/lib/client/frame.js:188:21)
+      at ../../../node_modules/playwright/lib/client/page.js:212:60
+      at Page._attributeToPage (../../../node_modules/playwright/lib/client/page.js:202:20)
+      at Page.waitForSelector (../../../node_modules/playwright/lib/client/page.js:212:21)
+      at tests/vp-plugin/kpi-summary.e2e.ts:28:16
+      at step (tests/vp-plugin/kpi-summary.e2e.ts:33:23)
+      at Object.next (tests/vp-plugin/kpi-summary.e2e.ts:14:53)
+      at tests/vp-plugin/kpi-summary.e2e.ts:8:71
+      at Object.<anonymous>.__awaiter (tests/vp-plugin/kpi-summary.e2e.ts:4:12)
+      at Object.<anonymous> (tests/vp-plugin/kpi-summary.e2e.ts:24:92)
+
+  ● VP - KPI Summary › [C367694] Verify the vendor is able to see the KPIs for multiple restaurants
+
+    page.waitForSelector: Timeout 30000ms exceeded.
+    =========================== logs ===========================
+    waiting for selector "[data-testid="multiselect-filter-vendors-select"]"
+    ============================================================
+    Note: use DEBUG=pw:api environment variable to capture Playwright logs.
+
+      46 |
+      47 |     // Select first 2 vendors from dropdown
+    > 48 |     const vendorSelector = await page.waitForSelector(
+         |                                       ^
+      49 |       '[data-testid="multiselect-filter-vendors-select"]',
+      50 |       {
+      51 |         state: 'attached',
+
+      at Object.captureStackTrace (../../../node_modules/playwright/lib/utils/stackTrace.js:51:19)
+      at Connection.sendMessageToServer (../../../node_modules/playwright/lib/client/connection.js:69:48)
+      at Proxy.<anonymous> (../../../node_modules/playwright/lib/client/channelOwner.js:64:61)
+      at ../../../node_modules/playwright/lib/client/frame.js:193:42
+      at Frame._wrapApiCall (../../../node_modules/playwright/lib/client/channelOwner.js:77:34)
+      at Frame.waitForSelector (../../../node_modules/playwright/lib/client/frame.js:188:21)
+      at ../../../node_modules/playwright/lib/client/page.js:212:60
+      at Page._attributeToPage (../../../node_modules/playwright/lib/client/page.js:202:20)
+      at Page.waitForSelector (../../../node_modules/playwright/lib/client/page.js:212:21)
+      at tests/vp-plugin/kpi-summary.e2e.ts:48:39
+      at step (tests/vp-plugin/kpi-summary.e2e.ts:33:23)
+      at Object.next (tests/vp-plugin/kpi-summary.e2e.ts:14:53)
+      at tests/vp-plugin/kpi-summary.e2e.ts:8:71
+      at Object.<anonymous>.__awaiter (tests/vp-plugin/kpi-summary.e2e.ts:4:12)
+      at Object.<anonymous> (tests/vp-plugin/kpi-summary.e2e.ts:43:86)
+
+Test Suites: 3 failed, 16 passed, 19 total
+Tests:       4 failed, 29 passed, 33 total
+Snapshots:   0 total
+Time:        135.322s
+Ran all test suites.
+Test results written to: e2e/output/playwright.json
+error Command failed with exit code 1.
+info Visit https://yarnpkg.com/en/docs/cli/run for documentation about this command.
+Browser    Exit Code
+webkit         0
+chrome         1
+error Command failed with exit code 1.
+info Visit https://yarnpkg.com/en/docs/cli/run for documentation about this command.
+error Command failed with exit code 1.
+info Visit https://yarnpkg.com/en/docs/cli/run for documentation about this command.

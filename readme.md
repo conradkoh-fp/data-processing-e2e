@@ -12,6 +12,8 @@ seq 1 20 | xargs -I{} sh -c "E2E_TEST_PASSWORD=foodpanda1 yarn e2e:staging > /Us
 
 Debug 60 times on locally with tracing
 
+## Helpful Commands
+
 ```
 mkdir -p /Users/c.koh.3/Downloads/e2e_results/data/e2e_local && seq 1 60 | xargs -I{} sh -c "RUN_ID={} yarn e2e:local > /Users/c.koh.3/Downloads/e2e_results/data/e2e_local/e2e_run_{}.txt 2>&1"
 ```
@@ -33,3 +35,10 @@ Debug 40 times on a single test in parallel with tracing
 ```
 mkdir -p /Users/c.koh.3/Downloads/e2e_results/data/e2e_local_single && seq 1 20 | xargs -P -I{} sh -c "RUN_ID={} yarn e2e:local_single e2e/tests/vp-plugin/customer-conversion-all-details-check.e2e.ts > /Users/c.koh.3/Downloads/e2e_results/data/e2e_local_single/e2e_run_{}.txt 2>&1"
 ```
+
+## Running the processor
+
+1. Execute main.ts to run the processor
+2. In the main.ts file, change the mode that you want to execute in:
+   - Archive will append the time as the prefix for the out file and the folder
+   - Reprocess will continuously process the same file
